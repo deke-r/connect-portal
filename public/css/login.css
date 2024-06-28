@@ -1,0 +1,44 @@
+a {
+    text-decoration: none;
+}
+.login-page {
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+.form-right i {
+    font-size: 100px;
+}
+
+.az-logo {
+    font-weight: 700;
+    color: #0d83dd;
+   
+}
+
+
+.showpassword {
+    background: none;
+    border: none;
+    color: #337ab7;
+    position: absolute;
+    right: .75em;
+    top: 10px;
+    z-index: 9;
+    font-size:14px !important;
+  }
+
+  .bordrrad5{
+    border-radius:0 5px 5px 0 !important;
+  }
+
+  .height_100vh{
+    height: 100dvh !important;
+  }
+
+
+
+
+ 

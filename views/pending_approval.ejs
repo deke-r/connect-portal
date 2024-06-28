@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/pending_approval.css">
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid border-t box_sdw pb-4 childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Influencer List</h5>
+                </div>
+
+
+
+
+
+                <div class="row border-0  bg-light newmp2  row_margin my-3">
+                    <div class="col-4">
+                        <h6 class="f_13 mt-2 ms-2">Vishal</h6>
+                        <h6 class="f_13 txt_sky">+919999789194</h6>
+                    </div>
+                    <div class="col-8 d-flex justify-content-end align-items-center">
+                        <div class="">
+                            <a href="/pending_approval_accept">
+                                <button class="btn bg_b box_sdw11 py-2 px-3 f_13 rounded-0 text-light">Accept</button>
+                            </a>
+                            <button class="btn bg_b box_sdw11 py-2  px-3 f_13 rounded-0 text-light" data-bs-toggle="modal" data-bs-target="#rejectmodal">Reject</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row border-0  bg-light newmp2  row_margin my-3">
+                    <div class="col-4">
+                        <h6 class="f_13 mt-2 ms-2">Bhavishya</h6>
+                        <h6 class="f_13 txt_sky">+919999789194</h6>
+                    </div>
+                    <div class="col-8 d-flex justify-content-end align-items-center">
+                        <div class="">
+                            <a href="/pending_approval_accept">
+                                <button class="btn bg_b box_sdw11 py-2 px-3 f_13 rounded-0 text-light">Accept</button>
+                            </a> 
+                            <button class="btn bg_b box_sdw11 py-2  px-3 f_13 rounded-0 text-light" data-bs-toggle="modal" data-bs-target="#rejectmodal">Reject</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row border-0  bg-light newmp2  row_margin my-3">
+                    <div class="col-4">
+                        <h6 class="f_13 mt-2 ms-2">Tilak</h6>
+                        <h6 class="f_13 txt_sky">+919999789194</h6>
+                    </div>
+                    <div class="col-8 d-flex justify-content-end align-items-center">
+                        <div class="">
+                            <a href="/pending_approval_accept">
+                                <button class="btn bg_b box_sdw11 py-2 px-3 f_13 rounded-0 text-light">Accept</button>
+                            </a>
+                                                        <button class="btn bg_b box_sdw11 py-2  px-3 f_13 rounded-0 text-light"data-bs-toggle="modal" data-bs-target="#rejectmodal">Reject</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+  <div class="modal fade" id="rejectmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title  f_16 text-center" id="staticBackdropLabel">Please Fill the Remarks</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <textarea class="newmp2 w-100 form-control border-0 rounded-2" rows="5"></textarea>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg_b f_13 text-light fw_600">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+        <%- include('partials/footer.ejs') %>
+
+
+            <script src="/static/js/pending_approval.js"></script>
+</body>
+
+</html>

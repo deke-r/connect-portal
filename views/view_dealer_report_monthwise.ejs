@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="stylesheet" href="/static/css/view_dealer_report_monthwise.css">
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    <div class="container-fluid py-4 ">
+        <div class="container-fluid border-t pb-4  box_sdw">
+            <div class="row bg_b border-t">
+                <h5 class="text-light text-center f_14 mt-2">iClub Report (FY 23-24)</h5>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-sm-6 col-md-5 col-lg-4 pt-3 ">
+                    <div class="">
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Enter Dealer Search String">
+                        <h6 class="fw-bold f_12 ms-1 pt-2">  <span class="text-danger">*</span> OUTLET-CODE/DEALER NAME/BAAN CODE/ MOBILE NO.</h6>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-7 col-lg-8 pt-sm-3 ">
+                    <button class="btn bg_b text-light f_13 fw_600 h_33 box_sdw11 rounded-2" type="button" id="search">Search</button>
+                    <button type="button" class="btn box_sdw11 float-right bg_b text-light ms-2  f_13 fw_600 rounded-2 " id="excel_btn">Export IN Excel</button>
+                </div>
+
+                                    
+                </div>
+                
+
+            </div>
+
+
+        </div>
+    
+    
+    <%- include('partials/footer.ejs') %>
+    <script src="/static/js/view_dealer_report_monthwise.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/duplicate_image_details.css">
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid border-t box_sdw  childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Duplicate Image Details</h5>
+                </div>
+
+                <div class="row mt-3 mx-2">
+                    <div class="col-md-3">
+                        <h6 class="fw_bold f_13 ms-1">Emp Id:</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" name="" id="srch"
+                            placeholder="" required>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <button class="btn box_sdw11 bg_b mt-4 text-light f_13 fw_600" id="srch_btn">Search</button>
+                        <button type="button" class="btn box_sdw11 mt-4 ms-2 float-right bg_r text-light f_13 fw_600" id="reset">Reset</button>
+
+                    </div>
+                </div>
+
+                <div class="row mt-4  mx-2 pb-4">
+
+                    <div class=" table-responsive h_350  px-2   me-2">
+                        <table class="table table-bordered table-responsive table-striped">
+                            <thead id="thead">
+                                <tr>
+                                    <th>Emp Id</th>
+                                    <th>Emp Name</th>
+                                    <th>Duplicate Rc Id's</th>
+                                    <th>Duplicate Images</th>
+                                    <th>Event Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                <% duplicateImageDetails.forEach(entry => { %>
+                                    <tr>
+                                        <td><%= entry.emp_id %></td>
+                                        <td><%= entry.EMP_NAME %></td>
+                                        <td>
+                                            <% if (entry.Event_Photo1 && entry.Event_Photo2 && entry.Event_Photo3) { %>
+                                                <%= entry.rc_id %>
+                                            <% } else { %>
+                                                No duplicates
+                                            <% } %>
+                                        </td>
+                                        <td>
+                                            <% if (entry.Event_Photo1 && entry.Event_Photo2 && entry.Event_Photo3) { %>
+                                                <%= entry.Event_Photo1 %>, <%= entry.Event_Photo2 %>, <%= entry.Event_Photo3 %>
+                                            <% } else { %>
+                                                N/A
+                                            <% } %>
+                                        </td>
+                                        <td><%= entry.DateOfMeet %></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <%- include('partials/footer.ejs') %>
+            <script src="/static/js/duplicate_image_details.js"></script>
+</body>
+<footer>
+    
+</footer>
+
+</html>

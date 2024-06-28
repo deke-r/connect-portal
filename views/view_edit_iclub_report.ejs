@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="stylesheet" href="/static/css/view_edit_iclub_report.css">
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    <div class="container-fluid my-4 ">
+        <div class="container-fluid border-t pb-3 box_sdw">
+            <div class="row bg_b border-t">
+                <h5 class="text-light text-center f_14 mt-2">iClub Report</h5>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-sm-6 col-md-5 col-lg-4 pt-3 ">
+                    <div class="">
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Enter Dealer Search String">
+                        <h6 class="fw_bold f_12 ms-1 pt-2">  <span class="text-danger">*</span> OUTLET-CODE/DEALER NAME/BAAN CODE/ MOBILE NO.</h6>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-7 col-lg-8 pt-sm-3 ">
+                    <button class="btn bg_b text-light f_13 fw_600 h_33 box_sdw11 rounded-2" type="button" id="search">Search</button>
+                    <button type="button" class="btn box_sdw11 float-right bg_b text-light  f_13 ms-2 fw_600 rounded-2 " id="excel_btn">Export In Excel</button>
+                </div>                        
+            </div>
+            
+                
+
+            </div>
+            
+            <div class="row mt-2 ">
+                <div class="col-md-12 py-2" id="dealer_detail_table">
+                     
+                    <div class="table-responsive px-2 me-2">
+                    <table class="table table-bordered table-striped table-hover d-none" id="dataTables">
+                        <thead id="thead">
+                            <tr>
+                                <th class="bg_b text-light f_13  ">
+                                    Quick View</th>
+                                <th class="bg_b text-light f_13 ">ID</th>
+                                <th class="bg_b text-light f_13 ">Status</th>
+                                <th class="bg_b text-light f_13  ">Dealer Code</th>
+                                <th class="bg_b text-light f_13 ">Dealer Name</th>
+                                <th class="bg_b text-light f_13 ">Club Enrolled</th>
+                                <th class="bg_b text-light f_13 ">Target</th>
+                                <th class="bg_b text-light f_13 ">Region</th>
+                                <th class="bg_b text-light f_13 ">Branch</th>
+                                <th class="bg_b text-light f_13 ">Heaquarter</th>
+                                <th class="bg_b text-light f_13 ">Employee</th>
+                                <th class="bg_b text-light f_13 ">Dealer id</th>
+                                <th class="bg_b text-light f_13 ">Dist Name</th>
+                                <th class="bg_b text-light f_13 ">BAAN Code</th>
+                                <th class="bg_b text-light f_13 ">Contact</th>
+                                <th class="bg_b text-light f_13 ">Contact No</th>
+                                <th class="bg_b text-light f_13 ">Created On</th>
+                                <th class="bg_b text-light f_13 ">Delete Mapping</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                    
+                    
+                    
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    
+    <!-- Edit modal start-->
+    <div class="modal" tabindex="-1" id="editModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit iClub Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body f_13">
+              <div class="container-fluid ">
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Trans ID</div>
+                    <div class="col-8">24135</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Dealer Details</div>
+                    <div class="col-8">OC35026 kitchen N More (70494)</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">iClub</div>
+                    <div class="col-8"><input type="text" class="form-control f_13 box_sdw11"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Target</div>
+                    <div class="col-8"><input type="text" class="form-control f_13 box_sdw11" value="1300"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Contact Name</div>
+                    <div class="col-8"><input type="text" class="form-control f_13 box_sdw11" value="CS ARORA"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Contact No</div>
+                    <div class="col-8"><input type="number" class="form-control f_13 box_sdw11" value="9356004465"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-4 fw-bold">Address</div>
+                    <div class="col-8"><textarea name="" id="" cols="2" rows="2" class="form-control f_13 box_sdw11" placeholder="Enter Address..."></textarea></div>
+                </div>
+
+              </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary box_sdw11 f_13 text-light fw-bold" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn bg_b box_sdw11 f_13 text-light fw-bold">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Edit modal end-->
+
+    
+    <%- include('partials/footer.ejs') %>
+    <script src="/static/js/view_edit_iclub_report.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+.fa-trash :hover{
+    color: red;
+}
+
+.fa-pen-to-square:hover{
+    color: green;
+}
+
+
+
+
+#thead tr th{
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #0473cf !important;
+    color: white !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 18px 10px !important;
+    white-space: nowrap !important;
+
+}
+
+#tbody tr td{
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 18px 10px !important;
+    white-space:nowrap !important;
+}
+
+
+
+
+.h_350{
+    height: 350px !important;
+}
+
+#thead{position: sticky !important;top: -2px !important;z-index: 2 !important;background-color: #0473cf !important;}
+
+
+#editModal .modal-body .row div{
+    font: 13px;
+}
+

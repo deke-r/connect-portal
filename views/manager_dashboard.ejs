@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/manager_dashboard.css">
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+
+        <!-- Banner Section ----------------------------- -->
+
+        <!-- <div class="container-fluid px-0 bg_g">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="http://13.234.228.246/meets/images/banner-mobile-app.png" class="d-block w-100"
+                            alt="...">
+                    </div>
+                    <div class="carousel-item bg_ant">
+                        <img src="/static/images/banner-2024.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item bg_bq">
+                        <img src="/static/images/banner-mobile-2024.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div> -->
+
+        <!-- Banner Section ----------------------------- -->
+
+
+
+
+
+
+
+        <div class="container-fluid mt-3">
+
+            <div class="row">
+
+                <div class="col-md-6 my-4">
+
+
+                    <div class=" row border-t mt-3 mediamr">
+            <div class="container-fluid pb-3 border-t bg_dot  newmp">
+                <div class="row bg_b2 text-light align-middle text-center border-t">
+                    <h4 class="f_14 mt-2"><i class="fa-solid fa-handshake me-2"></i> Meet Details</h4>
+                </div>
+                
+            
+                <div class="row mx-1 my-2">
+                    <button class="btn bg_grey hover_btn2 f_13 fw_600 text-light box_sdw11 text-start" id="eventreport">
+                        <i class="fa-regular fa-file me-3"></i>
+                        View Meet (SGA/Inshop/Contractor/Dealer) Report        </button>
+                </div>
+            
+            
+                <div class="row mx-1 my-2">
+                    <button class="btn bg_grey hover_btn2 f_13 fw_600 text-light text-start box_sdw11" id="detail_event">
+                        <i class="fa-solid fa-file-circle-check me-3"></i>
+                        View Meet (SGA/Inshop/Contractor) Detail Report        </button>
+                </div>
+
+                <div class="row mx-1 my-2">
+                    <button class="btn bg_grey hover_btn2 f_13 fw_600 text-light text-start box_sdw11"
+                        id="dealer_detail_event">
+                        <i class="fa-solid fa-file-circle-check me-3"></i>
+                        View Meet (Dealer) Detail Report </button>
+                </div>
+              
+            
+                
+            </div>
+            
+                    </div>
+            
+            
+                </div>
+
+
+                <div class="col-md-6 my-4">
+
+
+                    <div class=" row mediamr mt-3 ">
+                        <div class="container-fluid border-t bg_dot pb-3  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2"><i class="fa-regular fa-file me-2"></i>Ageing Report</h4>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn mt-2 f_13 fw_600 box_sdw11 text-light text-start"
+                                    id="download_ageing_report">
+                                    <i class="fa-solid fa-download me-3"></i>
+                                    Download Ageing Report </button>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class=" row mediamr mt-3">
+                        <div class="container-fluid border-t bg_dot pb-3  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2"><i class="fa-solid fa-receipt me-2"></i>Account Statement</h4>
+                            </div>
+                            
+                        
+                            
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn f_13 fw_600 box_sdw11 text-light text-start" id="download_account_st">
+                                    <i class="fa-solid fa-download me-3"></i>
+                                                           Download Account Statement      </button>
+                            </div>
+                        
+                           
+                        
+                          
+                        
+                            
+                        </div>
+                        
+                                </div>
+
+
+                </div>
+
+
+
+                <!-- <div class="col-md-6 my-4">
+
+
+                    <div class=" row mediamr mt-3  d-none">
+                        <div class="container-fluid border-t bg_dot pb-3  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2">
+                                    <i class="fa-solid fa-clock"></i>
+                                    Pending Report
+                                </h4>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn mt-2 f_13 fw_600 box_sdw11 text-light text-start"
+                                    id="pending_approval">
+                                    <i class="fa-brands fa-creative-commons-by me-3"></i>
+                                    Pending Approval </button>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div> -->
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        
+        
+        <%- include('partials/footer.ejs') %>
+        
+        
+        <script src="/static/js/manager_dashboard.js"></script>
+</body>
+
+</html>

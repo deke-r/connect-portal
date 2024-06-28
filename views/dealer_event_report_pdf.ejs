@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/eventreport_pdf.css">
+
+    <link rel="stylesheet" media="print" href="/static/css/print.css" />
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+
+        <div class=" my-3 container-fluid   " id="printableDiv">
+            
+
+            <div class="row  my-3">
+                <div class="col-2">
+                    <button class="btn box_sdw11 mt-3  bg_b text-light f_13 fw_600 text-nowrap" id="export_pdf">Export To Pdf</button>
+
+                </div>
+            </div>
+
+
+
+
+            <table class="table">
+                <thead>
+
+
+                    <tr class="bd-t0 bd-b">
+
+                        <td class=" text-start p-0 m-0 border-0 fw_bold" colspan="5">
+                            <div class="row p-0 m-0">
+                                <div class="container-fluid m-0 py-1 d-flex justify-content-start align-items-center">
+                                    <h4><% let meetTypeText;
+
+                                        if (data2[0].Meet_Type === 1) {
+                                            meetTypeText = 'In-Shop Meet';
+                                        } else if (data2[0].Meet_Type === 2) {
+                                            meetTypeText = 'Contractor Meet';
+                                        } else if (data2[0].Meet_Type === 3) {
+                                            meetTypeText = 'Dealer Meet';
+                                        } else {
+                                            meetTypeText = 'SGA Meet';
+                                        } %>
+                                        <%= meetTypeText %>
+
+                                    </h4>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td colspan="2" class="p-0  m-0 f_13 text-start border-0">
+                            <div class="row p-0 m-0">
+                                <div class="container-fluid m-0 py-1 d-flex justify-content-end align-items-center">
+
+                                    <img src="/static/images/logo.png" width="120px" height="70px">
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Ref.No.</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold" id="rc_id">
+                            <%= data2[0].rc_id%>
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Employee Name </td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold" id="emp_name">
+                            <%= data1[0].EMP_NAME%> (<%= emp%>)
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Reporting Manager</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold" id="rmname">
+                            <%= data1[0].REP_MANAGER_NAME%> (<%= data1[0].REP_MANAGER_ID%>)
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Event Date</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold"><%=dataformat%></td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Venue Name</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold">
+                            <%= data2[0].Dealer_firm_Name%>
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">City</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold">
+                            <%=data2[0].City%>
+                        </td>
+                    </tr>
+
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Agenda</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold">
+                            <%=data2[0].Agenda%>
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Attended by</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold">
+                            <%=data2[0].Jacpl_Attended%>
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">ADE Name</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold">
+                            <%=data2[0].Cond_By%>
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Outcome</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold">
+                            <%=data2[0].Outcome%>
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">People Attended</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold">
+                            <%=data2[0].Attended_count%>
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Budget</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold">
+                            <%=data2[0].Budget%>
+                        </td>
+                    </tr>
+                    <tr class="border-0">
+                        <td class="f_13 border-0 w_290 text-start fw_600">Expense</td>
+                        <td colspan="6" class="f_13 border-0 text-start fw_bold">
+                            <%=data2[0].Expense%>
+                        </td>
+                    </tr>
+                    <tr class="border-0 mt-3">
+                        <td class="border-0" colspan="7">
+
+                            <h6 class="f_13 fw_bold">Influencer List :</h6>
+                        </td>
+                    </tr>
+
+
+                    <tr class="text-center">
+                        <th class=" f_13 fw_bold w_100">Customer Code</th>
+                        <th class=" f_13 fw_bold w_290">Customer Name</th>
+                        <th class=" f_13 fw_bold">Customer Type</th>
+                        <th class=" f_13 fw_bold">Contact Person</th>
+                        <th class=" f_13 fw_bold">Customer Phone</th>
+                        <th class=" f_13 fw_bold">City</th>
+
+                    </tr>
+
+                </thead>
+                <tbody id="pdftbody">
+
+<% console.log(data3,'data3333') %>
+                    <% for(i=0;i< data3.length;i++){ %>
+
+                        <tr class="text-center">
+                            <th class=" f_13 fw_600 w_100"><%= data3[i].Customer_Code%></th>
+                            <th class=" f_13 fw_600 w_290"><%= data3[i].Customer_Name%></th>
+                            <th class=" f_13 fw_600"><%= data3[i].Customer_Type%></th>
+                            <th class=" f_13 fw_600"><%= data3[i].Contact_Person%></th>
+                            <th class=" f_13 fw_600"><%= data3[i].Customer_Phone%></th>
+                            <th class=" f_13 fw_600"><%= data3[i].City%></th>
+
+                        </tr>
+                        <%}%>
+                            <tr class="border-0">
+                                <td class="border-0" colspan="7">
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-10">
+                                            <div class="card w-100">
+                                                <div class="card-body">
+                                                    <p class="card-text text-center fw_bold f_13">Event Photo</p>
+                                                </div>
+                                                <img src="/static/images/<%= data2[0].Event_Photo1 %>"
+                                                    class="card-img-top" alt="...">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-0">
+                                <td class="border-0" colspan="7">
+                                    <div class="row d-flex justify-content-center page-break">
+                                        <div class="col-10">
+                                            <div class="card w-100">
+                                                <div class="card-body">
+                                                    <p class="card-text text-center fw_bold f_13">Event Hotel & Food
+                                                        Biils</p>
+                                                </div>
+                                                <img src="/static/images/<%= data2[0].Event_Photo2 %>"
+                                                    class="card-img-top" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-0">
+                                <td class="border-0" colspan="7">
+                                    <div class="row d-flex justify-content-center page-break">
+                                        <div class="col-10">
+                                            <div class="card w-100">
+                                                <div class="card-body">
+                                                    <p class="card-text text-center fw_bold f_13">Event Gift Biils</p>
+                                                </div>
+                                                <img src="/static/images/<%= data2[0].Event_Photo3 %>"
+                                                    class="card-img-top" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                </tbody>
+
+
+            </table>
+        </div>
+
+        </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <script src="/static/js/eventreport.js"></script>
+        <script src="/static/cdn/moment/moment.js"></script>
+
+
+        <%- include('partials/footer.ejs') %>
+</body>

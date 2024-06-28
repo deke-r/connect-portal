@@ -1,0 +1,38 @@
+#csvTableHead tr th{
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #0473cf !important;
+    color: white !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 18px 10px !important;
+
+}
+
+#csvTableBody tr td{
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 18px 10px !important;
+}
+
+
+
+#h400{
+    overflow: auto !important;
+    height: 425px !important;
+    scroll-behavior: smooth !important;
+}
+
+#csvTableHead{
+    position: sticky !important;
+    top: 0px !important;
+    z-index: 1 ;
+    background-color: #0473cf !important;
+}
+
+
+
+
+

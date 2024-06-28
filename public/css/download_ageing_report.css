@@ -1,0 +1,81 @@
+
+
+@media (max-width:768px) {
+    .my_cols{
+     margin-top: .5rem !important;
+     margin-bottom: .5rem !important;
+    }
+
+    .displaynun{
+        display: none !important;
+    }
+    .f-end{
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-pack: end !important;
+            -ms-flex-pack: end !important;
+                justify-content: end !important;
+    }
+ 
+}
+
+
+
+.disf{
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: start !important;
+}
+
+
+
+
+.dropdown-item.active,.dropdown-item:active {
+    color: white !important;
+    text-decoration: none;
+    background-color: #0473cf !important
+}
+
+
+
+#thead tr th{
+    text-align: center !important;
+    vertical-align: middle !important;
+    background-color: #0473cf !important;
+    color: white !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 20px 12px !important;
+
+}
+
+#tbody tr td{
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 20px 12px !important;
+}
+
+
+.h_350{height: 380px !important;}
+#thead{position: sticky !important;top: -2px !important;z-index: 2 !important;background-color: #0473cf !important;}
+
+
+.border-none{border: none !important;}
+.w_290{width: 290px !important;}
+.w_120{width: 120px !important;}
+.w_100{width: 100px !important;}
+.border-top-0{border: .5px solid lightgrey !important;}
+.h_150{height: 15px !important;}
+.border-top-0{border-top: none !important;}
+.hdsh{border-top: none !important;border-left: none !important;border-bottom: none !important;}
+.bd-t{border-top: 1px solid lightgray !important;}
+.bd-b{border-bottom: 1px solid lightgray !important;}
+.bd-l{border-left: 1px solid lightgray !important;}
+.bd-r{border-right: 1px solid lightgray !important;}
+.w_50{width: 50px !important;}

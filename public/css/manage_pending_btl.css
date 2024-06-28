@@ -1,0 +1,36 @@
+.newmp2{
+    border-radius: 1px;
+    background-color: white;
+    border-radius: 1px;
+    box-shadow:  5px 5px 12px #afafaf,
+                 -5px -5px 12px #ffffff;
+}
+
+
+@media (max-width:768px) {
+    .teend{text-align: end;}
+}
+
+.img_inlarge {
+    height: 60% !important;
+    width: 6% !important;
+}
+
+
+
+.h_18{height: 18px !important;}
+
+
+
+
+.modal_ab{
+    background-color: white !important;
+    position: absolute;
+    top: 67px;
+    z-index: 1;
+    right: 43px;
+}
+
+.modal_trans{
+    background-color: #fff0 !important;
+}

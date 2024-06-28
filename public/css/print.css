@@ -1,0 +1,20 @@
+#export_pdf{display: none !important;}
+#printableDiv{display: block !important;}
+.printnone{display: none !important;}
+
+
+
+.border-none{border: none !important;}
+.w_290{width: 290px !important;}
+.w_120{width: 120px !important;}
+.w_100{width: 100px !important;}
+.border-top-0{border: .5px solid lightgrey !important;}
+.h_150{height: 15px !important;}
+.border-top-0{border-top: none !important;}
+.hdsh{border-top: none !important;border-left: none !important;border-bottom: none !important;}
+.bd-t{border-top: 1px solid lightgray !important;}
+.bd-b{border-bottom: 1px solid lightgray !important;}
+.bd-l{border-left: 1px solid lightgray !important;}
+.bd-r{border-right: 1px solid lightgray !important;}
+
+

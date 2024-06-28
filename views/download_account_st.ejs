@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/dataTable.bootstrap.css">
+    <link rel="stylesheet" href="/static/css/download_account_st.css">
+    <link rel="stylesheet" media="print" href="/static/css/print.css" />
+
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+        <div class="container-fluid parentbox my-4 printnone">
+            <div class="container-fluid box_sdw border-t  childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Download Account Statement</h5>
+                </div>
+
+
+
+
+
+                <div class="row mt-4 mx-2 mb-2 pb-5">
+
+                    <div class="col-xl-4 col-md-6 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">Distributer Code:</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                            id="download_acc_st_inp" placeholder="Search String">
+                    </div>
+                    <div class="col-xl-1 col-md-2 col-sm-2 col-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 displaynun ">&nbsp;</h6>
+                        <button type="button" class="btn box_sdw11 text-nowrap float-right bg_b text-light f_13 fw_600"
+                            id="download_acc_st">Run Report</button>
+                    </div>
+                    <div class="col-xl-1 col-md-2 col-sm-6 col-4 my_cols ">
+                        <h6 class="fw_bold f_13 ms-1 displaynun ">&nbsp;</h6>
+                        <div class="dropdown disf">
+                            <button class="btn box_sdw11 float-right bg_b text-light f_13 fw_600 dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Export
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-light">
+                                <li><a class="dropdown-item" href="#" id="excel_btn">Export to Excel</a></li>
+                                <li><a class="dropdown-item" href="#" id="printButton">Export to Pdf</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 col-md-2 my_cols col-4 f-end">
+                        <h6 class="fw_bold f_13 ms-1 displaynun ">&nbsp;</h6>
+                        <button type="button" class="btn box_sdw11 float-right bg_r text-light f_13 fw_600"
+                            id="reset">Reset</button>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <div class="row mt-2 mx-2 pb-4">
+
+                    <div class=" table-responsive h_350  px-2   me-2">
+                        <table class="table table-bordered table-responsive  table-striped">
+                            <thead id="thead">
+
+                            </thead>
+                            <tbody id="tbody">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class=" my-3 d-none  " id="printableDiv">
+            <div class="container-fluid">
+
+
+                <table class="table  table-bordered" id="yourTableId">
+
+                    <thead id="">
+                        <tr class="border-0">
+                            <td class="f_13 text-start border-0 fw_bold" colspan="5">JUBILANT AGRI & CONSUMER PRODUCTS LIMITED </td>
+                            <td rowspan="4" colspan="3" class="p-0 f_13 text-start border-0">
+                                <div class="row p-0 m-0">
+                                    <div
+                                        class="container-fluid m-0 py-4 d-flex justify-content-end align-items-center">
+
+                                        <img src="/static/images/logo.png" width="220px" height="150px">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="border-0">
+                            <td class="f_13 text-start text-nowrap border-0 fw_bold" colspan="4">
+                                <span class="fw_bold" id="date_time"></span><span id="time_min" class="ms-2 fw_bold f_13"></span><br>
+
+                            </td>
+                            <td class="f_13 text-start text-nowrap border-0 fw_bold" colspan=""> CUSTOMER LEDGER</td>
+                        </tr>
+                       
+                        <tr class="border-0">
+                            <td colspan="5" class="f_13 text-start border-0">
+                                <span class="fw_bold">
+                                Customer Details:</span><span id="c_details"></span><span class="fw_bold" id="firm_name">
+                                </span>
+                            </td>
+
+                        </tr>
+                        <tr class="border-0">
+                            <td colspan="3" class="f_13 text-start border-0"><span class="fw_bold" id="start_date"></span></td>
+                            <td class="border-0"></td>
+                            <td colspan="2" class="f_13 text-start border-0"><span class="fw_bold" id="c_date"></span></td>
+                        </tr>
+                        <tr class="border-0">
+                            <td colspan="4" class="f_13 border-0"></td>
+                            <td class="f_13 border-0 fw_bold"></td>
+                        </tr>
+
+                        <tr class="text-center f_13 fw_bold">
+                            <td class="w_100">Date</td>
+                            <td class="w_100">Cmp</td>
+                            <td class="w_100">Type</td>
+                            <td class="w_120">Document</td>
+                            <td class="">Reference</td>
+                            <td class="w_100">Debit</td>
+                            <td class="w_100">Credit</td>
+                            <td class="w_100">Line Balance</td>
+                        </tr>
+                    </thead>
+                    <tbody id="pdftbody">
+                       
+                    </tbody>
+                    <tfoot id="tfoot">
+
+                    </tfoot>
+
+                </table>
+            </div>
+
+        </div>
+
+
+
+        <div class="loader-div d-none" id="loader-div">
+            <div class="loader">
+                <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+            </div>
+        </div>
+
+
+
+
+
+        <script src="/static/js/dataTable.bootstrap.js"></script>
+        <script src="/static/js/download_account_st.js"></script>
+
+
+
+        <%- include('partials/footer.ejs') %>
+</body>
