@@ -26,4 +26,18 @@ $(document).ready(function(){
     $(document).on('click','#download_account_st',function(){
         window.location.href='/download_account_st';
     })
+<<<<<<< HEAD
+})
+
+$(document).ready(function(){
+    $(document).on('click','#attended_approvel',function(){
+        window.location.href='/attend_approvel';
+    })
+})
+$(document).ready(function(){
+    $(document).on('click','#extra_expense_approval',function(){
+        window.location.href='/extra_expense_approval';
+    })
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 })

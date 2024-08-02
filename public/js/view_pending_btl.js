@@ -37,6 +37,16 @@ $( function() {
       const ed = $('#datepicker2').val();
       var userInput = $('#searchInput').val().trim();
   
+<<<<<<< HEAD
+      if ((!sd || !ed) && userInput.length === 0) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please Select Start Date & End Date or Enter Search Input!',
+        });
+        return;
+    }
+=======
       if (!sd || !ed) {
         Swal.fire({
           icon: 'error',
@@ -45,6 +55,7 @@ $( function() {
         });
         return;
       }
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
   
       
       $('#loader-div').removeClass('d-none')
@@ -76,6 +87,11 @@ $( function() {
             let rep_manager_name = res.data[j].REP_MANAGER_NAME;
             let branch = res.data[j].BRANCH;
             let zone = res.data[j].ZONE;
+<<<<<<< HEAD
+            let hqname=res.data[j].EMP_HQ_NAME;
+            let hqcode=res.data[j].EMP_HQ_CODE;
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
   
               let rc_id = res.data[j].rc_id;
               let emp_id = res.data[j].emp_id;
@@ -92,11 +108,19 @@ $( function() {
               let mobileNumbers = MobileAttended.split(',');            
               let mobileCount = mobileNumbers.length;           
               let Meet_Type = res.data[j].Meet_Type;
+<<<<<<< HEAD
+=======
               alert(Meet_Type)
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
               let Budget = res.data[j].Budget;
               let Expense = res.data[j].Expense;
               let vertical = res.data[j].vertical;
               let meeting_gift = res.data[j].meeting_gift;
+<<<<<<< HEAD
+              let pay_advance = res.data[j].pay_advance;
+              let action_status=res.data[j].action_status
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
   
   
               
@@ -122,6 +146,11 @@ $( function() {
                 <th>Zone</th>
                 <th>Emp Id</th>
                 <th>Employee</th>
+<<<<<<< HEAD
+                 <th>HQ Name</th>
+                  <th>HQ Code</th>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 <th>Sup ID</th>
                 <th>Supervisor</th>
                 <th>Category</th>
@@ -136,9 +165,18 @@ $( function() {
                 <th>ADE</th>
                 <th>Attended Jacpl</th>
                 <th>Budget(Rs.)</th>
+<<<<<<< HEAD
+                 <th>Advance(Rs.)</th>
                 <th>Expense (Rs.)</th>
                 <th>Vertical</th>
                 <th>Meeting Gift</th>
+                <th>Expense Budget Exceed Status</th>
+
+=======
+                <th>Expense (Rs.)</th>
+                <th>Vertical</th>
+                <th>Meeting Gift</th>
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
               </tr>
               `);
                 headerAppended = true;
@@ -152,6 +190,11 @@ $( function() {
               <td>${zone}</td>
               <td>${emp_id}</td>
               <td>${emp_name}</td>
+<<<<<<< HEAD
+              <td>${hqname}</td>
+              <td>${hqcode}</td>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
               <td>${rep_manager_id}</td>
               <td>${rep_manager_name}</td>
               <td>${meetTypeText}</td>
@@ -166,9 +209,18 @@ $( function() {
               <td>${Cond_By}</td>
               <td>${Jacpl_Attended}</td>
               <td>${Budget}</td>
+<<<<<<< HEAD
+                <td>${pay_advance}</td>
               <td>${Expense}</td>
               <td>${vertical}</td>
               <td>${meeting_gift}</td>
+              <td>${action_status}</td>
+
+=======
+              <td>${Expense}</td>
+              <td>${vertical}</td>
+              <td>${meeting_gift}</td>
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             </tr>
             `);
   

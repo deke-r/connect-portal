@@ -76,6 +76,11 @@ $(function () {
                   let rep_manager_name = res.data[i].REP_MANAGER_NAME;
                   let branch = res.data[i].BRANCH;
                   let zone = res.data[i].ZONE;
+<<<<<<< HEAD
+                  let hqname=rowData.EMP_HQ_NAME;
+                  let hqcode=rowData.EMP_HQ_CODE;
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
       
                     let rc_id = res.data[i].rc_id;
                     let emp_id = res.data[i].emp_id;
@@ -152,6 +157,11 @@ $(function () {
      <td style="${rowBackground}">${zone}</td>
      <td style="${rowBackground}">${emp_id}</td>
      <td style="${rowBackground}">${emp_name}</td>
+<<<<<<< HEAD
+       <td style="${rowBackground}">${hqname}</td>
+      <td style="${rowBackground}">${hqcode}</td>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
      <td style="${rowBackground}">${rep_manager_id}</td>
      <td style="${rowBackground}">${rep_manager_name}</td>
      <td style="${rowBackground}">${meetTypeText}</td>
@@ -197,6 +207,11 @@ $(function () {
                     <th>Zone</th>
                     <th>Emp Id</th>
                     <th>Employee</th>
+<<<<<<< HEAD
+                     <th>HQ Name</th>
+                    <th>HQ Code</th>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     <th>Sup ID</th>
                     <th>Supervisor</th> 
                     
@@ -258,6 +273,31 @@ $(function () {
   
   });
   
+<<<<<<< HEAD
+  $(document).on('click', '#excel_btn', function () {
+            let csvContent = "\uFEFF";
+            let headers = $('#thead th').map(function () {
+                let headerText = $(this).clone().children().remove().end().text();
+                return headerText.replace(/[";]/g, "") || ' ';
+            }).get();
+            csvContent += headers.join(",") + "\n";
+            $('#tbody tr').each(function () {
+                let row = $(this).find('td').map(function () {
+                    let cellText = $(this).text().replace(/[";]/g, ''); // Remove unwanted characters
+                    return cellText.includes(',') ? '"' + cellText + '"' : cellText;
+                }).get();
+                // Join row data with commas, and replace newline characters with a space
+                csvContent += row.join(",").replace(/\n/g, ' ') + "\n";
+            });
+            let encodedUri = encodeURI(csvContent);
+            let link = document.createElement("a");
+            link.setAttribute("href", "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent));
+            link.setAttribute("download", "dealer_event_report.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });  
+=======
   
   
   
@@ -294,6 +334,7 @@ $(function () {
   
   
   
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
   
   
   $(document).on('click', '#reset', function () {
@@ -301,4 +342,8 @@ $(function () {
   })
   function formatDate(date) {
     return moment(date).format('DD-MM-YYYY');
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730

@@ -16,7 +16,12 @@ const axios = require('axios');
 const qs = require('qs');
 const { error } = require('console');
 const nodemailer = require('nodemailer');
+<<<<<<< HEAD
+const dotenv = require('dotenv');
+const { v4: uuidv4} = require('uuid');
+=======
 const dotenv = require('dotenv')
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 dotenv.config({ path: './config.env' });
 
 
@@ -149,10 +154,20 @@ route.get('/view_pending_btl', authenticate, async (req, res) => {
                 jl.REP_MANAGER_ID, 
                 jl.REP_MANAGER_NAME, 
                 jl.BRANCH, 
+<<<<<<< HEAD
+                jl.ZONE,
+                jc.Manager_Approval_status,
+                ms.action_status
+            FROM 
+                Jacpl_ContractorMeet jc 
+                INNER JOIN JUBILANT_LOGIN jl ON jc.emp_id = jl.EMP_CODE
+                LEFT JOIN meet_status ms ON jc.Manager_Approval_status = ms.action_id
+=======
                 jl.ZONE 
             FROM 
                 Jacpl_ContractorMeet jc 
                 INNER JOIN JUBILANT_LOGIN jl ON jc.emp_id = jl.EMP_CODE
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             WHERE 
                 jc.is_active = 1 
             ORDER BY 
@@ -172,7 +187,12 @@ route.get('/view_pending_btl', authenticate, async (req, res) => {
                 delete result.formattedDate;
             });
 
+<<<<<<< HEAD
+
+            console.log(results)
+=======
             // console.log(results, 'resultsresults')
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             res.render('view_pending_btl', { data: results });
             logger.info(`GET view_pending_btl accessed for emp_code ${emp}`);
         });
@@ -185,6 +205,11 @@ route.get('/view_pending_btl', authenticate, async (req, res) => {
 });
 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 route.post('/filter_view_pending_btl', async (req, res) => {
     try {
         const con = await dbConnection();
@@ -200,6 +225,51 @@ route.post('/filter_view_pending_btl', async (req, res) => {
         let params;
 
         if (userInput.length > 0) {
+<<<<<<< HEAD
+            if (start_date && end_date) {
+                query = `
+                    SELECT j.*, c.*, ms.action_status
+                    FROM JUBILANT_LOGIN j
+                    INNER JOIN Jacpl_ContractorMeet c ON j.EMP_CODE = c.emp_id
+                    LEFT JOIN meet_status ms ON c.Manager_Approval_status = ms.action_id
+                    WHERE c.rc_id = ? AND DATE(c.DateOfMeet) BETWEEN ? AND ? AND c.is_active = 1 
+                    ORDER BY c.rc_id ASC
+                `;
+                params = [userInput, start_date_formatted, end_date_formatted];
+            } else {
+                query = `
+                    SELECT j.*, c.*, ms.action_status
+                    FROM JUBILANT_LOGIN j
+                    INNER JOIN Jacpl_ContractorMeet c ON j.EMP_CODE = c.emp_id
+                    LEFT JOIN meet_status ms ON c.Manager_Approval_status = ms.action_id
+                    WHERE c.rc_id = ? AND c.is_active = 1 
+                    ORDER BY c.rc_id ASC
+                `;
+                params = [userInput];
+            }
+        } else {
+            if (start_date && end_date) {
+                query = `
+                    SELECT j.*, c.*, ms.action_status
+                    FROM JUBILANT_LOGIN j
+                    INNER JOIN Jacpl_ContractorMeet c ON j.EMP_CODE = c.emp_id
+                    LEFT JOIN meet_status ms ON c.Manager_Approval_status = ms.action_id
+                    WHERE DATE(c.DateOfMeet) BETWEEN ? AND ? AND c.is_active = 1 
+                    ORDER BY c.rc_id ASC
+                `;
+                params = [start_date_formatted, end_date_formatted];
+            } else {
+                query = `
+                    SELECT j.*, c.*, ms.action_status
+                    FROM JUBILANT_LOGIN j
+                    INNER JOIN Jacpl_ContractorMeet c ON j.EMP_CODE = c.emp_id
+                    LEFT JOIN meet_status ms ON c.Manager_Approval_status = ms.action_id
+                    WHERE c.is_active = 1 
+                    ORDER BY c.rc_id ASC
+                `;
+                params = [];
+            }
+=======
             query = `
                 SELECT j.*, c.*
                 FROM JUBILANT_LOGIN j
@@ -215,6 +285,7 @@ route.post('/filter_view_pending_btl', async (req, res) => {
                 WHERE DATE(c.DateOfMeet) BETWEEN ? AND ? AND c.is_active = 1 ORDER BY c.rc_id ASC
             `;
             params = [start_date_formatted, end_date_formatted];
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         }
 
         con.query(query, params, function (err, results) {
@@ -224,7 +295,10 @@ route.post('/filter_view_pending_btl', async (req, res) => {
                 res.status(500).json({ error: 'Internal Server Error' });
                 return;
             }
+<<<<<<< HEAD
+=======
             // console.log(results, 'results');
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             logger.info('POST filter_view_pending_btl accessed ');
             res.json({ data: results });
         });
@@ -239,6 +313,10 @@ route.post('/filter_view_pending_btl', async (req, res) => {
 
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 route.get('/inshop', authenticate, async function (req, res) {
     try {
         const pool = await dbConnection();
@@ -248,7 +326,11 @@ route.get('/inshop', authenticate, async function (req, res) {
         let settingKey = 'Inshop-with-gift';
         let settingKey1 = 'Inshop-without-gift';
 
+<<<<<<< HEAD
+        let roleQuery = `SELECT DISTINCT UI_TITLE, BACKEND_TITLE FROM MEET_BUDGET WHERE SETTING_KEY = '${settingKey}' OR SETTING_KEY = '${settingKey1}'`;
+=======
         let roleQuery = `SELECT UI_TITLE, BACKEND_TITLE, SETTING_VALUE,FOOD_VALUE FROM MEET_BUDGET WHERE SETTING_KEY = '${settingKey}' OR SETTING_KEY = '${settingKey1}'`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         pool.query(roleQuery, function (error, results, fields) {
          
@@ -292,6 +374,12 @@ route.post('/jeaAPIhitsga', async (req, res) => {
     };
 
     const response = await axios.request(config);
+<<<<<<< HEAD
+    
+    let res1 = response.data.empId
+    let res2 = response.data.empName
+
+=======
 
     // console.log(JSON.stringify(response.data));
 
@@ -301,6 +389,7 @@ route.post('/jeaAPIhitsga', async (req, res) => {
     // console.log(res1)
     // console.log(res2)
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     res.json({ emppid: res1, empnamee: res2 });
 
 })
@@ -405,7 +494,11 @@ route.get('/sga_meet', authenticate, async function (req, res) {
         let settingKey = 'sga-with-gift';
         let settingKey1 = 'sga-without-gift';
 
+<<<<<<< HEAD
+        let roleQuery = `SELECT DISTINCT UI_TITLE, BACKEND_TITLE FROM MEET_BUDGET WHERE SETTING_KEY = '${settingKey}' OR SETTING_KEY = '${settingKey1}'`;
+=======
         let roleQuery = `SELECT UI_TITLE, BACKEND_TITLE, SETTING_VALUE,FOOD_VALUE FROM MEET_BUDGET WHERE SETTING_KEY = '${settingKey}' OR SETTING_KEY = '${settingKey1}'`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         pool.query(roleQuery, function (error, results, fields) {
             // console.log(results, 'results')
@@ -510,7 +603,11 @@ route.get('/contractor', authenticate, async function (req, res) {
         let settingKey = 'ContractorMeet-with-gift';
         let settingKey1 = 'ContractorMeet-without-gift';
 
+<<<<<<< HEAD
+        let roleQuery = `SELECT DISTINCT UI_TITLE,BACKEND_TITLE FROM MEET_BUDGET WHERE SETTING_KEY = '${settingKey}' OR SETTING_KEY = '${settingKey1}'`;
+=======
         let roleQuery = `SELECT UI_TITLE, BACKEND_TITLE, SETTING_VALUE,FOOD_VALUE FROM MEET_BUDGET WHERE SETTING_KEY = '${settingKey}' OR SETTING_KEY = '${settingKey1}'`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         pool.query(roleQuery, function (error, results, fields) {
             // console.log(results, 'results')
@@ -551,7 +648,11 @@ route.get('/dealer_meet', authenticate, async function (req, res) {
         let settingKey = 'DealerMeet-with-gift';
         let settingKey1 = 'DealerMeet-without-gift';
 
+<<<<<<< HEAD
+        let roleQuery = `SELECT DISTINCT UI_TITLE,BACKEND_TITLE FROM MEET_BUDGET WHERE SETTING_KEY = '${settingKey}' OR SETTING_KEY = '${settingKey1}'`;
+=======
         let roleQuery = `SELECT UI_TITLE, BACKEND_TITLE, SETTING_VALUE,FOOD_VALUE FROM MEET_BUDGET WHERE SETTING_KEY = '${settingKey}' OR SETTING_KEY = '${settingKey1}'`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         pool.query(roleQuery, function (error, results, fields) {
             // console.log(results, 'results')
@@ -909,6 +1010,120 @@ route.get('/view_pending_btl_pdf/:emp_id/:rc_id/:meetTypeText', authenticate, as
 
 
 
+<<<<<<< HEAD
+// route.get('/manage_pending_btl/:emp_id/:rc_nid', authenticate, async (req, res) => {
+//     try {
+//         const emp_id = req.params.emp_id;
+//         logger.info('Starting GET manage_pending_btl ' + emp_id);
+//         const rc_id = req.params.rc_nid;
+//         const pool = await dbConnection();
+
+//         const loginQuery = `SELECT EMP_NAME, REP_MANAGER_ID, REP_MANAGER_NAME, BRANCH, ZONE FROM JUBILANT_LOGIN WHERE EMP_CODE=?`;
+//         pool.query(loginQuery, [emp_id], (loginErr, loginResults) => {
+//             if (loginErr) {
+//                 console.error(loginErr);
+//                 logger.error('Error in GET manage_pending_btl loginQuery ' + emp_id + loginErr + "::query::" + loginQuery);
+//                 return res.status(500).json({ error: 'Internal Server Error' });
+//             }
+
+//             const btlQuery = `SELECT *, 
+//                                     DATE_FORMAT(DateOfMeet, '%d-%m-%Y') AS formattedDate,
+//                                     DATE_FORMAT(Manager_Approval_date, '%d-%m-%Y') AS formattedApprovedBTLDate
+//                               FROM Jacpl_ContractorMeet 
+//                               WHERE is_active = 1 AND rc_id=?`;
+//             pool.query(btlQuery, [rc_id], (btlErr, btlResults) => {
+//                 if (btlErr) {
+//                     console.error(btlErr);
+//                     logger.error('Error in GET manage_pending_btl btlQuery ' + emp_id + btlErr + "::query::" + btlQuery);
+//                     return res.status(500).send('Internal Server Error');
+//                 }
+
+//                 btlResults.forEach(result => {
+//                     result.DateOfMeet = result.formattedDate;
+//                     result.Manager_Approval_date = result.formattedApprovedBTLDate;
+//                     delete result.formattedDate;
+//                     delete result.formattedApprovedBTLDate;
+//                 });
+//                 const photoQueryForRCId = `
+//                 SELECT 
+//                     Event_Photo1, 
+//                     Event_Photo2, 
+//                     Event_Photo3 
+//                 FROM 
+//                     Jacpl_ContractorMeet 
+//                 WHERE 
+//                     emp_id=? AND rc_id=?
+//             `;
+
+//                 pool.query(photoQueryForRCId, [emp_id, rc_id], (photoErr, photoResultsForRCId) => {
+//                     if (photoErr) {
+//                         console.error(photoErr);
+//                         logger.error('Error in GET manage_pending_btl photoQuery ' + emp_id + photoErr + "::query::" + photoQueryForRCId);
+//                         return res.status(500).send('Internal Server Error');
+//                     }
+
+//                     console.log("Photo Results for RC Id:", photoResultsForRCId);
+
+//                     const photoQueryForEmpId = `SELECT rc_id,Event_Photo1,Event_Photo2,Event_Photo3 FROM Jacpl_ContractorMeet WHERE emp_id=? AND rc_id!=?`;
+//                     pool.query(photoQueryForEmpId, [emp_id, rc_id], (photoErrForEmpId, photoResultsForEmpId) => {
+//                         if (photoErrForEmpId) {
+//                             console.error(photoErrForEmpId);
+//                             logger.error('Error in GET manage_pending_btl photoQuery ' + emp_id + photoErrForEmpId + "::query::" + photoQueryForEmpId);
+//                             return res.status(500).send('Internal Server Error');
+//                         }
+
+//                         console.log("Photo Results for Emp Id:",photoResultsForEmpId);
+
+//                         const duplicates = [];
+
+//                         const photosForRCId = extractPhotos(photoResultsForRCId);
+
+//                         const photosForOtherRCIds = extractPhotos(photoResultsForEmpId);
+
+//                         if (!photosForRCId || !photosForOtherRCIds) {
+//                             return res.status(500).send('Internal Server Error');
+//                         }
+
+//                         photosForRCId.forEach(photo => {
+//                             if (photosForOtherRCIds.includes(photo)) {
+//                                 duplicates.push({ photo: photo, rc_ids: [rc_id, ...photoResultsForEmpId.filter(row => row.Event_Photo1 === photo || row.Event_Photo2 === photo || row.Event_Photo3 === photo).map(row => row.rc_id)] });
+//                             }
+//                         });
+
+//                         console.log("Duplicates:", duplicates);
+
+//                         res.render('manage_pending_btl', { data: btlResults, data2: loginResults, emp_id: emp_id, rc_id: rc_id, duplicatePhotos: duplicates });
+//                         logger.info('Accessed GET manage_pending_btl ' + emp_id);
+//                     });
+//                 });
+
+//                 function extractPhotos(results) {
+//                     if (!results || !Array.isArray(results)) {
+//                         return [];
+//                     }
+//                     const photos = [];
+//                     results.forEach(row => {
+//                         const rowPhotos = [row.Event_Photo1, row.Event_Photo2, row.Event_Photo3].filter(photo => photo);
+//                         photos.push(...rowPhotos);
+//                     });
+//                     return photos;
+//                 }
+
+
+
+//             });
+//         });
+
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Internal Server Error');
+//         logger.error('Error GET in manage_pending_btl ' + emp_id + error);
+//     }
+// });
+
+
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 route.get('/manage_pending_btl/:emp_id/:rc_nid', authenticate, async (req, res) => {
     try {
         const emp_id = req.params.emp_id;
@@ -942,6 +1157,13 @@ route.get('/manage_pending_btl/:emp_id/:rc_nid', authenticate, async (req, res) 
                     delete result.formattedDate;
                     delete result.formattedApprovedBTLDate;
                 });
+<<<<<<< HEAD
+
+                const photoQueryForRCId = `
+                    SELECT Event_Photo1,Event_Photo2,Event_Photo3 FROM Jacpl_ContractorMeet WHERE emp_id=? AND rc_id=?`;
+
+                pool.query(photoQueryForRCId, [emp_id,rc_id], (photoErr, photoResultsForRCId) => {
+=======
                 const photoQueryForRCId = `
                 SELECT 
                     Event_Photo1, 
@@ -954,15 +1176,30 @@ route.get('/manage_pending_btl/:emp_id/:rc_nid', authenticate, async (req, res) 
             `;
 
                 pool.query(photoQueryForRCId, [emp_id, rc_id], (photoErr, photoResultsForRCId) => {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     if (photoErr) {
                         console.error(photoErr);
                         logger.error('Error in GET manage_pending_btl photoQuery ' + emp_id + photoErr + "::query::" + photoQueryForRCId);
                         return res.status(500).send('Internal Server Error');
                     }
 
+<<<<<<< HEAD
+                    // Extract last values from photoResultsForRCId
+                    const lastValuesForRCId = photoResultsForRCId.map(photo => {
+                        const values = [photo.Event_Photo1, photo.Event_Photo2, photo.Event_Photo3];
+                        const lastParts = values.map(value => {
+                            const parts = (value || '').split("-");
+                            return parts[parts.length - 1];
+                        });
+                        return lastParts;
+                    });
+
+                    const photoQueryForEmpId = `SELECT rc_id, Event_Photo1, Event_Photo2, Event_Photo3 FROM Jacpl_ContractorMeet WHERE emp_id=? AND rc_id!=?`;
+=======
                     console.log("Photo Results for RC Id:", photoResultsForRCId);
 
                     const photoQueryForEmpId = `SELECT rc_id,Event_Photo1,Event_Photo2,Event_Photo3 FROM Jacpl_ContractorMeet WHERE emp_id=? AND rc_id!=?`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     pool.query(photoQueryForEmpId, [emp_id, rc_id], (photoErrForEmpId, photoResultsForEmpId) => {
                         if (photoErrForEmpId) {
                             console.error(photoErrForEmpId);
@@ -970,6 +1207,36 @@ route.get('/manage_pending_btl/:emp_id/:rc_nid', authenticate, async (req, res) 
                             return res.status(500).send('Internal Server Error');
                         }
 
+<<<<<<< HEAD
+                        const duplicates = [];
+
+                        const lastValuesForEmpId = photoResultsForEmpId.map(photo => {
+                            const values = [photo.Event_Photo1, photo.Event_Photo2, photo.Event_Photo3];
+                            const lastParts = values.map(value => {
+                                const parts = (value || '').split("-");
+                                return parts[parts.length - 1];
+                            });
+                            return lastParts;
+                        });
+
+                        // Check for duplicate last values
+                        lastValuesForRCId.forEach((photo, index) => {
+                            const isDuplicate = lastValuesForEmpId.some(parts => {
+                                return parts.includes(photo[0]) || parts.includes(photo[1]) || parts.includes(photo[2]);
+                            });
+
+                            if (isDuplicate) {
+                                duplicates.push({ 
+                                    photo: photo, 
+                                    rc_ids: [rc_id, ...photoResultsForEmpId.filter(row => {
+                                        const values = [row.Event_Photo1, row.Event_Photo2, row.Event_Photo3];
+                                        return values.some(value => {
+                                            const parts = (value || '').split("-");
+                                            return parts.includes(photo[0]) || parts.includes(photo[1]) || parts.includes(photo[2]);
+                                        });
+                                    }).map(row => row.rc_id)] 
+                                });
+=======
                         console.log("Photo Results for Emp Id:",photoResultsForEmpId);
 
                         const duplicates = [];
@@ -985,6 +1252,7 @@ route.get('/manage_pending_btl/:emp_id/:rc_nid', authenticate, async (req, res) 
                         photosForRCId.forEach(photo => {
                             if (photosForOtherRCIds.includes(photo)) {
                                 duplicates.push({ photo: photo, rc_ids: [rc_id, ...photoResultsForEmpId.filter(row => row.Event_Photo1 === photo || row.Event_Photo2 === photo || row.Event_Photo3 === photo).map(row => row.rc_id)] });
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                             }
                         });
 
@@ -994,6 +1262,8 @@ route.get('/manage_pending_btl/:emp_id/:rc_nid', authenticate, async (req, res) 
                         logger.info('Accessed GET manage_pending_btl ' + emp_id);
                     });
                 });
+<<<<<<< HEAD
+=======
 
                 function extractPhotos(results) {
                     if (!results || !Array.isArray(results)) {
@@ -1009,6 +1279,7 @@ route.get('/manage_pending_btl/:emp_id/:rc_nid', authenticate, async (req, res) 
 
 
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             });
         });
 
@@ -1043,7 +1314,11 @@ route.post('/approval_btl', async (req, res) => {
         let rc_id = req.body.rc_id;
 
 
+<<<<<<< HEAD
+        let query = 'UPDATE Jacpl_ContractorMeet SET is_active = 2, ApprovedBTL_date= ?, Zone = ?, Company = ?, voucher_no = ?, Session_ID = ? WHERE rc_id = ?';
+=======
         let query = 'UPDATE Jacpl_ContractorMeet SET is_active = 2,ApprovedBTL_date= ?, Zone = ?, Company = ?, voucher_no = ?, Session_ID = ? WHERE rc_id = ?';
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         pool.query(query, [currentDate, zone, company, voucher, emp, rc_id], function (err, result) {
             if (err) {
                 res.json({ error: 'Error updating record:', });
@@ -1321,6 +1596,12 @@ route.post('/login', async (req, res) => {
                         let teEmailId = response.data.teEmailId
                         let bmEmailId = response.data.bmEmailId
                         let zmEmailId = response.data.zmEmailId
+<<<<<<< HEAD
+                        let hqName = response.data.hqName;
+                        let hqcode = response.data.hqCode;
+                        let category = response.data.category;
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 
 
@@ -1337,8 +1618,13 @@ route.post('/login', async (req, res) => {
                                 console.log(action_url, 'action_url');
 
                                 if (action_url === '1') {
+<<<<<<< HEAD
+                                    const updateQuery = `UPDATE JUBILANT_LOGIN SET ROLE=?, EMP_NAME=?,PASSWORD=?,Emp_Email_ID=?,REP_MANAGER_ID=?,REP_MANAGER_NAME=?,REP_MANAGER_Email_ID=?,RSM_ZSM_ID=?,RSM_ZSM_Name=?,RSM_ZSM_Email_ID=?,BRANCH=?,ZONE=?,L_LOGIN_DATE=?,EMP_DESI=?,EMP_HQ_NAME=?,EMP_HQ_CODE=?,EMP_VERTICAL=? WHERE EMP_CODE=?`;
+                                    const updateValues = [req.session.role, req.session.emp_Name, empPassword, bmEmailId, supeviosrId, supeviosrName, zmEmailId, zmRSMId, zmRSMName, zmEmailId, branch, zone, currentDateAndTime, designation,hqName,hqcode,category, empId];
+=======
                                     const updateQuery = `UPDATE JUBILANT_LOGIN SET ROLE=?, EMP_NAME=?,PASSWORD=?,Emp_Email_ID=?,REP_MANAGER_ID=?,REP_MANAGER_NAME=?,REP_MANAGER_Email_ID=?,RSM_ZSM_ID=?,RSM_ZSM_Name=?,RSM_ZSM_Email_ID=?,BRANCH=?,ZONE=?,L_LOGIN_DATE=?,EMP_DESI=? WHERE EMP_CODE=?`;
                                     const updateValues = [req.session.role, req.session.emp_Name, empPassword, bmEmailId, supeviosrId, supeviosrName, zmEmailId, zmRSMId, zmRSMName, zmEmailId, branch, zone, currentDateAndTime, designation, empId];
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     pool.query(updateQuery, updateValues, function (error, results, fields) {
                                         if (error) {
                                             console.error(error);
@@ -1348,8 +1634,13 @@ route.post('/login', async (req, res) => {
                                         }
                                     });
                                 } else if (action_url === '2') {
+<<<<<<< HEAD
+                                    const updateQuery = `UPDATE JUBILANT_LOGIN SET ROLE=?, EMP_NAME=?,PASSWORD=?,Emp_Email_ID=?,REP_MANAGER_ID=?,REP_MANAGER_NAME=?,REP_MANAGER_Email_ID=?,RSM_ZSM_ID=?,RSM_ZSM_Name=?,RSM_ZSM_Email_ID=?,BRANCH=?,ZONE=?,L_LOGIN_DATE=?,EMP_DESI=?,EMP_HQ_NAME=?,EMP_HQ_CODE=?,EMP_VERTICAL=? WHERE EMP_CODE=?`;
+                                    const updateValues = [req.session.role, req.session.emp_Name, empPassword, zmEmailId, supeviosrId, supeviosrName, bmEmailId, zmRSMId, zmRSMName, 'null', branch, zone, currentDateAndTime, designation,hqName,hqcode,category, empId];
+=======
                                     const updateQuery = `UPDATE JUBILANT_LOGIN SET ROLE=?, EMP_NAME=?,PASSWORD=?,Emp_Email_ID=?,REP_MANAGER_ID=?,REP_MANAGER_NAME=?,REP_MANAGER_Email_ID=?,RSM_ZSM_ID=?,RSM_ZSM_Name=?,RSM_ZSM_Email_ID=?,BRANCH=?,ZONE=?,L_LOGIN_DATE=?,EMP_DESI=? WHERE EMP_CODE=?`;
                                     const updateValues = [req.session.role, req.session.emp_Name, empPassword, zmEmailId, supeviosrId, supeviosrName, bmEmailId, zmRSMId, zmRSMName, 'null', branch, zone, currentDateAndTime, designation, empId];
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     pool.query(updateQuery, updateValues, function (error, results, fields) {
                                         if (error) {
                                             console.error(error);
@@ -1359,8 +1650,13 @@ route.post('/login', async (req, res) => {
                                         }
                                     });
                                 } else {
+<<<<<<< HEAD
+                                    const updateQuery = `UPDATE JUBILANT_LOGIN SET ROLE=?, EMP_NAME=?,PASSWORD=?,Emp_Email_ID=?,REP_MANAGER_ID=?,REP_MANAGER_NAME=?,REP_MANAGER_Email_ID=?,RSM_ZSM_ID=?,RSM_ZSM_Name=?,RSM_ZSM_Email_ID=?,BRANCH=?,ZONE=?,L_LOGIN_DATE=?,EMP_DESI=?,EMP_HQ_NAME=?,EMP_HQ_CODE=?,EMP_VERTICAL=? WHERE EMP_CODE=?`;
+                                    const updateValues = [req.session.role, req.session.emp_Name, empPassword, teEmailId, supeviosrId, supeviosrName, bmEmailId, zmRSMId, zmRSMName, zmEmailId, branch, zone, currentDateAndTime, designation,hqName,hqcode,category, empId];
+=======
                                     const updateQuery = `UPDATE JUBILANT_LOGIN SET ROLE=?, EMP_NAME=?,PASSWORD=?,Emp_Email_ID=?,REP_MANAGER_ID=?,REP_MANAGER_NAME=?,REP_MANAGER_Email_ID=?,RSM_ZSM_ID=?,RSM_ZSM_Name=?,RSM_ZSM_Email_ID=?,BRANCH=?,ZONE=?,L_LOGIN_DATE=?,EMP_DESI=? WHERE EMP_CODE=?`;
                                     const updateValues = [req.session.role, req.session.emp_Name, empPassword, teEmailId, supeviosrId, supeviosrName, bmEmailId, zmRSMId, zmRSMName, zmEmailId, branch, zone, currentDateAndTime, designation, empId];
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     pool.query(updateQuery, updateValues, function (error, results, fields) {
                                         if (error) {
                                             console.error(error);
@@ -1375,8 +1671,13 @@ route.post('/login', async (req, res) => {
 
 
                                 if (action_url === '1') {
+<<<<<<< HEAD
+                                    const insertQuery = `INSERT INTO JUBILANT_LOGIN (EMP_CODE, ROLE, EMP_NAME, PASSWORD ,F_LOGIN_DATE ,EMP_DESI,BRANCH,ZONE,Emp_Email_ID,REP_MANAGER_ID,REP_MANAGER_NAME,REP_MANAGER_Email_ID,RSM_ZSM_ID,RSM_ZSM_Name,RSM_ZSM_Email_ID,EMP_HQ_NAME,EMP_HQ_CODE,EMP_VERTICAL,EMP_HQ_NAME,EMP_HQ_CODE,EMP_VERTICAL) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+                                    const insertValues = [empId, req.session.role, req.session.emp_Name, empPassword, currentDateAndTime, designation, branch, zone, bmEmailId, supeviosrId, supeviosrName, zmEmailId, zmRSMId, zmRSMName, zmEmailId,hqName,hqcode,category];
+=======
                                     const insertQuery = `INSERT INTO JUBILANT_LOGIN (EMP_CODE, ROLE, EMP_NAME, PASSWORD ,F_LOGIN_DATE ,EMP_DESI,BRANCH,ZONE,Emp_Email_ID,REP_MANAGER_ID,REP_MANAGER_NAME,REP_MANAGER_Email_ID,RSM_ZSM_ID,RSM_ZSM_Name,RSM_ZSM_Email_ID) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)`;
                                     const insertValues = [empId, req.session.role, req.session.emp_Name, empPassword, currentDateAndTime, designation, branch, zone, bmEmailId, supeviosrId, supeviosrName, zmEmailId, zmRSMId, zmRSMName, zmEmailId];
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     pool.query(insertQuery, insertValues, function (error, results, fields) {
                                         if (error) {
                                             console.error(error);
@@ -1386,8 +1687,13 @@ route.post('/login', async (req, res) => {
                                         }
                                     });
                                 } else if (action_url === '2') {
+<<<<<<< HEAD
+                                    const insertQuery = `INSERT INTO JUBILANT_LOGIN (EMP_CODE, ROLE, EMP_NAME, PASSWORD ,F_LOGIN_DATE ,EMP_DESI,BRANCH,ZONE,Emp_Email_ID,REP_MANAGER_ID,REP_MANAGER_NAME,REP_MANAGER_Email_ID,RSM_ZSM_ID,RSM_ZSM_Name,RSM_ZSM_Email_ID,EMP_HQ_NAME,EMP_HQ_CODE,EMP_VERTICAL) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)`;
+                                    const insertValues = [empId, req.session.role, req.session.emp_Name, empPassword, currentDateAndTime, designation, branch, zone, zmEmailId, supeviosrId, supeviosrName, bmEmailId, zmRSMId, zmRSMName, 'null',hqName,hqcode,category];
+=======
                                     const insertQuery = `INSERT INTO JUBILANT_LOGIN (EMP_CODE, ROLE, EMP_NAME, PASSWORD ,F_LOGIN_DATE ,EMP_DESI,BRANCH,ZONE,Emp_Email_ID,REP_MANAGER_ID,REP_MANAGER_NAME,REP_MANAGER_Email_ID,RSM_ZSM_ID,RSM_ZSM_Name,RSM_ZSM_Email_ID) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)`;
                                     const insertValues = [empId, req.session.role, req.session.emp_Name, empPassword, currentDateAndTime, designation, branch, zone, zmEmailId, supeviosrId, supeviosrName, bmEmailId, zmRSMId, zmRSMName, 'null'];
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     pool.query(insertQuery, insertValues, function (error, results, fields) {
                                         if (error) {
                                             console.error(error);
@@ -1397,8 +1703,13 @@ route.post('/login', async (req, res) => {
                                         }
                                     });
                                 } else {
+<<<<<<< HEAD
+                                    const insertQuery = `INSERT INTO JUBILANT_LOGIN (EMP_CODE, ROLE, EMP_NAME, PASSWORD ,F_LOGIN_DATE ,EMP_DESI,BRANCH,ZONE,Emp_Email_ID,REP_MANAGER_ID,REP_MANAGER_NAME,REP_MANAGER_Email_ID,RSM_ZSM_ID,RSM_ZSM_Name,RSM_ZSM_Email_ID,EMP_HQ_NAME,EMP_HQ_CODE,EMP_VERTICAL) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+                                    const insertValues = [empId, req.session.role, req.session.emp_Name, empPassword, currentDateAndTime, designation, branch, zone, teEmailId, supeviosrId, supeviosrName, bmEmailId, zmRSMId, zmRSMName, zmEmailId,hqName,hqcode,category];
+=======
                                     const insertQuery = `INSERT INTO JUBILANT_LOGIN (EMP_CODE, ROLE, EMP_NAME, PASSWORD ,F_LOGIN_DATE ,EMP_DESI,BRANCH,ZONE,Emp_Email_ID,REP_MANAGER_ID,REP_MANAGER_NAME,REP_MANAGER_Email_ID,RSM_ZSM_ID,RSM_ZSM_Name,RSM_ZSM_Email_ID) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?)`;
                                     const insertValues = [empId, req.session.role, req.session.emp_Name, empPassword, currentDateAndTime, designation, branch, zone, teEmailId, supeviosrId, supeviosrName, bmEmailId, zmRSMId, zmRSMName, zmEmailId];
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     pool.query(insertQuery, insertValues, function (error, results, fields) {
                                         if (error) {
                                             console.error(error);
@@ -1520,11 +1831,332 @@ route.post('/login', async (req, res) => {
 
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, '/var/log/jubilant/images');
     },
     filename: (req, file, cb) => {
+<<<<<<< HEAD
+        // Generate a unique filename here
+        const uniqueFilename = uuidv4() + '-' + file.originalname;
+       
+        cb(null, uniqueFilename);
+    },
+});
+
+
+const upload = multer({ storage: storage });
+
+
+// route.post('/in-shope', upload.fields([
+//     { name: 'Attachment1', maxCount: 1 },
+//     { name: 'Attachment2', maxCount: 1 },
+//     { name: 'Attachment3', maxCount: 1 },
+// ]), async function (req, res) {
+//     try {
+//         const currentDateAndTime = getCurrentDateAndTime();
+
+
+
+//         let email_send = req.body.email_to_send;
+
+//         const uniqueFilename1 = req.files.Attachment1[0].filename;
+//         const uniqueFilename2 = req.files.Attachment2[0].filename;
+//         const uniqueFilename3 = req.files.Attachment3[0].filename;
+    
+//         let emp_code = req.body.employeeId
+        
+//         let dealer_code = req.body.dealercode;
+//         let dealer_firmname = req.body.dealerfirmname;
+//         let dealer_name = req.body.dealername;
+//         let mobile_number = req.body.mobilenumber;
+        
+//         let city = req.body.city;
+//         let agendaLines = req.body.Agenda.split('\n');
+//         let agenda = agendaLines.join(' ');
+//         let outcomeLines = req.body.Outcome.split('\n');
+//         let outcome = outcomeLines.join(' ');
+//         let dateformate = req.body.dateformate;
+//         formattedDateForDatabase = moment(dateformate, 'DD-MM-YYYY').format('YYYY-MM-DD');
+//         let vertical = req.body.vertical;
+//         let Meeting = req.body.Meeting;
+//         let count = req.body.count;
+//         let countemp = req.body.countemp;
+//         let countade = req.body.countade;
+//         let number = req.body.number;
+//         let numberemp = req.body.numberemp;
+//         let numberade = req.body.numberade;
+//         console.log(numberade,'numberade')
+//         let expense = req.body.expense;
+//         const additionalInfo = req.body.additionalInfo; 
+//         let budget = req.body.budget;
+//         let { cal, cal1, cal2 } = req.body;
+//         let concatenatedValue = `${cal2} + ${cal1} + ${cal}`;
+
+//         console.log("2 in in--shope meet")
+//         logger.info("2 in in--shope")
+
+
+//         const pool = await dbConnection();
+
+//         let is_active = (email_send === 'Yes') ? '0' : '1';
+
+
+//         let insertQuery = `
+//             INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_code, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active,pay_advance)
+//             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+//         `;
+
+//         pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_code, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '1', uniqueFilename1, uniqueFilename2,uniqueFilename3, count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active,additionalInfo], (error, results) => {
+//             console.log(results, 'results')
+//             if (error) {
+//                 console.log(error);
+//                 logger.error(error)
+//                 res.json({ error: 'Internal Server Error' });
+//             } else {
+
+//                 console.log("3 in in--shope meet")
+//                 logger.info("3 in in--shope")
+//                 let rc_query = `SELECT rc_id FROM Jacpl_ContractorMeet ORDER BY rc_id DESC LIMIT 1;`
+//                 pool.query(rc_query, (err, rc_results) => {
+//                     rc_id = rc_results[0].rc_id
+//                     if (email_send === 'Yes') {
+//                         try {
+//                             let mailquery = `SELECT * FROM JUBILANT_LOGIN WHERE EMP_CODE=?`
+//                             pool.query(mailquery, [emp_code], async (error, results) => {
+//                                 if (error){
+//                                     console.log(error)
+//                                     logger.error(error)
+//                                 }
+
+//                                 // console.log(results)
+//                                 let cc1 = results[0].RSM_ZSM_Email_ID
+//                                 let receiver1 = results[0].REP_MANAGER_Email_ID
+//                                 let emp_name = results[0].EMP_NAME
+
+//                                 let REP_MANAGER_NAME = results[0].REP_MANAGER_NAME
+//                                 // let RSM_ZSM_Name = results[0].RSM_ZSM_Name
+
+//                                 let toAddresses = `${receiver1}`;
+//                                 let ccAddresses = `${cc1}`;
+
+//                                 let transporter = nodemailer.createTransport({
+//                                     host: 'jublcorp.mail.protection.outlook.com',
+//                                     port: 25,
+//                                     secure: false,
+//                                     auth: {
+//                                         user: 'g-smart.helpdesk@jubl.com',
+//                                         pass: 'jubl@123'
+//                                     },
+//                                     debug: true
+//                                 });
+
+//                                 let mailOptions = {
+//                                     from: 'g-smart.helpdesk@jubl.com',
+//                                     to: toAddresses,
+//                                     // to: 'bhavishya.chauhan@manthanitsolutions.in',
+//                                     cc: ccAddresses,
+//                                     subject: 'InShop Meet Approval',
+//                                     html: `<p style="font-size: 13px;font-weight: 600;color: black;">Dear Team,<br><br>
+
+                                 
+ 
+//                                 Employee ID: ${emp_code} Name: ${emp_name} has punched ${count} contractors in InShop Meet hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
+//                                BTL ID: ${rc_id}<br>
+                    
+//                                         JACPL Employee Count: ${countemp}<br>
+                    
+//                                         ADE Employee Count: ${countade}<br>
+                    
+//                                         Budget Brife: ${concatenatedValue}<br>
+                    
+//                                         BTL Advance Amount: ${additionalInfo}<br>
+                    
+//                                         Allocated Budget: ${budget}<br>
+                    
+//                                         Total Expense: ${expense}<br>
+
+//                                 <table border="0" cellspacing="0" cellpadding="0">
+//                                 <tr>
+//                                     <td align="center" style="border-radius: 5px; background-color: #1F7F4C;">
+//                                         <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_APPROVE}/${rc_id}/${REP_MANAGER_NAME}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid white; display: inline-block;">Approve</a>
+//                                     </td>
+                            
+//                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+//                                     <td>&nbsp;</td>
+                            
+//                                     <td align="center" style="border-radius: 5px; background-color: #cc0001;">
+//                                     <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_REJECT}/${rc_id}/${REP_MANAGER_NAME}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color:#ffffff ; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid #cc0001; display: inline-block;">&nbsp;Reject&nbsp;</a>
+//                                 </td>
+//                                 </tr>
+//                             </table>
+
+//                                 <br><br>
+                                 
+//                                 Regards,
+//                                 </p>`
+//                                 };
+
+//                                 try {
+//                                     let info = await transporter.sendMail(mailOptions);
+//                                     res.json({ message: `Email sent for approval with ID ${rc_id}`, number: number });
+//                                     // console.log('Email sent: ', info.messageId);
+
+//                                     console.log("4 in in--shope meet")
+//                                     logger.info("4 in in--shope")
+//                                     return info;
+//                                 } catch (error) {
+//                                     console.log('Error sending email: ', error);
+//                                     logger.error(error + ' in nodemailer')
+//                                     throw error;
+//                                 }
+//                             })
+
+//                         } catch (emailError) {
+//                             console.log(emailError);
+//                             logger.log(emailError)
+//                             res.json({ error: 'Error sending email for approval' });
+//                         }
+//                     } else {
+//                         res.json({ message: `Inshop detail successfully submitted  with ID ${rc_id}`, number: number });
+//                     }
+
+//                     if (expense > budget) {
+
+                       
+
+//                         console.log('11111')
+//                         const transporter = nodemailer.createTransport({
+//                             service: 'gmail', 
+//                             auth: {
+//                                  user: 'vishal.manthanitsolutions@gmail.com',
+//                                   pass: 'yjal dkyp ncld juil'
+//                             }
+//                         });
+                        
+//                         const mailOption1 = {
+//                             from: 'vishal.manthanitsolutions@gmail.com',
+//                             to: 'yogeshmanthanitsolution@gmail.com',
+//                             cc: 'ramkeshn311@gmail.com',
+//                             subject: 'Expense Exceeds Budget',
+//                                 html: `<p style="font-size: 13px;font-weight: 600;color: black;">Dear Team,<br><br>
+//                                         Employee ID: ${emp_code} Name: ${emp_name} has punched 16 Contractors/Dealers in SGA Meet and Expense amount greater than the allocated budget hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
+                                                     
+//                                         BTL ID: ${rc_id}<br>
+                    
+//                                         JACPL Employee Count: ${countemp}<br>
+                    
+//                                         ADE Employee Count: ${countade}<br>
+                    
+//                                         Budget Brife: ${concatenatedValue}<br>
+                    
+//                                         BTL Advance Amount: ${additionalInfo}<br>
+                    
+//                                         Allocated Budget: ${budget}<br>
+                    
+//                                         Total Expense: ${expense}<br>
+                    
+//                                         Kindly find the enclosed attached meeting pics, Hotel & Food bill & Gift bill.<br>
+                    
+//                                         Note: BTL & Expense approve & Reject by ZSM/RSM only.<br>
+                    
+//                                         <table border="0" cellspacing="0" cellpadding="0">
+//                                         <tr>
+//                                             <td align="center" style="border-radius: 5px; background-color: #1F7F4C;">
+//                                                 <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_APPROVE}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid white; display: inline-block;">Approve</a>
+//                                             </td>
+                                    
+//                                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+//                                             <td>&nbsp;</td>
+                                    
+//                                             <td align="center" style="border-radius: 5px; background-color: #cc0001;">
+//                                             <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_REJECT}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color:#ffffff ; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid #cc0001; display: inline-block;">&nbsp;Reject&nbsp;</a>
+//                                         </td>
+//                                         </tr>
+//                                     </table>
+                    
+//                                 <br><br>
+                                    
+//                                 Regards,
+//                                 </p>`
+//                              };
+                    
+                                                  
+                     
+                    
+//                         transporter.sendMail(mailOption1, (error, info) => {
+//                             if (error) {
+//                                 return res.status(500).send(error.toString());
+//                             }
+//                             res.status(200).send('Email sent: ' + info.response);
+//                         });
+
+                     
+//                     }
+
+
+
+//                 })
+
+//             }
+
+
+//             let selectQuery = `SELECT MobileAttended, creation_dtm, rc_id FROM Jacpl_ContractorMeet ORDER BY rc_id DESC LIMIT 1`;
+
+//             pool.query(selectQuery, function (error, results, fields) {
+//                 console.log(results,'results')
+//                 if (error) {
+//                     console.log(error);
+//                     logger.error(error)
+
+//                     return;
+//                 }
+
+//                 for (let i = 0; i < results.length; i++) {
+//                     let rc_id = results[i].rc_id;
+//                     let creation_dtm = results[i].creation_dtm
+//                     let mobile_numbers = results[i].MobileAttended;
+
+//                     let values = mobile_numbers.split(',');
+
+                  
+//                     let numbersArray = values.map(item => {
+//                         let pair = item.split(':');
+//                         return { mobile: pair[0].trim(), gift: pair[1].trim() }; 
+//                     });
+
+                 
+
+                    
+//                     numbersArray.forEach(function (userData) {
+//                         let insertQuery = `INSERT INTO Jacpl_ContractorMeetDetails (rc_id, Inf_Mobile, creation_dtm, gift_name) VALUES (?,?,?,?)`;
+//                         pool.query(insertQuery, [rc_id, userData.mobile, creation_dtm, userData.gift], function (insertError, insertResults) {
+                           
+//                             if (insertError) {
+//                                 console.log(insertError);
+//                                 logger.error(insertError);
+//                             } else {
+//                                 console.log("Insert successful for rc_id:", rc_id);
+//                                 logger.info("Insert successful for rc_id:", rc_id);
+//                             }
+//                         });
+//                     });
+//                 }
+//             });
+//         });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// });
+
+
+
+=======
         cb(null, file.originalname);
     },
 });
@@ -1532,6 +2164,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 route.post('/in-shope', upload.fields([
     { name: 'Attachment1', maxCount: 1 },
     { name: 'Attachment2', maxCount: 1 },
@@ -1544,14 +2177,24 @@ route.post('/in-shope', upload.fields([
 
         let email_send = req.body.email_to_send;
 
+<<<<<<< HEAD
+    
+ let { Attachment1 = [], Attachment2 = [], Attachment3 = [] } = req.files;
+    
+=======
         let { Attachment1 = [], Attachment2 = [], Attachment3 = [] } = req.files;
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         let emp_code = req.body.employeeId
         
         let dealer_code = req.body.dealercode;
         let dealer_firmname = req.body.dealerfirmname;
         let dealer_name = req.body.dealername;
         let mobile_number = req.body.mobilenumber;
+<<<<<<< HEAD
+        
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         let city = req.body.city;
         let agendaLines = req.body.Agenda.split('\n');
         let agenda = agendaLines.join(' ');
@@ -1567,7 +2210,13 @@ route.post('/in-shope', upload.fields([
         let number = req.body.number;
         let numberemp = req.body.numberemp;
         let numberade = req.body.numberade;
+<<<<<<< HEAD
+        console.log(numberade,'numberade')
         let expense = req.body.expense;
+        const additionalInfo = req.body.additionalInfo; 
+=======
+        let expense = req.body.expense;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         let budget = req.body.budget;
         let { cal, cal1, cal2 } = req.body;
         let concatenatedValue = `${cal2} + ${cal1} + ${cal}`;
@@ -1582,11 +2231,20 @@ route.post('/in-shope', upload.fields([
 
 
         let insertQuery = `
+<<<<<<< HEAD
+            INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_code, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active,pay_advance)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        `;
+
+        pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_code, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '1',  Attachment1.length > 0 ? Attachment1[0].filename : '', Attachment2.length > 0 ? Attachment2[0].filename : '',
+            Attachment3.length > 0 ? Attachment3[0].filename : '', count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active,additionalInfo], (error, results) => {
+=======
             INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_code, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?)
         `;
 
         pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_code, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '1', Attachment1.length > 0 ? Attachment1[0].originalname : '', Attachment2.length > 0 ? Attachment2[0].originalname : '', Attachment3.length > 0 ? Attachment3[0].originalname : '', count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active], (error, results) => {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             console.log(results, 'results')
             if (error) {
                 console.log(error);
@@ -1641,10 +2299,30 @@ route.post('/in-shope', upload.fields([
                                  
  
                                 Employee ID: ${emp_code} Name: ${emp_name} has punched ${count} contractors in InShop Meet hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
+<<<<<<< HEAD
+                               BTL ID: ${rc_id}<br>
+                    
+                                        JACPL Employee Count: ${countemp}<br>
+                    
+                                        ADE Employee Count: ${countade}<br>
+                    
+                                        Budget Brife: ${concatenatedValue}<br>
+                    
+                                        BTL Advance Amount: ${additionalInfo}<br>
+                    
+                                        Allocated Budget: ${budget}<br>
+                    
+                                        Total Expense: ${expense}<br>
+
+                                           <br>
+                    
+                                        Note: BTL & Expense approve & Reject by BM/ASM/TM/BDM/TSS only.<br>
+=======
                                  
                                 BTL ID: ${rc_id}<br>
                                 Allocated Budget: ${budget}<br>
                                 Total Expence: ${expense}<br><br>
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
                                 <table border="0" cellspacing="0" cellpadding="0">
                                 <tr>
@@ -1690,6 +2368,106 @@ route.post('/in-shope', upload.fields([
                     } else {
                         res.json({ message: `Inshop detail successfully submitted  with ID ${rc_id}`, number: number });
                     }
+<<<<<<< HEAD
+
+                    if (expense > budget) {
+
+
+                        let mailquery = `SELECT * FROM JUBILANT_LOGIN WHERE EMP_CODE=?`
+                        pool.query(mailquery, [emp_code], async (error, results) => {
+                            if (error){
+                                console.log(error)
+                                logger.error(error)
+                            }
+
+                       
+                            let cc1 = results[0].RSM_ZSM_Email_ID
+                            let receiver1 = results[0].REP_MANAGER_Email_ID
+                            let emp_name = results[0].EMP_NAME
+
+                            let REP_MANAGER_NAME = results[0].REP_MANAGER_NAME
+                         
+
+                            let toAddresses = `${receiver1}`;
+                            let ccAddresses = `${cc1}`;
+
+                        
+
+                        console.log('11111')
+                        const transporter = nodemailer.createTransport({
+                            service: 'gmail', 
+                            auth: {
+                                 user: 'vishal.manthanitsolutions@gmail.com',
+                                  pass: 'yjal dkyp ncld juil'
+                            }
+                        });
+                        
+                        const mailOption1 = {
+                            from: 'vishal.manthanitsolutions@gmail.com',
+                            to: 'yogeshmanthanitsolution@gmail.com',
+                            cc: 'ramkeshn311@gmail.com',
+                            subject: 'InShop Meet Budget Exceeds',
+                                html: `<p style="font-size: 13px;font-weight: 600;color: black;">Dear Team,<br><br>
+                                        Employee ID: ${emp_code} Name: ${emp_name} has punched ${count} Contractors/Dealers in SGA Meet and Expense amount greater than the allocated budget hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
+                                                     
+                                        BTL ID: ${rc_id}<br>
+                    
+                                        JACPL Employee Count: ${countemp}<br>
+                    
+                                        ADE Employee Count: ${countade}<br>
+                    
+                                        Budget Brife: ${concatenatedValue}<br>
+                    
+                                        BTL Advance Amount: ${additionalInfo}<br>
+                    
+                                        Allocated Budget: ${budget}<br>
+                    
+                                        Total Expense: ${expense}<br>
+                    
+                                      <br>
+
+                                        Note: BTL & Expense approve & Reject by ZSM/RSM only.<br>
+                    
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="center" style="border-radius: 5px; background-color: #1F7F4C;">
+                                                <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_APPROVE}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid white; display: inline-block;">Approve</a>
+                                            </td>
+                                    
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                    
+                                            <td align="center" style="border-radius: 5px; background-color: #cc0001;">
+                                            <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_REJECT}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color:#ffffff ; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid #cc0001; display: inline-block;">&nbsp;Reject&nbsp;</a>
+                                        </td>
+                                        </tr>
+                                    </table>
+                    
+                                <br><br>
+                                    
+                                Regards,
+                                </p>`
+                             };
+                    
+                                                  
+                     
+                    
+                        transporter.sendMail(mailOption1, (error, info) => {
+                            if (error) {
+                                return res.status(500).send(error.toString());
+                            }
+                            res.status(200).send('Email sent: ' + info.response);
+                        });
+
+                    });
+
+                     
+                    }
+
+
+
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 })
 
             }
@@ -1698,6 +2476,10 @@ route.post('/in-shope', upload.fields([
             let selectQuery = `SELECT MobileAttended, creation_dtm, rc_id FROM Jacpl_ContractorMeet ORDER BY rc_id DESC LIMIT 1`;
 
             pool.query(selectQuery, function (error, results, fields) {
+<<<<<<< HEAD
+                console.log(results,'results')
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 if (error) {
                     console.log(error);
                     logger.error(error)
@@ -1707,6 +2489,35 @@ route.post('/in-shope', upload.fields([
 
                 for (let i = 0; i < results.length; i++) {
                     let rc_id = results[i].rc_id;
+<<<<<<< HEAD
+                    let creation_dtm = results[i].creation_dtm
+                    let mobile_numbers = results[i].MobileAttended;
+
+                    let values = mobile_numbers.split(',');
+
+                  
+                    let numbersArray = values.map(item => {
+                        let pair = item.split(':');
+                        return { mobile: pair[0].trim(), gift: pair[1].trim() }; 
+                    });
+
+                 
+
+                    
+                    numbersArray.forEach(function (userData) {
+                        let insertQuery = `INSERT INTO Jacpl_ContractorMeetDetails (rc_id, Inf_Mobile, creation_dtm, gift_name) VALUES (?,?,?,?)`;
+                        pool.query(insertQuery, [rc_id, userData.mobile, creation_dtm, userData.gift], function (insertError, insertResults) {
+                           
+                            if (insertError) {
+                                console.log(insertError);
+                                logger.error(insertError);
+                            } else {
+                                console.log("Insert successful for rc_id:", rc_id);
+                                logger.info("Insert successful for rc_id:", rc_id);
+                            }
+                        });
+                    });
+=======
                     let mobile_numbers = results[i].MobileAttended;
                     let creation_dtm = results[i].creation_dtm
 
@@ -1726,6 +2537,7 @@ route.post('/in-shope', upload.fields([
                             }
                         });
                     })
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 }
             });
         });
@@ -1774,21 +2586,37 @@ route.post('/contractor_meet', upload.fields([
         let numberade = req.body.numberade;
         let expense = req.body.expense;
         let budget = req.body.budget;
+<<<<<<< HEAD
+        const additionalInfo = req.body.additionalInfo; 
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         let { cal, cal1, cal2 } = req.body;
         let concatenatedValue = `${cal2} + ${cal1} + ${cal}`;
 
 
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         const pool = await dbConnection();
         let is_active = (email_send === 'Yes') ? '0' : '1';
 
         let insertQuery = `
+<<<<<<< HEAD
+            INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_code, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active,pay_advance)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        `;
+
+        pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_code, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '2',Attachment1.length > 0 ? Attachment1[0].filename : '', Attachment2.length > 0 ? Attachment2[0].filename : '',Attachment3.length > 0 ? Attachment3[0].filename : '', count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active,additionalInfo], (error, results) => {
+=======
             INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_code, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?)
         `;
 
         pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_code, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '2', Attachment1.length > 0 ? Attachment1[0].filename : '', Attachment2.length > 0 ? Attachment2[0].filename : '', Attachment3.length > 0 ? Attachment3[0].filename : '', count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active], (error, results) => {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             // console.log(results, 'results')
             if (error) {
                 console.error(error);
@@ -1836,9 +2664,29 @@ route.post('/contractor_meet', upload.fields([
  
                                 Employee ID: ${emp_code} Name: ${emp_name} has punched ${count} contractors in Contractor Meet hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
                                  
+<<<<<<< HEAD
+                               BTL ID: ${rc_id}<br>
+                    
+                                        JACPL Employee Count: ${countemp}<br>
+                    
+                                        ADE Employee Count: ${countade}<br>
+                    
+                                        Budget Brife: ${concatenatedValue}<br>
+                    
+                                        BTL Advance Amount: ${additionalInfo}<br>
+                    
+                                        Allocated Budget: ${budget}<br>
+                    
+                                        Total Expense: ${expense}<br>
+
+                                         <br>
+                    
+                                        Note: BTL & Expense approve & Reject by BM/ASM/TM/BDM/TSS only.<br>
+=======
                                 BTL ID: ${rc_id}<br>
                                 Allocated Budget: ${budget}<br>
                                 Total Expence: ${expense}<br><br>
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
                                 <table border="0" cellspacing="0" cellpadding="0">
                                 <tr>
@@ -1860,7 +2708,10 @@ route.post('/contractor_meet', upload.fields([
                                 Regards,
                                 </p>`
                                 };
+<<<<<<< HEAD
+=======
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                 try {
                                     let info = await transporter.sendMail(mailOptions);
                                     res.json({ message: `Email sent for approval with ID ${rc_id}`, number: number });
@@ -1880,6 +2731,95 @@ route.post('/contractor_meet', upload.fields([
                     } else {
                         res.json({ message: `Contractor detail successfully submitted  with ID ${rc_id}`, number: number });
                     }
+<<<<<<< HEAD
+
+                    if (expense > budget) {
+
+                        let mailquery = `SELECT * FROM JUBILANT_LOGIN WHERE EMP_CODE=?`
+                            pool.query(mailquery, [emp_code], async (error, results) => {
+                                if (error) throw error;
+
+                                // console.log(results)
+                                let cc1 = results[0].RSM_ZSM_Email_ID
+                                let receiver1 = results[0].REP_MANAGER_Email_ID
+                                let emp_name = results[0].EMP_NAME
+
+                                let REP_MANAGER_NAME = results[0].REP_MANAGER_NAME
+                                // let RSM_ZSM_Name = results[0].RSM_ZSM_Name
+
+                                let toAddresses = `${receiver1}`;
+                                let ccAddresses = `${cc1}`;
+
+                        console.log('11111')
+                        const transporter = nodemailer.createTransport({
+                            service: 'gmail', 
+                            auth: {
+                                 user: 'vishal.manthanitsolutions@gmail.com',
+                                  pass: 'yjal dkyp ncld juil'
+                            }
+                        });
+                        
+                        const mailOption1 = {
+                            from: 'vishal.manthanitsolutions@gmail.com',
+                            to: 'yogeshmanthanitsolution@gmail.com',
+                            cc: 'ramkeshn311@gmail.com',
+                            subject: 'Contractor Meet Budget Exceeds ',
+                                html: `<p style="font-size: 13px;font-weight: 600;color: black;">Dear Team,<br><br>
+                                        Employee ID: ${emp_code} Name: ${emp_name} has punched ${count} Contractors/Dealers in SGA Meet and Expense amount greater than the allocated budget hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
+                                                     
+                                        BTL ID: ${rc_id}<br>
+                    
+                                        JACPL Employee Count: ${countemp}<br>
+                    
+                                        ADE Employee Count: ${countade}<br>
+                    
+                                        Budget Brife: ${concatenatedValue}<br>
+                    
+                                        BTL Advance Amount: ${additionalInfo}<br>
+                    
+                                        Allocated Budget: ${budget}<br>
+                    
+                                        Total Expense: ${expense}<br>
+                    
+                                       <br>
+                    
+                                        Note: BTL & Expense approve & Reject by ZSM/RSM only.<br>
+                    
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="center" style="border-radius: 5px; background-color: #1F7F4C;">
+                                                <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_APPROVE}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid white; display: inline-block;">Approve</a>
+                                            </td>
+                                    
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                    
+                                            <td align="center" style="border-radius: 5px; background-color: #cc0001;">
+                                            <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_REJECT}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color:#ffffff ; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid #cc0001; display: inline-block;">&nbsp;Reject&nbsp;</a>
+                                        </td>
+                                        </tr>
+                                    </table>
+                    
+                                <br><br>
+                                    
+                                Regards,
+                                </p>`
+                             };
+                    
+                                                  
+                     
+                    
+                        transporter.sendMail(mailOption1, (error, info) => {
+                            if (error) {
+                                return res.status(500).send(error.toString());
+                            }
+                            res.status(200).send('Email sent: ' + info.response);
+                        });
+
+                    })
+                    }
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 })
 
             }
@@ -1895,6 +2835,32 @@ route.post('/contractor_meet', upload.fields([
 
                 for (let i = 0; i < results.length; i++) {
                     let rc_id = results[i].rc_id;
+<<<<<<< HEAD
+                    let creation_dtm = results[i].creation_dtm
+                    let mobile_numbers = results[i].MobileAttended;
+                    let values = mobile_numbers.split(',');
+
+                  
+                    let numbersArray = values.map(item => {
+                        let pair = item.split(':');
+                        return { mobile: pair[0].trim(), gift: pair[1].trim() }; 
+                    });
+
+                    
+                    numbersArray.forEach(function (userData) {
+                        let insertQuery = `INSERT INTO Jacpl_ContractorMeetDetails (rc_id, Inf_Mobile, creation_dtm, gift_name) VALUES (?,?,?,?)`;
+                        pool.query(insertQuery, [rc_id, userData.mobile, creation_dtm, userData.gift], function (insertError, insertResults) {
+                           
+                            if (insertError) {
+                                console.log(insertError);
+                                logger.error(insertError);
+                            } else {
+                                console.log("Insert successful for rc_id:", rc_id);
+                                logger.info("Insert successful for rc_id:", rc_id);
+                            }
+                        });
+                    });
+=======
                     let mobile_numbers = results[i].MobileAttended;
                     let creation_dtm = results[i].creation_dtm
 
@@ -1911,6 +2877,7 @@ route.post('/contractor_meet', upload.fields([
                             }
                         });
                     })
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 }
             });
         });
@@ -1934,8 +2901,11 @@ route.post('/dealer_meet', upload.fields([
         const currentDateAndTime = getCurrentDateAndTime();
 
         let email_send = req.body.email_to_send;
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         let { Attachment1 = [], Attachment2 = [], Attachment3 = [] } = req.files;
 
         let emp_code = req.body.employeeId
@@ -1959,10 +2929,17 @@ route.post('/dealer_meet', upload.fields([
         let numberade = req.body.numberade;
         let expense = req.body.expense;
         let budget = req.body.budget;
+<<<<<<< HEAD
+        const additionalInfo = req.body.additionalInfo; 
+       
+        let { cal, cal1, cal2 } = req.body;
+       
+=======
         let { cal, cal1, cal2 } = req.body;
         // console.log(cal, 'shkldh')
         // console.log(cal1, 'shkldh')
         // console.log(cal2, 'shkldh')
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         let concatenatedValue = `${cal2} + ${cal1} + ${cal}`;
 
 
@@ -1972,12 +2949,20 @@ route.post('/dealer_meet', upload.fields([
         let is_active = (email_send === 'Yes') ? '0' : '1';
 
         let insertQuery = `
+<<<<<<< HEAD
+            INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active,pay_advance)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        `;
+
+        pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '3',Attachment1.length > 0 ? Attachment1[0].filename : '', Attachment2.length > 0 ? Attachment2[0].filename : '', Attachment3.length > 0 ? Attachment3[0].filename : '', count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active,additionalInfo], (error, results) => {
+=======
             INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?)
         `;
 
         pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '3', Attachment1.length > 0 ? Attachment1[0].filename : '', Attachment2.length > 0 ? Attachment2[0].filename : '', Attachment3.length > 0 ? Attachment3[0].filename : '', count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active], (error, results) => {
             // console.log(results, 'results')
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             if (error) {
                 console.error(error);
                 res.json({ error: 'Internal Server Error' });
@@ -2072,9 +3057,12 @@ route.post('/dealer_meet', upload.fields([
 
             }
 
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             let selectQuery = `SELECT MobileAttended, creation_dtm, rc_id FROM Jacpl_ContractorMeet ORDER BY rc_id DESC LIMIT 1`;
 
             pool.query(selectQuery, function (error, results, fields) {
@@ -2087,12 +3075,18 @@ route.post('/dealer_meet', upload.fields([
                     let rc_id = results[i].rc_id;
                     let creation_dtm = results[i].creation_dtm;
                     let mobile_numbers = results[i].MobileAttended;
+<<<<<<< HEAD
+=======
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     const numbersArray = mobile_numbers.split(',');
 
                     numbersArray.forEach(function (value) {
                         const [dealerCode, secondPart] = value.split(':');
+<<<<<<< HEAD
+=======
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         let dealerDataQuery = `SELECT * FROM dealer_master WHERE Customer_Code = ?`;
                         pool.query(dealerDataQuery, [dealerCode], function (fetchError, fetchResults) {
                             if (fetchError) {
@@ -2103,19 +3097,35 @@ route.post('/dealer_meet', upload.fields([
                             if (fetchResults.length > 0) {
                                 let insertQuery = `INSERT INTO Jacpl_DealerMeetDetails (rc_id, Customer_Code, Customer_Name, Customer_Phone, Channel_Code, Customer_Type, City, Contact_Person, creation_dtm) VALUES (?,?,?,?,?,?,?,?,?)`;
                                 pool.query(insertQuery, [rc_id, fetchResults[0].Customer_Code, fetchResults[0].Customer_Name, fetchResults[0].Customer_Phone, fetchResults[0].Channel_Code, fetchResults[0].Customer_Type, fetchResults[0].City, fetchResults[0].Contact_Person, creation_dtm], function (insertError, insertResults) {
+<<<<<<< HEAD
+                                    console.log(insertResults,'insertResults')
+                                    if (insertError) {
+                                        console.error(insertError);
+                                    } else {
+                                        
+=======
                                     if (insertError) {
                                         console.error(insertError);
                                     } else {
                                         // Insert successful
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     }
                                 });
                             } else {
                                 let insertQuery = `INSERT INTO Jacpl_DealerMeetDetails (rc_id, Customer_Code, Customer_Name,  creation_dtm) VALUES (?,?,?,?)`;
                                 pool.query(insertQuery, [rc_id, dealerCode, secondPart, creation_dtm], function (insertError, insertResults) {
+<<<<<<< HEAD
+                                    console.log(insertResults,'else')
+                                    if (insertError) {
+                                        console.error(insertError);
+                                    } else {
+                                       
+=======
                                     if (insertError) {
                                         console.error(insertError);
                                     } else {
                                         // Insert successful
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     }
                                 });
                             }
@@ -2156,7 +3166,11 @@ route.post('/filter_detail_event', async (req, res) => {
             let EMP_DESI = respon[0].EMP_DESI;
 
 
+<<<<<<< HEAD
+            if (ROLE === "MANAGER" && EMP_DESI === "ZSM" || EMP_DESI === "RSM") {
+=======
             if (ROLE === "MANAGER" && EMP_DESI === "ZSM" && EMP_DESI === "RSM") {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 let query = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.RSM_ZSM_ID = ? AND  DATE(c.DateOfMeet) BETWEEN ? AND ? AND c.Meet_Type != 3`;
 
                 let params = [emp, start_date_formatted, end_date_formatted];
@@ -2252,16 +3266,24 @@ route.post('/filter_detail_event', async (req, res) => {
             } else if (ROLE === "SUPER_ADMIN" || ROLE === "ADMIN") {
 
                 let query = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE DATE(c.DateOfMeet) BETWEEN ? AND ? AND c.Meet_Type != 3`;
+<<<<<<< HEAD
+                let params = [start_date_formatted, end_date_formatted];
+=======
 
                 let params = [start_date_formatted, end_date_formatted];
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 if (userInput.length > 0) {
                     query += ` AND c.rc_id = ?`;
                     params.push(userInput);
                 }
+<<<<<<< HEAD
+                query += ` ORDER BY c.rc_id ASC`;
+=======
 
                 query += ` ORDER BY c.rc_id ASC`;
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 con.query(query, params, function (error, results) {
                     if (error) {
                         console.log(error);
@@ -2373,7 +3395,11 @@ route.post('/dealer_detail_event', async (req, res) => {
             let ROLE = respon[0].ROLE;
             let EMP_DESI = respon[0].EMP_DESI;
 
+<<<<<<< HEAD
+            if (ROLE === "MANAGER" && EMP_DESI === "ZSM" || EMP_DESI === "RSM") {
+=======
             if (ROLE === "MANAGER" && EMP_DESI === "ZSM" && EMP_DESI === "RSM") {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 let query = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.RSM_ZSM_ID=? AND DATE(c.DateOfMeet) BETWEEN ? AND ? AND c.Meet_Type = 3`;
 
                 let params = [emp, start_date_formatted, end_date_formatted];
@@ -2604,13 +3630,22 @@ route.post('/filter_event_report', async (req, res) => {
 
         let qry = `SELECT ROLE,EMP_DESI FROM JUBILANT_LOGIN WHERE EMP_CODE = '${emp}'`;
         con.query(qry, function (error, respon) {
+<<<<<<< HEAD
+            console.log(respon)
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             let ROLE = respon[0].ROLE;
             let EMP_DESI = respon[0].EMP_DESI;
 
             if (event_category.length > 0 && userInput.length > 0) {
  
+<<<<<<< HEAD
+                if (ROLE === "MANAGER" && EMP_DESI === "ZSM" || EMP_DESI === "RSM") {
+                    let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.RSM_ZSM_ID = ? AND (c.Meet_Type = ? AND c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                 if (ROLE === "MANAGER" && EMP_DESI === "ZSM" && EMP_DESI === "RSM") {
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.RSM_ZSM_ID = ? AND (c.Meet_Type = ? AND c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ?  ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [emp, event_category, userInput, start_date_formatted, end_date_formatted], function (error, results) {
 
                         if (error) {
@@ -2626,7 +3661,11 @@ route.post('/filter_event_report', async (req, res) => {
 
                 } else if (ROLE === "MANAGER") {
 
+<<<<<<< HEAD
+                    let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.REP_MANAGER_ID = ? AND (c.Meet_Type = ? AND c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.REP_MANAGER_ID = ? AND (c.Meet_Type = ? AND c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ?  ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [emp, event_category, userInput, start_date_formatted, end_date_formatted], function (error, results) {
 
                         if (error) {
@@ -2640,7 +3679,11 @@ route.post('/filter_event_report', async (req, res) => {
                     });
                 } else if (ROLE === "SUPER_ADMIN" || ROLE === "ADMIN" || ROLE === "COMMERCIAL") {
 
+<<<<<<< HEAD
+                    let loginQuery = `SELECT c.*,l.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE c.Meet_Type = ? AND c.rc_id = ? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+=======
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE (c.Meet_Type = ? AND c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [event_category, userInput, start_date_formatted, end_date_formatted], function (error, results) {
 
                         if (error) {
@@ -2654,7 +3697,11 @@ route.post('/filter_event_report', async (req, res) => {
                         logger.info(`Accessed POST filter_event loginQuery ${emp}`);
                     });
                 } else if (ROLE === "EMPLOYEE") {
+<<<<<<< HEAD
+                    let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE (c.Meet_Type = ? AND c.rc_id = ?)  AND l.EMP_CODE=? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE (c.Meet_Type = ? AND c.rc_id = ?)  AND l.EMP_CODE=? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [event_category, userInput, emp, start_date_formatted, end_date_formatted], function (error, results) {
 
                         if (error) {
@@ -2671,9 +3718,15 @@ route.post('/filter_event_report', async (req, res) => {
 
             } else if (event_category.length > 0 || userInput.length > 0) {
 
+<<<<<<< HEAD
+                if (ROLE === "MANAGER" && EMP_DESI === "ZSM" || EMP_DESI === "RSM") {
+
+                    let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.RSM_ZSM_ID = ? AND (c.Meet_Type = ? OR c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                 if (ROLE === "MANAGER" && EMP_DESI === "ZSM" && EMP_DESI === "RSM") {
 
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.RSM_ZSM_ID = ? AND (c.Meet_Type = ? OR c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ?  ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [emp, event_category, userInput, start_date_formatted, end_date_formatted], function (error, results) {
 
                         if (error) {
@@ -2689,7 +3742,11 @@ route.post('/filter_event_report', async (req, res) => {
 
                 } else if (ROLE === "MANAGER") {
 
+<<<<<<< HEAD
+                    let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.REP_MANAGER_ID = ? AND (c.Meet_Type = ? OR c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.REP_MANAGER_ID = ? AND (c.Meet_Type = ? OR c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [emp, event_category, userInput, start_date_formatted, end_date_formatted], function (error, results) {
 
                         if (error) {
@@ -2705,7 +3762,11 @@ route.post('/filter_event_report', async (req, res) => {
 
                 } else if (ROLE === "SUPER_ADMIN" || ROLE === "ADMIN" || ROLE === "COMMERCIAL") {
 
+<<<<<<< HEAD
+                    let loginQuery = `SELECT  c.*,l.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE c.Meet_Type = ? OR c.rc_id = ? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE (c.Meet_Type = ? OR c.rc_id = ?) AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [event_category, userInput, start_date_formatted, end_date_formatted], function (error, results) {
 
                         if (error) {
@@ -2719,7 +3780,11 @@ route.post('/filter_event_report', async (req, res) => {
                         logger.info(`Accessed POST filter_event loginQuery ${emp}`);
                     });
                 } else if (ROLE === "EMPLOYEE") {
+<<<<<<< HEAD
+                    let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE (c.Meet_Type = ? OR c.rc_id = ?) AND l.EMP_CODE=? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE (c.Meet_Type = ? OR c.rc_id = ?) AND l.EMP_CODE=? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [event_category, userInput, emp, start_date_formatted, end_date_formatted], function (error, results) {
 
                         if (error) {
@@ -2735,9 +3800,15 @@ route.post('/filter_event_report', async (req, res) => {
                 }
 
             } else {
+<<<<<<< HEAD
+                if (ROLE === "MANAGER" && EMP_DESI === "ZSM" || EMP_DESI === "RSM") {
+
+                    let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON EMP_CODE = c.emp_id WHERE l.RSM_ZSM_ID = ? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                 if (ROLE === "MANAGER" && EMP_DESI === "ZSM" && EMP_DESI === "RSM") {
 
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON EMP_CODE = c.emp_id WHERE l.RSM_ZSM_ID = ? AND DATE(c.DateOfMeet) BETWEEN ? AND ?  ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [emp, start_date_formatted, end_date_formatted], function (error, results) {
                         if (error) {
                             console.log(error);
@@ -2752,7 +3823,11 @@ route.post('/filter_event_report', async (req, res) => {
 
                 } else if (ROLE === "MANAGER") {
                     console.log('12')
+<<<<<<< HEAD
+                    let loginQuery = `SELECT  c.*,l.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.REP_MANAGER_ID = ? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.REP_MANAGER_ID = ? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [emp, start_date_formatted, end_date_formatted], function (error, results) {
                         console.log(results, 'results')
                         if (error) {
@@ -2767,7 +3842,11 @@ route.post('/filter_event_report', async (req, res) => {
                     });
                 } else if (ROLE === "SUPER_ADMIN" || ROLE === "ADMIN" || ROLE === "COMMERCIAL") {
 
+<<<<<<< HEAD
+                    let loginQuery = `SELECT c.*, l.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+=======
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     con.query(loginQuery, [start_date_formatted, end_date_formatted], function (error, results) {
 
                         if (error) {
@@ -2781,7 +3860,11 @@ route.post('/filter_event_report', async (req, res) => {
                         logger.info(`Accessed POST filter_event loginQuery ${emp}`);
                     });
                 } else if (ROLE === "EMPLOYEE") {
+<<<<<<< HEAD
+                    let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.EMP_CODE=? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id DESC`;
+=======
                     let loginQuery = `SELECT l.*, c.* FROM JUBILANT_LOGIN l INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id WHERE l.EMP_CODE=? AND DATE(c.DateOfMeet) BETWEEN ? AND ? ORDER BY c.rc_id ASC`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     console.log(loginQuery, 'loginQuery')
                     con.query(loginQuery, [emp, start_date_formatted, end_date_formatted], function (error, results) {
 
@@ -2798,8 +3881,11 @@ route.post('/filter_event_report', async (req, res) => {
                 }
 
             }
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         })
     } catch (err) {
         console.log(err);
@@ -2808,10 +3894,13 @@ route.post('/filter_event_report', async (req, res) => {
     }
 });
 
+<<<<<<< HEAD
+=======
 
 
 
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 route.post('/filter_view_rejected_approved_btl', async (req, res) => {
     try {
         logger.info('Starting POST filter_view_rejected_approved_btl');
@@ -2820,6 +3909,10 @@ route.post('/filter_view_rejected_approved_btl', async (req, res) => {
         let sd = req.body.sd;
         let ed = req.body.ed;
         let ddown = req.body.ddown;
+<<<<<<< HEAD
+       
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         const con = await dbConnection();
         const moment = require('moment');
@@ -2835,15 +3928,26 @@ route.post('/filter_view_rejected_approved_btl', async (req, res) => {
             INNER JOIN 
                 Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id
             WHERE 
+<<<<<<< HEAD
+                DATE(c.DateOfMeet) BETWEEN ? AND ?`;
+
+        let params = [start_date_formatted,end_date_formatted];
+=======
                 DATE(c.DateOfMeet) BETWEEN ? AND ?
         `;
 
         let params = [start_date_formatted, end_date_formatted];
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         if (ddown == 2) {
             query += ` AND c.is_active = 2`;
         } else if (ddown == 3) {
             query += ` AND c.is_active = 3`;
+<<<<<<< HEAD
+        }else if (ddown === 'Pending_Voucher' || ddown === 2) {
+            query += ` AND c.is_active = 2`;
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         } else {
             query += ` AND c.is_active = 0`;
         }
@@ -2868,6 +3972,218 @@ route.post('/filter_view_rejected_approved_btl', async (req, res) => {
 });
 
 
+<<<<<<< HEAD
+// route.post('/sga_meet', upload.fields([
+//     { name: 'Attachment1', maxCount: 1 },
+//     { name: 'Attachment2', maxCount: 1 },
+//     { name: 'Attachment3', maxCount: 1 },
+// ]), async function (req, res) {
+//     try {
+//         const currentDateAndTime = getCurrentDateAndTime();
+
+//         console.log("1 in sga meet")
+//         logger.info("1 in sga meet")
+//         let email_send = req.body.email_to_send;
+
+//         let { Attachment1 = [], Attachment2 = [], Attachment3 = [] } = req.files;
+
+//         let emp_code = req.body.employeeId;
+//         let dealer_code = 'null'
+//         let dealer_firmname = 'null'
+//         let dealer_name = 'null'
+//         let mobile_number = 'null'
+//         let city = 'null'
+//         console.log("2 in sga meet")
+//         logger.info("2 in sga meet")
+//         let agendaLines = req.body.Agenda.split('\n');
+//         let agenda = agendaLines.join(' ');
+//         let outcomeLines = req.body.Outcome.split('\n');
+//         let outcome = outcomeLines.join(' ');
+//         let dateformate = req.body.dateformate;
+//         formattedDateForDatabase = moment(dateformate, 'DD-MM-YYYY').format('YYYY-MM-DD');
+//         let vertical = req.body.vertical;
+//         let Meeting = req.body.Meeting;
+//         let count = req.body.count;
+//         let countemp = req.body.countemp;
+//         let countade = req.body.countade;
+//         let number = req.body.number;
+//         let numberemp = req.body.numberemp;
+//         let numberade = req.body.numberade;
+//         let expense = req.body.expense;
+//         let budget = req.body.budget;
+//         let { cal, cal1, cal2 } = req.body;
+//         const additionalInfo = req.body.additionalInfo;
+
+//         console.log("3 in sga meet")
+//         logger.info("3 in sga meet")
+//         let concatenatedValue = `${cal2} + ${cal1} + ${cal}`;
+
+//         const pool = await dbConnection();
+
+//         let is_active = (email_send === 'Yes') ? '0' : '1';
+
+//         console.log("4 in sga meet")
+//         logger.info("4 in sga meet")
+
+//         let insertQuery = `
+//             INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_code, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active,pay_advance)
+//             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+//         `;
+
+//         pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_code, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '4', Attachment1.length > 0 ? Attachment1[0].filename : '', Attachment2.length > 0 ? Attachment2[0].filename : '', Attachment3.length > 0 ? Attachment3[0].filename : '', count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active,additionalInfo], async (error, results) => {
+//             // console.log(results, 'results')
+//             if (error) {
+//                 console.log(error);
+//                 logger.error(error)
+//                 res.json({ error: 'Internal Server Error' });
+//             } else {
+
+//                 console.log("5 in sga meet")
+//                 logger.info("5 in sga meet")
+
+//                 let rc_query = `SELECT rc_id FROM Jacpl_ContractorMeet ORDER BY rc_id DESC LIMIT 1;`
+//                 pool.query(rc_query, (err, rc_results) => {
+//                     rc_id = rc_results[0].rc_id
+//                     if (email_send === 'Yes') {
+//                         try {
+//                             let mailquery = `SELECT * FROM JUBILANT_LOGIN WHERE EMP_CODE=?`
+//                             pool.query(mailquery, [emp_code], async (error, results) => {
+//                                 if (error) throw error;
+//                                 console.log(error)
+//                                 logger.error(error)
+
+                            
+//                                 let cc1 = results[0].RSM_ZSM_Email_ID
+//                                 let receiver1 = results[0].REP_MANAGER_Email_ID
+//                                 let emp_name = results[0].EMP_NAME
+
+//                                 let REP_MANAGER_NAME = results[0].REP_MANAGER_NAME
+                              
+
+//                                 let toAddresses = `${receiver1}`;
+//                                 let ccAddresses = `${cc1}`;
+
+//                                 let transporter = nodemailer.createTransport({
+//                                     host: 'jublcorp.mail.protection.outlook.com',
+//                                     port: 25,
+//                                     secure: false,
+//                                     auth: {
+//                                         user: 'g-smart.helpdesk@jubl.com',
+//                                         pass: 'jubl@123'
+//                                     },
+//                                     debug: true
+//                                 });
+
+//                                 let mailOptions = {
+//                                     from: 'g-smart.helpdesk@jubl.com',
+//                                     to: toAddresses,
+//                                     cc: ccAddresses,
+//                                     subject: 'SGA Meet Approval',
+//                                     html: `<p style="font-size: 13px;font-weight: 600;color: black;">Dear Team,<br><br>
+
+                                 
+ 
+//                                 Employee ID: ${emp_code} Name: ${emp_name} has punched ${count} contractors in SGA Meet hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
+                                 
+//                                 BTL ID: ${rc_id}<br>
+//                                 Allocated Budget: ${budget}<br>
+//                                 Total Expence: ${expense}<br><br>
+
+//                                 <table border="0" cellspacing="0" cellpadding="0">
+//                                 <tr>
+//                                     <td align="center" style="border-radius: 5px; background-color: #1F7F4C;">
+//                                         <a rel="noopener" target="_blank" href="${process.env.SGA_MAIL_APPROVE}/${rc_id}/${REP_MANAGER_NAME}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid white; display: inline-block;">Approve</a>
+//                                     </td>
+                            
+//                                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+//                                     <td>&nbsp;</td>
+                            
+//                                     <td align="center" style="border-radius: 5px; background-color: #cc0001;">
+//                                     <a rel="noopener" target="_blank" href="${process.env.SGA_MAIL_REJECT}/${rc_id}/${REP_MANAGER_NAME}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color:#ffffff ; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid #cc0001; display: inline-block;">&nbsp;Reject&nbsp;</a>
+//                                 </td>
+//                                 </tr>
+//                             </table>
+
+//                                 <br><br>
+                                 
+//                                 Regards,
+//                                 </p>`
+//                                 };
+
+//                                 try {
+//                                     let info = await transporter.sendMail(mailOptions);
+//                                     res.json({ message: `Email sent for approval with ID ${rc_id}`, number: number });
+//                                     // console.log('Email sent: ', info.messageId);
+//                                     console.log("6 in sga meet")
+//                                     logger.info("6 in sga meet")
+//                                     return info;
+//                                 } catch (error) {
+//                                     console.log('Error sending email: ', error);
+//                                     logger.error(error + ' in nodemailer')
+//                                     throw error;
+//                                 }
+//                             })
+
+//                         } catch (emailError) {
+//                             console.log(emailError);
+//                             logger.error(emailError)
+//                             res.json({ error: 'Error sending email for approval' });
+//                         }
+//                     } else {
+//                         res.json({ message: `SGA detail successfully submitted  with ID ${rc_id}`, number: number });
+//                         console.log("7 in sga meet")
+//                         logger.info("7 in sga meet")
+//                     }
+//                 })
+
+//             }
+
+//             console.log("8 in sga meet")
+//             logger.info("8 in sga meet")
+
+//             let selectQuery = `SELECT MobileAttended, creation_dtm, rc_id FROM Jacpl_ContractorMeet ORDER BY rc_id DESC LIMIT 1`;
+
+
+//             pool.query(selectQuery, function (error, results, fields) {
+//                 if (error) {
+//                     console.log(error);
+//                     logger.error(error)
+//                     return;
+//                 }
+
+//                 for (let i = 0; i < results.length; i++) {
+//                     let rc_id = results[i].rc_id;
+//                     let mobile_numbers = results[i].MobileAttended;
+//                     let creation_dtm = results[i].creation_dtm
+
+//                     const numbersArray = mobile_numbers.split(',').map(Number);
+
+//                     numbersArray.forEach(function (userData) {
+//                         let insertQuery = `INSERT INTO Jacpl_ContractorMeetDetails (rc_id, Inf_Mobile,creation_dtm) VALUES (?,?,?)`;
+//                         pool.query(insertQuery, [rc_id, userData, creation_dtm], function (insertError, insertResults) {
+//                             if (insertError) {
+//                                 console.log(insertError);
+//                                 logger.error(insertError)
+//                             } else {
+//                                 // console.log("Insert successful for rc_id:", rc_id);
+//                                 console.log("9 in sga meet")
+//                                 logger.info("9 in sga meet")
+//                             }
+//                         });
+//                     })
+//                 }
+//             });
+//         });
+//     } catch (err) {
+//         console.log(err);
+//         logger.error(err)
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// });
+
+
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 route.post('/sga_meet', upload.fields([
     { name: 'Attachment1', maxCount: 1 },
     { name: 'Attachment2', maxCount: 1 },
@@ -2880,9 +4196,16 @@ route.post('/sga_meet', upload.fields([
         logger.info("1 in sga meet")
         let email_send = req.body.email_to_send;
 
+<<<<<<< HEAD
+              let { Attachment1 = [], Attachment2 = [], Attachment3 = [] } = req.files;
+
+        let emp_code = req.body.employeeId;
+        let emp_name = req.session.emp_Name;
+=======
         let { Attachment1 = [], Attachment2 = [], Attachment3 = [] } = req.files;
 
         let emp_code = req.body.employeeId;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         let dealer_code = 'null'
         let dealer_firmname = 'null'
         let dealer_name = 'null'
@@ -2895,7 +4218,11 @@ route.post('/sga_meet', upload.fields([
         let outcomeLines = req.body.Outcome.split('\n');
         let outcome = outcomeLines.join(' ');
         let dateformate = req.body.dateformate;
+<<<<<<< HEAD
+        formattedDateForDatabase = moment(dateformate,'DD-MM-YYYY').format('YYYY-MM-DD');
+=======
         formattedDateForDatabase = moment(dateformate, 'DD-MM-YYYY').format('YYYY-MM-DD');
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         let vertical = req.body.vertical;
         let Meeting = req.body.Meeting;
         let count = req.body.count;
@@ -2906,6 +4233,16 @@ route.post('/sga_meet', upload.fields([
         let numberade = req.body.numberade;
         let expense = req.body.expense;
         let budget = req.body.budget;
+<<<<<<< HEAD
+        const additionalInfo = req.body.additionalInfo;
+       
+        console.log(additionalInfo,'additionalInfo')
+  
+
+
+        
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         let { cal, cal1, cal2 } = req.body;
 
         console.log("3 in sga meet")
@@ -2914,17 +4251,44 @@ route.post('/sga_meet', upload.fields([
 
         const pool = await dbConnection();
 
+<<<<<<< HEAD
+        let is_active;
+        let status_ma;
+
+        if (email_send === 'Yes' && expense < budget) {
+            is_active = '0';
+            status_ma = 5;
+        } else if (email_send === 'No' && expense < budget) {
+            is_active = '1';
+            status_ma = 5;
+        } else if (email_send === 'Yes' && expense > budget) {
+            is_active = '0';
+            status_ma = 6;
+        } else if (email_send === 'No' && expense > budget) {
+            is_active = '0';
+            status_ma = 6;
+        }
+=======
         let is_active = (email_send === 'Yes') ? '0' : '1';
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         console.log("4 in sga meet")
         logger.info("4 in sga meet")
 
         let insertQuery = `
+<<<<<<< HEAD
+            INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_code, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active,Manager_Approval_status,pay_advance)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        `;
+
+        pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_code, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '4',Attachment1.length > 0 ? Attachment1[0].filename : '', Attachment2.length > 0 ? Attachment2[0].filename : '', Attachment3.length > 0 ? Attachment3[0].filename : '', count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active,status_ma,additionalInfo], async (error, results) => {
+=======
             INSERT INTO Jacpl_ContractorMeet (emp_id, dateofmeet, dealer_code, dealer_firm_name, dealer_name, dealer_mobile, city, agenda, jacpl_attended, cond_by, outcome, vertical, meeting_gift, meet_type, event_photo1,event_photo2,event_photo3,attended_count,MobileAttended,expense,Budget,Jacpl_Attended_count,ADE_Attended_count,Budget_brief,creation_dtm,is_active)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?)
         `;
 
         pool.query(insertQuery, [emp_code, formattedDateForDatabase, dealer_code, dealer_firmname, dealer_name, mobile_number, city, agenda, numberemp, numberade, outcome, vertical, Meeting, '4', Attachment1.length > 0 ? Attachment1[0].filename : '', Attachment2.length > 0 ? Attachment2[0].filename : '', Attachment3.length > 0 ? Attachment3[0].filename : '', count, number, expense, budget, countemp, countade, concatenatedValue, currentDateAndTime, is_active], async (error, results) => {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             // console.log(results, 'results')
             if (error) {
                 console.log(error);
@@ -2937,8 +4301,90 @@ route.post('/sga_meet', upload.fields([
 
                 let rc_query = `SELECT rc_id FROM Jacpl_ContractorMeet ORDER BY rc_id DESC LIMIT 1;`
                 pool.query(rc_query, (err, rc_results) => {
+<<<<<<< HEAD
+                    if(err) throw err
+                    rc_id = rc_results[0].rc_id
+
+
+                    if (email_send === 'Yes' && expense > budget) {
+
+                        console.log('dono')
+                        const transporter = nodemailer.createTransport({
+                            service: 'gmail', 
+                            auth: {
+                                 user: 'vishal.manthanitsolutions@gmail.com',
+                                  pass: 'yjal dkyp ncld juil'
+                            }
+                        });
+                        
+                        const mailOption1 = {
+                            from: 'vishal.manthanitsolutions@gmail.com',
+                            to: 'yogeshmanthanitsolution@gmail.com',
+                            cc: 'ramkeshn311@gmail.com',
+                            subject: 'SGA Meet Budget Exceeds',
+                                html: `<p style="font-size: 13px;font-weight: 600;color: black;">Dear Team,<br><br>
+                                        Employee ID: ${emp_code} Name: ${emp_name} has punched ${count} Contractors/Dealers in SGA Meet and Expense amount greater than the allocated budget hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
+                                                     
+                                        BTL ID: ${rc_id}<br>
+                    
+                                        JACPL Employee Count: ${countemp}<br>
+                    
+                                        ADE Employee Count: ${countade}<br>
+                    
+                                        Budget Brife: ${concatenatedValue}<br>
+                    
+                                        BTL Advance Amount: ${additionalInfo}<br>
+                    
+                                        Allocated Budget: ${budget}<br>
+                    
+                                        Total Expense: ${expense}<br>
+                    
+                                      <br>
+                    
+                                        Note: BTL & Expense approve & Reject by ZSM/RSM only.<br>
+                    
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="center" style="border-radius: 5px; background-color: #1F7F4C;">
+                                                <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_APPROVE}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid white; display: inline-block;">Approve</a>
+                                            </td>
+                                    
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                    
+                                            <td align="center" style="border-radius: 5px; background-color: #cc0001;">
+                                            <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_REJECT}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color:#ffffff ; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid #cc0001; display: inline-block;">&nbsp;Reject&nbsp;</a>
+                                        </td>
+                                        </tr>
+                                    </table>
+                    
+                                <br><br>
+                                    
+                                Regards,
+                                </p>`
+                             };
+                    
+                                                  
+                     
+                    
+                        transporter.sendMail(mailOption1, (error, info) => {
+                            if (error) {
+                                return res.status(500).send(error.toString());
+                            }
+                            res.status(200).send('Email sent: ' + info.response);
+                        });
+
+                     
+                    }else {
+                        res.json({ message: `SGA detail successfully submitted  with ID ${rc_id}`, number: number });
+                        console.log("7 in sga meet")
+                        logger.info("7 in sga meet")
+                        
+                    } if (email_send === 'Yes') {
+=======
                     rc_id = rc_results[0].rc_id
                     if (email_send === 'Yes') {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         try {
                             let mailquery = `SELECT * FROM JUBILANT_LOGIN WHERE EMP_CODE=?`
                             pool.query(mailquery, [emp_code], async (error, results) => {
@@ -2957,6 +4403,29 @@ route.post('/sga_meet', upload.fields([
                                 let toAddresses = `${receiver1}`;
                                 let ccAddresses = `${cc1}`;
 
+<<<<<<< HEAD
+                                // let transporter = nodemailer.createTransport({
+                                //     host: 'jublcorp.mail.protection.outlook.com',
+                                //     port: 25,
+                                //     secure: false,
+                                //     auth: {
+                                //         user: 'g-smart.helpdesk@jubl.com',
+                                //         pass: 'jubl@123'
+                                //     },
+                                //     debug: true
+                                // });
+
+                                
+                        const transporter = nodemailer.createTransport({
+                            service: 'gmail', 
+                            auth: {
+                                 user: 'vishal.manthanitsolutions@gmail.com',
+                                  pass: 'yjal dkyp ncld juil'
+                            }
+                        });
+                                let mailOptions = {
+                                    from: 'vishal.manthanitsolutions@gmail.com',
+=======
                                 let transporter = nodemailer.createTransport({
                                     host: 'jublcorp.mail.protection.outlook.com',
                                     port: 25,
@@ -2970,6 +4439,7 @@ route.post('/sga_meet', upload.fields([
 
                                 let mailOptions = {
                                     from: 'g-smart.helpdesk@jubl.com',
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     to: toAddresses,
                                     cc: ccAddresses,
                                     subject: 'SGA Meet Approval',
@@ -2980,8 +4450,28 @@ route.post('/sga_meet', upload.fields([
                                 Employee ID: ${emp_code} Name: ${emp_name} has punched ${count} contractors in SGA Meet hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
                                  
                                 BTL ID: ${rc_id}<br>
+<<<<<<< HEAD
+                    
+                                JACPL Employee Count: ${countemp}<br>
+                    
+                             ADE Employee Count: ${countade}<br>
+                    
+                                                    Budget Brife: ${concatenatedValue}<br>
+                    
+                                                    BTL Advance Amount: ${additionalInfo}<br>
+                    
+                                                    Allocated Budget: ${budget}<br>
+                    
+                                                    Total Expense: ${expense}<br>
+
+
+                                                     <br>
+                    
+                                        Note: BTL & Expense approve & Reject by BM/ASM/TM/BDM/TSS only.<br>
+=======
                                 Allocated Budget: ${budget}<br>
                                 Total Expence: ${expense}<br><br>
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
                                 <table border="0" cellspacing="0" cellpadding="0">
                                 <tr>
@@ -3007,7 +4497,11 @@ route.post('/sga_meet', upload.fields([
                                 try {
                                     let info = await transporter.sendMail(mailOptions);
                                     res.json({ message: `Email sent for approval with ID ${rc_id}`, number: number });
+<<<<<<< HEAD
+                                  
+=======
                                     // console.log('Email sent: ', info.messageId);
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     console.log("6 in sga meet")
                                     logger.info("6 in sga meet")
                                     return info;
@@ -3016,7 +4510,14 @@ route.post('/sga_meet', upload.fields([
                                     logger.error(error + ' in nodemailer')
                                     throw error;
                                 }
+<<<<<<< HEAD
+
+                               
                             })
+                           
+=======
+                            })
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
                         } catch (emailError) {
                             console.log(emailError);
@@ -3028,8 +4529,89 @@ route.post('/sga_meet', upload.fields([
                         console.log("7 in sga meet")
                         logger.info("7 in sga meet")
                     }
+<<<<<<< HEAD
+                  
+                    if (expense > budget) {
+
+                       
+                        const transporter = nodemailer.createTransport({
+                            service: 'gmail', 
+                            auth: {
+                                 user: 'vishal.manthanitsolutions@gmail.com',
+                                  pass: 'yjal dkyp ncld juil'
+                            }
+                        });
+                        
+                        const mailOption1 = {
+                            from: 'vishal.manthanitsolutions@gmail.com',
+                            to: 'yogeshmanthanitsolution@gmail.com',
+                            cc: 'ramkeshn311@gmail.com',
+                            subject: 'SGA Meet Budget Exceeds',
+                                html: `<p style="font-size: 13px;font-weight: 600;color: black;">Dear Team,<br><br>
+                                        Employee ID: ${emp_code} Name: ${emp_name} has punched ${count} Contractors/Dealers in SGA Meet and Expense amount greater than the allocated budget hence this approval mail is coming to highlight the cases, please verify and approve or reject the case for further action from commercial team.<br><br>
+                                                     
+                                        BTL ID: ${rc_id}<br>
+                    
+                                        JACPL Employee Count: ${countemp}<br>
+                    
+                                        ADE Employee Count: ${countade}<br>
+                    
+                                        Budget Brife: ${concatenatedValue}<br>
+                    
+                                        BTL Advance Amount: ${additionalInfo}<br>
+                    
+                                        Allocated Budget: ${budget}<br>
+                    
+                                        Total Expense: ${expense}<br>
+                    
+                                      <br>
+                    
+                                        Note: BTL & Expense approve & Reject by ZSM/RSM only.<br>
+                    
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td align="center" style="border-radius: 5px; background-color: #1F7F4C;">
+                                                <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_APPROVE}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid white; display: inline-block;">Approve</a>
+                                            </td>
+                                    
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                    
+                                            <td align="center" style="border-radius: 5px; background-color: #cc0001;">
+                                            <a rel="noopener" target="_blank" href="${process.env.INSHOP_MAIL_REJECT}/${rc_id}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; color:#ffffff ; font-weight: 600; text-decoration: none;border-radius: 5px; padding: 8px 15px; border: 1px solid #cc0001; display: inline-block;">&nbsp;Reject&nbsp;</a>
+                                        </td>
+                                        </tr>
+                                    </table>
+                    
+                                <br><br>
+                                    
+                                Regards,
+                                </p>`
+                             };
+                    
+                                                  
+                     
+                    
+                        transporter.sendMail(mailOption1, (error, info) => {
+                            if (error) {
+                                return res.status(500).send(error.toString());
+                            }
+                            res.status(200).send('Email sent: ' + info.response);
+                        });
+
+                     
+                    }
+
+                    
+               
                 })
 
+                
+
+=======
+                })
+
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             }
 
             console.log("8 in sga meet")
@@ -3039,6 +4621,10 @@ route.post('/sga_meet', upload.fields([
 
 
             pool.query(selectQuery, function (error, results, fields) {
+<<<<<<< HEAD
+                console.log(results,'results')
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 if (error) {
                     console.log(error);
                     logger.error(error)
@@ -3047,6 +4633,36 @@ route.post('/sga_meet', upload.fields([
 
                 for (let i = 0; i < results.length; i++) {
                     let rc_id = results[i].rc_id;
+<<<<<<< HEAD
+                    let creation_dtm = results[i].creation_dtm
+                    let mobile_numbers = results[i].MobileAttended;
+                    let values = mobile_numbers.split(',');
+
+                  
+                    let numbersArray = values.map(item => {
+                        let pair = item.split(':');
+                        return { mobile: pair[0].trim(), gift: pair[1].trim() }; 
+                    });
+
+                 
+
+                    
+                    numbersArray.forEach(function (userData) {
+                        let insertQuery = `INSERT INTO Jacpl_ContractorMeetDetails (rc_id, Inf_Mobile, creation_dtm, gift_name) VALUES (?,?,?,?)`;
+                        pool.query(insertQuery, [rc_id, userData.mobile, creation_dtm, userData.gift], function (insertError, insertResults) {
+                           
+                            if (insertError) {
+                                console.log(insertError);
+                                logger.error(insertError);
+                            } else {
+                                console.log("Insert successful for rc_id:", rc_id);
+                                logger.info("Insert successful for rc_id:", rc_id);
+                            }
+                        });
+                    });
+            
+                    
+=======
                     let mobile_numbers = results[i].MobileAttended;
                     let creation_dtm = results[i].creation_dtm
 
@@ -3065,6 +4681,7 @@ route.post('/sga_meet', upload.fields([
                             }
                         });
                     })
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 }
             });
         });
@@ -3080,7 +4697,10 @@ route.post('/sga_meet', upload.fields([
 
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 route.get('/add_new_iclub', authenticate, function (req, res) {
     try {
         let emp = req.session.employeeId
@@ -3301,6 +4921,57 @@ route.post('/upload_ageing_report', async (req, res) => {
 
 
 
+<<<<<<< HEAD
+// route.get('/sga_mail_approve/:rc_id/:REP_MANAGER_NAME', async function (req, res) {
+//     try {
+//         const date = new Date();
+//         const day = date.getDate();
+//         const month = date.getMonth() + 1;
+//         const year = date.getFullYear();
+//         const currentDate = `${year}-${month}-${day}`;
+
+//         const rc_id = req.params.rc_id;
+//         const REP_MANAGER_NAME = req.params.REP_MANAGER_NAME;
+
+//         const pool = await dbConnection();
+
+//         const selectQuery = `SELECT * FROM Jacpl_ContractorMeet WHERE rc_id = ?`;
+//         pool.query(selectQuery, [rc_id], (selectError, selectResults) => {
+//             console.log(selectResults,'selectResults')
+//             if (selectError) {
+//                 console.error(selectError);
+//                 res.status(500).json({ error: 'Internal Server Error' });
+//             } else if (selectResults.length > 0) {
+//                 const isActive = selectResults[0].is_active;
+//                 if (isActive === 0) {
+//                     const updateQuery = `UPDATE Jacpl_ContractorMeet SET is_active = 1, Approved_by = ?, Manager_Approval_date = ? WHERE rc_id = ?`;
+//                     pool.query(updateQuery, [REP_MANAGER_NAME, currentDate, rc_id], (updateError, updateResults) => {
+//                         console.log(updateResults,'updateResults')
+//                         if (updateError) {
+//                             console.error(updateError);
+//                             res.status(500).json({ error: 'Error updating record status' });
+//                         } else {
+//                             res.json({ message: `SGA Meet with ID ${rc_id} approved successfully` });
+//                         }
+//                     });
+//                 } else if (isActive === 1) {
+//                     res.json({ message: `SGA Meet with ID ${rc_id} has already been approved by ${REP_MANAGER_NAME}` });
+//                 } else if (isActive === 4) {
+//                     res.json({ message: `SGA Meet with ID ${rc_id} has already been rejected by ${REP_MANAGER_NAME}` });
+//                 }
+//             } else {
+//                 res.json({ message: `No record found for SGA Meet with ID ${rc_id}` });
+//             }
+//         });
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// });
+
+
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 route.get('/sga_mail_approve/:rc_id/:REP_MANAGER_NAME', async function (req, res) {
     try {
         const date = new Date();
@@ -3349,7 +5020,10 @@ route.get('/sga_mail_approve/:rc_id/:REP_MANAGER_NAME', async function (req, res
 
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 route.get('/sga_mail_reject/:rc_id/:REP_MANAGER_NAME', async function (req, res) {
     try {
         const date = new Date();
@@ -3681,6 +5355,26 @@ route.get('/dealer_mail_reject/:rc_id/:REP_MANAGER_NAME', async function (req, r
 
 
 
+<<<<<<< HEAD
+route.get('/manager_dashboard', authenticate, async (req, res) => {
+
+    const pool = await dbConnection();
+    let desi =req.session.designation;
+
+    let sql = `SELECT action_url FROM Jacpl_master where action_value = ? `;
+    pool.query(sql,[desi],(err, result) => {
+
+     console.log(result,'sdsdiugfi')
+        if(err){
+            console.log(err)
+        }
+
+
+
+ 
+    res.render('manager_dashboard',{result:result})
+})
+=======
 
 
 
@@ -3696,6 +5390,7 @@ route.get('/dealer_mail_reject/:rc_id/:REP_MANAGER_NAME', async function (req, r
 
 route.get('/manager_dashboard', authenticate, (req, res) => {
     res.render('manager_dashboard')
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 })
 route.get('/pending_approval', authenticate, (req, res) => {
     res.render('pending_approval')
@@ -3909,10 +5604,17 @@ route.post('/dealer_check_dealer', async (req, res) => {
 
 
 
+<<<<<<< HEAD
+route.get('/jacpl_contractor_meet_details_api', async (req, res) => {
+    try {
+        const pool = await dbConnection();
+        const query = `SELECT Inf_Mobile FROM Jacpl_ContractorMeetDetails WHERE is_active IN ('1')`;
+=======
 route.post('/jacpl_contractor_meet_details_api', async (req, res) => {
     try {
         const pool = await dbConnection();
         const query = `SELECT Inf_Mobile FROM Jacpl_ContractorMeetDetails`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         const results = await new Promise((resolve, reject) => {
             pool.query(query, (err, results) => {
@@ -3924,7 +5626,11 @@ route.post('/jacpl_contractor_meet_details_api', async (req, res) => {
                 }
             });
         });
+<<<<<<< HEAD
+//console.log(results.length)
+=======
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         for (let i = 0; i < results.length; i++) {
             const mobileNumber = results[i].Inf_Mobile;
 
@@ -3940,6 +5646,26 @@ route.post('/jacpl_contractor_meet_details_api', async (req, res) => {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'Cookie': 'JSESSIONID=8B78A55B1CE2F30F3A7697E5E8D42639'
                 },
+<<<<<<< HEAD
+                data: data,
+		timeout: 15000
+            };
+//console.log('02')
+            axios.request(config)
+                .then((response) => {
+                    // console.log(JSON.stringify(response.data));
+
+                    const responseData = response.data;
+
+                    let is_active = responseData.userStatus === 'ACTIVE' ? 2 : 0;
+
+                    const updateQuery = `UPDATE Jacpl_ContractorMeetDetails SET Inf_Name = ?, Inf_Type = ?, Inf_City = ?, Inf_AC_Points = ?, Inf_Status = ?, is_active = ? WHERE Inf_Mobile = ?`;
+                    //  console.log(updateQuery)
+			pool.query(updateQuery, [responseData.name, responseData.influencerType, responseData.city, responseData.totalPoint, responseData.userStatus, is_active, mobileNumber], (err, results) => {
+                        if (err) throw err;
+                        logger.error(err)
+                      // console.log(results,'03')
+=======
                 data: data
             };
 
@@ -3956,6 +5682,7 @@ route.post('/jacpl_contractor_meet_details_api', async (req, res) => {
                         if (err) throw err;
                         logger.error(err)
                         // console.log(results)
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     });
                 })
                 .catch((error) => {
@@ -3963,7 +5690,11 @@ route.post('/jacpl_contractor_meet_details_api', async (req, res) => {
                 });
         }
 
+<<<<<<< HEAD
+	    res.json({ message: 'Update process initiated for all mobile numbers' });
+=======
         res.json({ message: 'Update process initiated for all mobile numbers' });
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     } catch (err) {
         console.error('Database connection error:', err);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -3971,6 +5702,21 @@ route.post('/jacpl_contractor_meet_details_api', async (req, res) => {
 });
 
 
+<<<<<<< HEAD
+//const cron = require('node-cron');
+
+//cron.schedule('*/30 * * * *', async () => {
+//    try {
+//        const response = await axios.post('http://localhost:8081/jacpl_contractor_meet_details_api');
+//        logger.log(response.data);
+//    } catch (error) {
+//        logger.error('Error occurred:', error);
+//    }
+//}, {
+//    scheduled: true,
+//    timezone: 'Asia/Kolkata'
+//});
+=======
 
 
 
@@ -3991,6 +5737,7 @@ cron.schedule('*/70 * * * *', async () => {
     scheduled: true,
     timezone: 'Asia/Kolkata'
 });
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 
 
@@ -4017,5 +5764,343 @@ route.post('/is_active_status', async (req, res) => {
 });
 
 
+<<<<<<< HEAD
+route.get("/get_data_sga_meet", async (req, res) => {
+    try {
+        const vertical = req.query.vertical; 
+        const ho_gift = req.query.ho_gift;
+       
+        let settingKey = 'sga-with-gift';
+        let settingKey1 = 'sga-without-gift';
+
+        const pool = await dbConnection();
+
+        const sql = `SELECT Gift_Value,Food_Value,SETTING_VALUE FROM MEET_BUDGET WHERE vertical = ? AND (SETTING_KEY = ? OR SETTING_KEY = ?) AND BACKEND_TITLE = ?`;
+        pool.query(sql, [vertical,settingKey,settingKey1,ho_gift], (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send({ success: false, message: 'Database query failed' });
+            } else {
+                console.log(result,'12');
+                res.send({ success: true, data: result });
+            }
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ success: false, message: 'Database connection failed' });
+    }
+});
+
+
+route.get("/get_data", async (req, res) => {
+    try {
+        const vertical = req.query.vertical; 
+        const ho_gift = req.query.ho_gift;
+       
+        let settingKey = 'ContractorMeet-with-gift';
+        let settingKey1 = 'ContractorMeet-without-gift';
+
+        const pool = await dbConnection();
+
+        const sql = `SELECT Gift_Value,Food_Value,SETTING_VALUE FROM MEET_BUDGET WHERE vertical = ? AND (SETTING_KEY = ? OR SETTING_KEY = ?) AND BACKEND_TITLE = ?`;
+        pool.query(sql, [vertical,settingKey,settingKey1,ho_gift], (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send({ success: false, message: 'Database query failed' });
+            } else {
+                console.log(result,'12');
+                res.send({ success: true, data: result });
+            }
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ success: false, message: 'Database connection failed' });
+    }
+});
+
+
+route.get("/get_data_inshop", async (req, res) => {
+    try {
+        const vertical = req.query.vertical; 
+        const ho_gift = req.query.ho_gift;
+       
+        let settingKey = 'Inshop-with-gift';
+        let settingKey1 = 'Inshop-without-gift';
+
+        const pool = await dbConnection();
+
+        const sql = `SELECT Gift_Value,Food_Value,SETTING_VALUE FROM MEET_BUDGET WHERE vertical = ? AND (SETTING_KEY = ? OR SETTING_KEY = ?) AND BACKEND_TITLE = ?`;
+        pool.query(sql, [vertical,settingKey,settingKey1,ho_gift], (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send({ success: false, message: 'Database query failed' });
+            } else {
+                console.log(result,'12');
+                res.send({ success: true, data: result });
+            }
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ success: false, message: 'Database connection failed' });
+    }
+});
+
+
+route.get("/get_data_dealer_meet", async (req, res) => {
+    try {
+        const vertical = req.query.vertical; 
+        const ho_gift = req.query.ho_gift;
+       
+        let settingKey = 'DealerMeet-with-gift';
+        let settingKey1 = 'DealerMeet-without-gift';
+
+        const pool = await dbConnection();
+
+        const sql = `SELECT Gift_Value,Food_Value,SETTING_VALUE FROM MEET_BUDGET WHERE vertical = ? AND (SETTING_KEY = ? OR SETTING_KEY = ?) AND BACKEND_TITLE = ?`;
+        pool.query(sql, [vertical,settingKey,settingKey1,ho_gift], (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send({ success: false, message: 'Database query failed' });
+            } else {
+               
+                res.send({ success: true, data: result });
+            }
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ success: false, message: 'Database connection failed' });
+    }
+});
+
+
+route.get('/gift-options', async (req, res) => {
+
+    const pool = await dbConnection();
+    const query = 'SELECT gift_name FROM jacpl_meet_gifts'; 
+
+    pool.query(query, (err, results) => {
+        if (err) {
+            console.error('Error executing query:', err);
+            res.status(500).send('Error fetching data');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+
+
+route.post('/update_voucher',async (req, res) => {
+    const { rc_id, voucher_no } = req.body;
+    
+  
+    let pool = await dbConnection();
+    const sql = 'UPDATE Jacpl_ContractorMeet SET voucher_no= ? WHERE rc_id= ?';
+    pool.query(sql, [voucher_no, rc_id], (err, result) => {
+        console.log(result)
+      if (err) {
+        console.error('Error executing query', err);
+        res.status(500).json({ success: false, message: 'Database query failed' });
+        return;
+      }
+      if (result.affectedRows > 0) {
+        res.json({ success: true, updatedVoucherNo: voucher_no });
+      } else {
+        res.json({ success: false, message: 'Record not found' });
+      }
+    });
+  });
+
+
+  route.get('/attend_approvel',authenticate,async (req,res) => {
+
+    try {
+        const emp = req.session.employeeId;
+        const pool = await dbConnection();
+
+        const query = `
+            SELECT 
+                jc.*, 
+                DATE_FORMAT(jc.DateOfMeet, '%d-%m-%Y') AS formattedDate,
+                jl.EMP_NAME, 
+                jl.REP_MANAGER_ID, 
+                jl.REP_MANAGER_NAME, 
+                jl.BRANCH, 
+                jl.ZONE 
+            FROM 
+                Jacpl_ContractorMeet jc 
+                INNER JOIN JUBILANT_LOGIN jl ON jc.emp_id = jl.EMP_CODE
+            WHERE 
+                jc.is_active = 1 AND
+                jl.REP_MANAGER_ID = ?
+            ORDER BY 
+                jc.rc_id DESC 
+            LIMIT 
+                20`;
+
+        pool.query(query,[emp], (err, results) => {
+            console.log(results,'results')
+            if (err) {
+                console.error(err);
+                logger.error(`Error occurred in GET view_pending_btl for emp_code ${emp}: ${err}`);
+                return res.status(500).send('Internal Server Error');
+            }
+
+            results.forEach(result => {
+                result.DateOfMeet = result.formattedDate;
+                delete result.formattedDate;
+            });
+
+            res.render('attend_approvel', { data: results });
+            logger.info(`GET view_pending_btl accessed for emp_code ${emp}`);
+        });
+
+    } catch (error) {
+        console.error(error);
+        logger.error(`Error occurred in GET view_pending_btl for emp_code ${emp}: ${error}`);
+        res.status(500).send('Internal Server Error');
+    }
+
+
+})
+route.get('/extra_expense_approval',authenticate,async (req,res) => {
+
+    try {
+        const emp = req.session.employeeId;
+        const pool = await dbConnection();
+
+        const query = `
+            SELECT 
+                jc.*, 
+                DATE_FORMAT(jc.DateOfMeet, '%d-%m-%Y') AS formattedDate,
+                jl.EMP_NAME, 
+                jl.REP_MANAGER_ID, 
+                jl.REP_MANAGER_NAME, 
+                jl.BRANCH, 
+                jl.ZONE 
+            FROM 
+                Jacpl_ContractorMeet jc 
+                INNER JOIN JUBILANT_LOGIN jl ON jc.emp_id = jl.EMP_CODE
+            WHERE 
+                jc.is_active = 1 AND 
+                jl.RSM_ZSM_ID = ?
+            ORDER BY 
+                jc.rc_id DESC 
+            LIMIT 
+                20`;
+
+        pool.query(query,[emp], (err, results) => {
+            if (err) {
+                console.error(err);
+                logger.error(`Error occurred in GET view_pending_btl for emp_code ${emp}: ${err}`);
+                return res.status(500).send('Internal Server Error');
+            }
+
+            results.forEach(result => {
+                result.DateOfMeet = result.formattedDate;
+                delete result.formattedDate;
+            });
+
+            res.render('extra_expence_approvel', { data: results });
+            logger.info(`GET view_pending_btl accessed for emp_code ${emp}`);
+        });
+
+    } catch (error) {
+        console.error(error);
+        logger.error(`Error occurred in GET view_pending_btl for emp_code ${emp}: ${error}`);
+        res.status(500).send('Internal Server Error');
+    }
+
+})
+
+
+ 
+
+route.post('/expance_approved', async (req, res) => {
+    try {
+        const rc_id = req.body.rc_id;
+        const emp_name = req.session.emp_Name;
+
+        const pool = await dbConnection();
+
+        // Get the action status
+        let statusQuery = `SELECT action_status FROM meet_status WHERE action_value ='Expense Approved'`;
+        pool.query(statusQuery, (err, result1) => {
+            console.log('Result from status query:', result1); 
+            if (err) {
+                console.error('Error fetching action status:', err);
+                return res.status(500).json({ error: 'Database error fetching action status' });
+            }
+
+            if (result1.length === 0) {
+                return res.status(404).json({ error: 'Action status not found' });
+            }
+
+            let status = result1[0].action_status;
+            console.log('Action status:', status);
+
+            let updateQuery = `UPDATE Jacpl_ContractorMeet SET Manager_Approval_date = ?, Manager_Approval_status = ?, Approved_by = ? WHERE rc_id = ?`;
+            pool.query(updateQuery, [getCurrentDateAndTime(), status, emp_name, rc_id], (error, result) => {
+                console.log('Result from update query:', result); 
+                if (error) {
+                    res.send('error')
+                    console.log('111111')
+                }
+                else{
+                    res.send('success')
+                    console.log('222222')
+                }
+
+             
+            });
+        });
+    } catch (error) {
+        console.error('Database connection error:', error);
+        res.status(500).json({ error: 'Database connection error' });
+    }
+});
+
+route.post('/expance_reject', async (req, res) => {
+    try {
+        const rc_id = req.body.rc_id;
+        const emp_name = req.session.emp_Name;
+        const pool = await dbConnection();
+    
+        let statusQuery = `SELECT action_status FROM meet_status WHERE action_value ='Expense Rejected'`;
+        pool.query(statusQuery, (err, result1) => {
+            console.log('Result from status query:', result1); 
+            if (err) {
+                console.error('Error fetching action status:', err);
+                return res.status(500).json({ error: 'Database error fetching action status' });
+            }
+
+            if (result1.length === 0) {
+                return res.status(404).json({ error: 'Action status not found' });
+            }
+
+            let status = result1[0].action_status;
+            console.log('Action status:', status);
+
+            let updateQuery = `UPDATE Jacpl_ContractorMeet SET Manager_Approval_date = ?, Manager_Approval_status = ?, Approved_by = ? WHERE rc_id = ?`;
+            pool.query(updateQuery, [getCurrentDateAndTime(), status, emp_name, rc_id], (error, result) => {
+                console.log('Result from update query:', result); 
+                if (error) {
+                  res.send('error')
+                }
+
+               res.send('success')
+            });
+        });
+    } catch (error) {
+        console.error('Database connection error:', error);
+        res.status(500).json({ error: 'Database connection error' });
+    }
+});
+
+
 
 module.exports = route;
+=======
+
+module.exports = route;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730

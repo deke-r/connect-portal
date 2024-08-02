@@ -30,7 +30,11 @@
 
           
 
+<<<<<<< HEAD
+            <form action="/in-shope" method="POST" enctype="multipart/form-data" id="paymentForm">
+=======
             <form action="/in-shope" method="POST" enctype="multipart/form-data">
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                 <input type="hidden" name="email_to_send" id="email_to_send">
                 <input type="hidden" name="countemp" id="countInputemp">
                 <input type="hidden" name="count" id="countInput">
@@ -44,7 +48,11 @@
                     <div class="col-md-6 my_cols">
                         <h6 class="fw_bold f_13 ms-1 ">Select Vertical:</h6>
                         <select name="vertical" class="form-select border-leftb box_sdw11 f_13 fw_600"
+<<<<<<< HEAD
+                            aria-label="Default select example" id="vertical_1" required>
+=======
                             aria-label="Default select example" required>
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                             <option selected disabled>Select</option>
                             <% for (var i=0; i < data.length; i++) { %>
                                 <option value="<%= data[i].vertical %>">
@@ -78,6 +86,19 @@
                     <div class="col-md-4 my_cols">
                         <h6 class="fw_bold f_13 ms-1">Select Meeting Gift Details:</h6>
                         <select class="form-select border-leftb box_sdw11 f_13 fw_600 onchange" id="mySelect"
+<<<<<<< HEAD
+                        aria-label="Default select example" name="Meeting" required>
+                        <option selected disabled>Select Meeting Gift Details</option>
+                        <% for (var i=0; i < inshopData.length; i++) { %>
+                            <option value="<%= inshopData[i].BACKEND_TITLE %>">
+                                <%= inshopData[i].UI_TITLE %>
+
+                            </option>
+                            <% } %>
+
+
+                    </select>
+=======
                             aria-label="Default select example" name="Meeting" required>
                             <option selected disabled>Select Meeting Gift Details</option>
                             <% for (var i=0; i < inshopData.length; i++) { %>
@@ -90,6 +111,7 @@
 
                         </select>
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         <input type="hidden" value="<%= inshopData[0].BACKEND_TITLE %>" class="" id="ady">
                         
 
@@ -120,17 +142,29 @@
                     <div class="col-md-4 my_cols">
                         <h6 class="fw_bold f_13 ms-1">Upload Event Photo (Mandatory):</h6>
                         <input type="file" name="Attachment1"
+<<<<<<< HEAD
+                            class="form-control border-leftb box_sdw11 f_13 fw_600" accept="image/*" required />
+=======
                             class="form-control border-leftb box_sdw11 f_13 fw_600" required />
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     </div>
                     <div class="col-md-4 my_cols">
                         <h6 class="fw_bold f_13 ms-1">Upload Event Hotel/Food Bills in one file (Mandatory):</h6>
                         <input type="file" name="Attachment2"
+<<<<<<< HEAD
+                            class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="" accept="image/*" required>
+=======
                             class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="" required>
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     </div>
                     <div class="col-md-4 my_cols">
                         <h6 class="fw_bold f_13 ms-1">Upload Event Gift Bills <span id="mandatory"></span>:</h6>
                         <input type="file" name="Attachment3"
+<<<<<<< HEAD
+                            class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="" id="rqr_att" accept="image/*">
+=======
                             class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="" id="rqr_att">
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         <h6 class="f_11 fw_bold ms-1 mt-1 displaynun">&nbsp;</h6>
                     </div>
                 </div>
@@ -190,7 +224,17 @@
 
 
                     </div>
+<<<<<<< HEAD
+                    <div class="container">
+
+                        <div class="row d-flex justify-content-end">
+                            <div class="col-md-4 my_cols " id="newinput"></div>
+                    
+                        </div>
+                    </div>
+=======
                    
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                    
 
 
@@ -260,6 +304,79 @@
                
 
 
+<<<<<<< HEAD
+                <div class="container-fluid parentbox my-4">
+                    <div class="container-fluid newmp border-t  childbox bg-light">
+                        <div class="row bg_b border-t">
+                            <h5 class="text-light text-center f_14 mt-2">Budget Details</h5>
+                        </div>
+                
+                        <div class="row mt-2 mb-2 pb-4">
+                
+                
+                            <div class="col-md-4 my_cols">
+                                <h6 class="fw_bold f_13 ms-1">Advance Payment By HO</h6>
+                                <select id="advancePaymentSelect" class="form-select border-leftb box_sdw11 f_13 fw_600" required>
+                                    <option selected disabled>Select</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+
+                            <!-- <div class="col-md-4 my_cols">
+                                <h6 class="fw-bold f-13 ms-1">Advance Payment By HO</h6>
+                                <select id="advancePaymentSelect" class="form-select border-leftb box_sdw11 f-13 fw-600 onchange" required>
+                                    <option selected disabled>Select</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div> -->
+                            
+                
+                            <div class="col-md-4 my_cols">
+                                <h6 class="fw_bold f_13 ms-1" id="valuetotal"></h6>
+                                <input type="text" class="form-control bg_lg border-leftb box_sdw11 f_13 fw_600" id="total" name=""
+                                    placeholder="" disabled>
+                
+                            </div>
+                            <input type="hidden" name="budget" id="cal">
+                            <div class="col-md-4 my_cols">
+                                <h6 class="fw_bold f_13 ms-1">Total incurred expense for meet (Rs.):</h6>
+                                <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" name="expense" placeholder=""
+                                    required>
+                
+                            </div>
+                        </div>
+                
+                        <div class="row mt-2 mb-2 pb-4">
+                
+                            <div class="col-md-4 my_cols mt-2" id="additionalInputContainer">
+                            </div>
+                
+                
+                            <div class="col-md-4 my_cols">
+                            </div>
+                            <div class="col-md-4 d-flex align-items-center   my_cols">
+                                <div class="container-fluid d-flex justify-content-between ">
+                                    <button class="btn bg_b mt-5 text-nowrap text-light f_13 fw_600 submitExpense email" type="sumbit"
+                                        id="sub_btn">Submit Details</button><br>
+                                    <button class="btn bg_r mt-5 text-light f_13 fw_600" type="button" id="back">Back</button>
+                                </div>
+                            </div>
+                        </div>
+                
+                
+                        <input type="hidden" id="additionalInfo" class="form-control mt-3" placeholder="Captured Value" readonly>
+                        <div class="form-group mt-3 d-none">
+                            <label for="mygift">Selected Gift:</label>
+                            <input type="text" class="form-control" id="mygift" readonly>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+
+=======
     <div class="container-fluid parentbox my-4">
             <div class="container-fluid newmp border-t  childbox bg-light">
                         <div class="row bg_b border-t">
@@ -311,6 +428,7 @@
 
     </div>
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     </div>
 </div>
 
@@ -329,4 +447,8 @@
 
 
 <%- include('partials/footer.ejs') %>
+<<<<<<< HEAD
 </body>
+=======
+</body>
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730

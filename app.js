@@ -36,7 +36,11 @@ app.set('view engine', 'ejs');
 //     console.log("Server is running on 8081");
 // });
 
+<<<<<<< HEAD
+const port = process.env.PORT || 8080;
+=======
 const port = process.env.PORT || 8082;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 try {
     app.listen(port, () => {
         console.log(`Server is running on port ${port}`);

@@ -1,0 +1,180 @@
+2024-07-09T04:22:50.813Z info: Accessed GET in login 
+2024-07-09T04:22:53.477Z info: GET admin_dashboard accessed 16008288
+2024-07-09T04:22:53.580Z error: null
+2024-07-09T04:39:01.242Z info: Accessed GET in login 
+2024-07-09T04:39:02.975Z info: GET admin_dashboard accessed 16008288
+2024-07-09T04:39:03.097Z error: null
+2024-07-09T04:39:04.552Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T04:40:38.548Z info: GET admin_dashboard accessed 16008288
+2024-07-09T04:40:40.279Z info: Accessed GET in eventreport 16008288
+2024-07-09T04:42:41.597Z info: GET admin_dashboard accessed 16008288
+2024-07-09T04:42:48.413Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T04:43:39.566Z info: Starting GET manage_pending_btl 16009550
+2024-07-09T04:43:39.940Z info: Accessed GET manage_pending_btl 16009550
+2024-07-09T04:43:52.262Z info: Starting GET manage_pending_btl 16009550
+2024-07-09T04:43:52.596Z info: Accessed GET manage_pending_btl 16009550
+2024-07-09T04:51:17.574Z info: Accessed GET in login 
+2024-07-09T04:51:19.826Z info: GET admin_dashboard accessed 16008288
+2024-07-09T04:51:19.941Z error: null
+2024-07-09T04:51:22.338Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T04:51:23.643Z info: Starting GET manage_pending_btl 16009550
+2024-07-09T04:51:24.011Z info: Accessed GET manage_pending_btl 16009550
+2024-07-09T04:55:32.785Z info: Accessed GET in login 
+2024-07-09T04:55:34.664Z info: GET admin_dashboard accessed 16008288
+2024-07-09T04:55:34.779Z error: null
+2024-07-09T04:55:36.781Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T04:55:36.886Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T04:55:38.050Z info: Starting GET manage_pending_btl 16009550
+2024-07-09T04:55:38.498Z info: Accessed GET manage_pending_btl 16009550
+2024-07-09T04:57:38.569Z info: Starting GET manage_pending_btl 16009550
+2024-07-09T04:57:39.011Z info: Accessed GET manage_pending_btl 16009550
+2024-07-09T04:58:06.459Z info: Starting GET manage_pending_btl 16009550
+2024-07-09T04:58:07.017Z info: Accessed GET manage_pending_btl 16009550
+2024-07-09T04:59:31.813Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:01:31.203Z info: Accessed GET in view_rejected_approved_btl 16008288
+2024-07-09T05:01:42.952Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-09T05:01:43.089Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-09T05:04:13.182Z info: Accessed GET in login 
+2024-07-09T05:04:14.999Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:04:15.119Z error: null
+2024-07-09T05:04:16.274Z info: Accessed GET in view_rejected_approved_btl 16008288
+2024-07-09T05:04:27.711Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-09T05:04:27.862Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-09T05:04:33.567Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-09T05:04:33.720Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-09T05:04:35.533Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:04:36.921Z info: Accessed GET in view_rejected_approved_btl 16008288
+2024-07-09T05:04:44.866Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-09T05:04:44.989Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-09T05:04:46.987Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-09T05:04:47.128Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-09T05:04:47.605Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-09T05:04:47.756Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-09T05:05:27.878Z info: Accessed GET in login 
+2024-07-09T05:05:29.454Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:05:29.571Z error: null
+2024-07-09T05:05:50.136Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T05:05:51.447Z info: Starting GET manage_pending_btl 16009550
+2024-07-09T05:05:51.785Z info: Accessed GET manage_pending_btl 16009550
+2024-07-09T05:08:14.754Z info: Accessed GET in login 
+2024-07-09T05:08:16.883Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:08:16.996Z error: null
+2024-07-09T05:13:31.203Z info: 1 in sga meet
+2024-07-09T05:13:31.204Z info: 2 in sga meet
+2024-07-09T05:13:31.209Z info: 3 in sga meet
+2024-07-09T05:13:31.288Z info: 4 in sga meet
+2024-07-09T05:13:31.346Z info: 5 in sga meet
+2024-07-09T05:13:31.349Z info: 8 in sga meet
+2024-07-09T05:13:31.505Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.510Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.514Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.547Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.550Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.553Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.559Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.564Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.568Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.571Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.574Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.581Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.613Z error: null
+2024-07-09T05:13:31.681Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.684Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.686Z info: Insert successful for rc_id:
+2024-07-09T05:13:31.695Z info: Insert successful for rc_id:
+2024-07-09T05:13:32.751Z error: Error: Can't send mail - all recipients were rejected: 550 5.7.1 Service unavailable, Client host [43.248.243.200] blocked using Spamhaus. To request removal from this list see https://www.spamhaus.org/query/ip/43.248.243.200 AS(1450) [MA1PEPF00007262.INDPRD01.PROD.OUTLOOK.COM 2024-07-09T05:13:32.295Z 08DC9E0C732450D3] in nodemailer
+2024-07-09T05:15:03.728Z info: Accessed GET in login 
+2024-07-09T05:15:07.763Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:15:07.882Z error: null
+2024-07-09T05:19:25.452Z info: 1 in sga meet
+2024-07-09T05:19:25.454Z info: 2 in sga meet
+2024-07-09T05:19:25.461Z info: 3 in sga meet
+2024-07-09T05:19:25.542Z info: 4 in sga meet
+2024-07-09T05:19:25.599Z info: 5 in sga meet
+2024-07-09T05:19:25.600Z info: 8 in sga meet
+2024-07-09T05:19:25.747Z error: null
+2024-07-09T05:19:25.815Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.828Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.860Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.866Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.870Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.874Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.877Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.880Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.882Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.884Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.886Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.889Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.959Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.960Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.985Z info: Insert successful for rc_id:
+2024-07-09T05:19:25.988Z info: Insert successful for rc_id:
+2024-07-09T05:19:29.548Z info: 6 in sga meet
+2024-07-09T05:19:42.224Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:19:47.995Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T05:20:49.638Z info: POST filter_view_pending_btl accessed 
+2024-07-09T05:20:51.887Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:21:00.401Z info: Accessed GET in eventreport 16008288
+2024-07-09T05:21:13.113Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-09T05:21:59.565Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:22:02.326Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T05:22:08.113Z info: POST filter_view_pending_btl accessed 
+2024-07-09T05:22:30.952Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:22:33.023Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T05:22:35.188Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:23:07.356Z info: Accessed GET in eventreport 16008288
+2024-07-09T05:23:17.059Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-09T05:24:44.701Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:25:02.812Z info: Accessed GET in eventreport 16008288
+2024-07-09T05:25:10.678Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:35:08.777Z info: Accessed GET in login 
+2024-07-09T05:35:11.389Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:35:11.508Z error: null
+2024-07-09T05:35:12.972Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T05:35:14.027Z info: Starting GET manage_pending_btl 16009550
+2024-07-09T05:35:14.420Z info: Accessed GET manage_pending_btl 16009550
+2024-07-09T05:35:22.010Z info: Starting GET manage_pending_btl 16009200
+2024-07-09T05:35:22.389Z info: Accessed GET manage_pending_btl 16009200
+2024-07-09T05:36:24.970Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:36:30.750Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T05:37:06.681Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:39:57.897Z info: 1 in sga meet
+2024-07-09T05:39:57.899Z info: 2 in sga meet
+2024-07-09T05:39:57.916Z info: 3 in sga meet
+2024-07-09T05:39:57.992Z info: 4 in sga meet
+2024-07-09T05:39:58.051Z info: 5 in sga meet
+2024-07-09T05:39:58.055Z info: 8 in sga meet
+2024-07-09T05:39:58.174Z info: 7 in sga meet
+2024-07-09T05:39:58.250Z info: Insert successful for rc_id:
+2024-07-09T05:43:14.553Z info: 1 in sga meet
+2024-07-09T05:43:14.561Z info: 2 in sga meet
+2024-07-09T05:43:14.569Z info: 3 in sga meet
+2024-07-09T05:43:14.657Z info: 4 in sga meet
+2024-07-09T05:43:14.715Z info: 5 in sga meet
+2024-07-09T05:43:14.717Z info: 8 in sga meet
+2024-07-09T05:43:14.812Z info: 7 in sga meet
+2024-07-09T05:43:14.880Z info: Insert successful for rc_id:
+2024-07-09T05:48:27.124Z info: Accessed GET in login 
+2024-07-09T05:48:29.103Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:48:29.225Z error: null
+2024-07-09T05:48:31.543Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-09T05:48:36.770Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:49:10.451Z info: 1 in sga meet
+2024-07-09T05:49:10.454Z info: 2 in sga meet
+2024-07-09T05:49:10.467Z info: 3 in sga meet
+2024-07-09T05:49:10.556Z info: 4 in sga meet
+2024-07-09T05:49:10.617Z info: 5 in sga meet
+2024-07-09T05:49:10.622Z info: 8 in sga meet
+2024-07-09T05:49:10.723Z info: 7 in sga meet
+2024-07-09T05:49:10.800Z info: Insert successful for rc_id:
+2024-07-09T05:52:26.953Z info: Accessed GET in login 
+2024-07-09T05:52:29.449Z info: GET admin_dashboard accessed 16008288
+2024-07-09T05:52:29.565Z error: null
+2024-07-09T05:53:04.565Z info: 1 in sga meet
+2024-07-09T05:53:04.569Z info: 2 in sga meet
+2024-07-09T05:53:04.585Z info: 3 in sga meet
+2024-07-09T05:53:04.659Z info: 4 in sga meet
+2024-07-09T05:53:04.714Z info: 5 in sga meet
+2024-07-09T05:53:04.720Z info: 8 in sga meet
+2024-07-09T05:53:04.844Z info: 7 in sga meet
+2024-07-09T05:53:04.918Z info: Insert successful for rc_id:

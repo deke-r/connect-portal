@@ -45,6 +45,64 @@ $(document).ready(function () {
         updateTotal(); // Update the total count multiplication
     }
 
+<<<<<<< HEAD
+    // $(document).on('click', '#btn_add', function () {
+    //     var mySelectVal = $('#mySelect').val(); 
+    //     var mygift = $('#mygift').val();
+    //     if (mySelectVal !== null && mySelectVal !== '') { 
+    //         var no = $('#int_no').val().trim();
+    //         if (no !== "") {
+    //             if (/^\d{10}$/.test(no)) {
+    //                 if ($('#txt_no option[value="' + no + '"]').length === 0) {
+    //                     $('#txt_no').append(`<option value="${no}:${mygift}" selected class='selected'>${no}:${mygift}</option>`);
+    //                     $('#int_no').val('');
+    //                     updateCount();
+    //                 } else {
+    //                     Swal.fire({
+    //                         icon: "error",
+    //                         title: "Oops...",
+    //                         html: "<h4 class='fw-600'>This number is already added!</h4>",
+    //                         preConfirm: function () { }
+    //                     });
+    //                 }
+    //             } else {
+    //                 Swal.fire({
+    //                     icon: "error",
+    //                     title: "Oops...",
+    //                     html: "<h4 class='fw-600'>Please enter a valid 10-digit phone number!</h4>",
+    //                     preConfirm: function () { }
+    //                 });
+    //             }
+    //         } else {
+    //             Swal.fire({
+    //                 icon: "error",
+    //                 title: "Oops...",
+    //                 html: "<h4 class='fw-600'>Please enter a phone number!</h4>",
+    //                 preConfirm: function () { }
+    //             });
+    //         }
+    //     } else {
+    //         Swal.fire({
+    //             icon: "error",
+    //             title: "Oops...",
+    //             html: "<h4 class='fw-600'>Please select any option from Meeting Gift Details!</h4>",
+    //             preConfirm: function () { }
+    //         });
+    //     }
+    // });
+
+
+    $(document).on('click', '#btn_add', function () {
+        var mySelectVal = $('#mySelect').val();
+        var mygift = $('#mygift').val();
+        if (mySelectVal !== null && mySelectVal !== '') {
+            var no = $('#int_no').val().trim();
+            if (no !== "") {
+                if (/^\d{10}$/.test(no)) {
+                    // Check only the phone number for duplicates
+                    if ($('#txt_no option').filter(function() { return this.value.split(':')[0] === no; }).length === 0) {
+                        $('#txt_no').append(`<option value="${no}:${mygift}" selected class='selected'>${no}:${mygift}</option>`);
+=======
     $(document).on('click', '#btn_add', function () {
         var mySelectVal = $('#mySelect').val(); 
         if (mySelectVal !== null && mySelectVal !== '') { 
@@ -53,6 +111,7 @@ $(document).ready(function () {
                 if (/^\d{10}$/.test(no)) {
                     if ($('#txt_no option[value="' + no + '"]').length === 0) {
                         $('#txt_no').append(`<option value="${no}" selected class='selected'>${no}</option>`);
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         $('#int_no').val('');
                         updateCount();
                     } else {
@@ -299,10 +358,49 @@ $(document).ready(function () {
         $('#gtade').val(allOptionValuesade);
     }
 
+<<<<<<< HEAD
+   
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     function updateTotal() {
         let cal = 0;
         let cal2 = 0;
         let cal3 = 0;
+<<<<<<< HEAD
+    
+        let id1 = parseFloat(document.getElementById("fiLE_SETTING_VALUE").value);
+        let count1 = parseFloat($('#countInput').val());
+        if (!isNaN(id1) && !isNaN(count1)) {
+            cal = count1 * id1;
+        }
+    
+        let id2 = parseFloat(document.getElementById("fiLE_SETTING_VALUEADE").value);
+        let count2 = parseFloat($('#countInputade').val());
+        if (!isNaN(id2) && !isNaN(count2)) {
+            cal2 = count2 * id2;
+        }
+    
+        let id3 = parseFloat(document.getElementById("fiLE_SETTING_VALUEEMP").value);
+        let count3 = parseFloat($('#countInputemp').val());
+        if (!isNaN(id3) && !isNaN(count3)) {
+            cal3 = count3 * id3;
+        }
+    
+        let lessValue = parseFloat($('#additionalInfo').val());
+        if (isNaN(lessValue)) {
+            lessValue = 0;
+        }
+    
+        let total = cal + cal2 + cal3 - lessValue;
+    
+        $('#valuetotal').text('Budget For The Meet Rs:- [ ' + cal3 + ' ] + [ ' + cal2 + ' ] + [ ' + cal + ' ]');
+        $('#total').val(total);
+        $('#cal').val(total);
+        $('#cal1').val(cal);
+        $('#cal2').val(cal2);
+        $('#cal3').val(cal3);
+    
+=======
 
         let id1 = parseFloat(document.getElementById("fiLE_SETTING_VALUE").value);
         let count1 = parseFloat($('#countInput').val());
@@ -324,6 +422,7 @@ $(document).ready(function () {
         $('#cal1').val(cal)
         $('#cal2').val(cal2)
         $('#cal3').val(cal3)
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     }
 
     $(document).on('click', '.add', function () {
@@ -337,6 +436,10 @@ $(document).ready(function () {
     $(document).on('click', '.addemp', function () {
         updateTotal();
     });
+<<<<<<< HEAD
+    
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
     updateCount();
 });
@@ -357,6 +460,31 @@ $(function () {
 
 $(document).ready(function () {
     $(document).on('change', '.onchange', function () {
+<<<<<<< HEAD
+        let vertical = $('#vertical_1').val();
+        let ho_gift = $('#mySelect').val();
+
+        $.ajax({
+            url: "/get_data",
+            method: "GET",
+            data: { vertical:vertical, ho_gift:ho_gift },
+            success: function(response) { 
+                let food_value = response.data[0].Food_Value;
+                let setting_value = response.data[0].SETTING_VALUE;
+              
+                
+                document.getElementById("fiLE_SETTING_VALUE").value = `${setting_value}`;
+                document.getElementById("fiLE_SETTING_VALUEADE").value = `${food_value}`;
+                document.getElementById("fiLE_SETTING_VALUEEMP").value = `${food_value}`;    
+            },
+            error: function(error) {
+                alert('Error occurred');
+            }
+        });
+    });
+});
+
+=======
 
         var selectElement = document.getElementById("mySelect");
         var selectedOption = selectElement.options[selectElement.selectedIndex];
@@ -383,6 +511,7 @@ $(document).ready(function () {
         } else { }
     });
 });
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 $(document).ready(function () {
     $('form').submit(function (event) {
@@ -396,6 +525,11 @@ $(document).ready(function () {
 
         event.preventDefault();
         var formData = new FormData($(this)[0]);
+<<<<<<< HEAD
+        var additionalInfo = $('#additionalInput').val();
+        formData.append('additionalInfo', additionalInfo);
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         $.ajax({
             type: 'POST',
@@ -553,4 +687,79 @@ $(document).ready(function() {
             $('#mandatory').text('');
         }
     });
+<<<<<<< HEAD
+});
+
+
+$(document).ready(function() {
+    $('#advancePaymentSelect').change(function() {
+        var selectedValue = $(this).val();
+        $('#additionalInputContainer').empty(); 
+
+        
+        if (selectedValue === 'Yes') {
+  $('#additionalInputContainer').append(`
+    <h6 class="fw_bold f_13 ms-1">BTL Advance Amount (Rs.):</h6>
+    <div class="input-group">
+                        <input type="text"
+                            class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Advance Payment"
+                            name="" id="additionalInput">
+
+                       
+                        
+                    </div>
+    `)
+           
+
+            $('#additionalInput').on('input', function() {
+                var additionalInfo = $(this).val();
+                document.getElementById("additionalInfo").value = additionalInfo;
+            });
+
+          
+        }
+    });
+});
+
+
+
+$(document).ready(function(){
+    $('#mySelect').change(function(){
+        var selectedValue = $(this).val();
+        $('#newinput').empty();
+        if(selectedValue === "Gift Provided by HO Marketing"){
+            $.ajax({
+                url: '/gift-options', 
+                method: 'GET',
+                dataType: 'json',
+                success: function(response){
+                    console.log('Success:', response); 
+                    $('#newinput').append(`
+                        <h6 class="fw_bold f_13 ms-1">BTL Gifts:</h6>
+                            <select class="form-select border-leftb box_sdw11 f_13 fw_600 onchange"
+                                    aria-label="Default select example" id="gifts" required>
+                                <option selected disabled>Please Select Gift</option>
+                            </select>
+                    `);
+
+                    var select = $('#gifts');
+                    $.each(response, function(index, item) {
+                        select.append(`<option value="${item.gift_name}">${item.gift_name}</option>`);
+                    });
+
+                  
+                    $('#gifts').change(function() {
+                        var selectedGift = $(this).val();
+                        $('#mygift').val(selectedGift);
+                    });
+                },
+                error: function(xhr, status, error){
+                    console.error('Error fetching data:', error);
+                   
+                }
+            });
+        }
+    });
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 });

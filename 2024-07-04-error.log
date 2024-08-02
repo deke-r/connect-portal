@@ -1,0 +1,8 @@
+2024-07-04T04:02:49.127Z error: null
+2024-07-04T04:23:38.496Z error: null
+2024-07-04T04:23:39.457Z error: Error: Can't send mail - all recipients were rejected: 550 5.7.1 Service unavailable, Client host [43.248.243.200] blocked using Spamhaus. To request removal from this list see https://www.spamhaus.org/query/ip/43.248.243.200 AS(1450) [PN1PEPF000062BA.INDPRD01.PROD.OUTLOOK.COM 2024-07-04T04:23:39.654Z 08DC9B032C2316A3] in nodemailer
+2024-07-04T04:52:19.664Z error: null
+2024-07-04T04:52:53.802Z error: null
+2024-07-04T04:56:29.857Z error: null
+2024-07-04T05:10:54.310Z error: null
+2024-07-04T05:43:01.314Z error: null

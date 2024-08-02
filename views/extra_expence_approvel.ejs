@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/extra_expence_approvel.css">
+
+
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid box_sdw border-t  childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Extra Expence Approval</h5>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row mt-2 mx-2">
+            <div class=" table-responsive  px-2  h_350  me-2">
+                <table class="table table-bordered table-responsive  table-striped" id="dataTables">
+                    <thead id="thead">
+                        <tr>
+                            <th>Rc Id</th>
+                            <th>Emp Id</th>
+                            <th>Emp Name</th>                            
+                            <th>Meet Type</th>                            
+                            <th>Attended Count</th>                            
+                            <th>Budget Brief</th>                            
+                            <th>Budget</th>                            
+                            <th>Advance</th>                            
+                            <th>Expanse</th>                            
+                            <th>Action</th>                            
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <% for(var i = 0; i < data.length; i++){ %>
+                            <% 
+                                if (data[i].Expense > data[i].Budget) {
+                                    let meetTypeText;
+                                    if (data[i].Meet_Type === 1) {
+                                        meetTypeText = 'In-Shop Meet';
+                                    } else if (data[i].Meet_Type === 2) {
+                                        meetTypeText = 'Contractor Meet';
+                                    } else if (data[i].Meet_Type === 3) {
+                                        meetTypeText = 'Dealer Meet';
+                                    } else {
+                                        meetTypeText = 'SGA Meet';
+                                    }
+                            %>
+                           
+                            <% if (data[i].Manager_Approval_date === null) { %>
+                            <tr>
+                                <td><%= data[i].rc_id %></td>
+                                <td><%= data[i].emp_id %></td>
+                                <td><%= data[i].EMP_NAME %></td>
+                                <td><%= meetTypeText %></td>
+                                <td><%= data[i].Attended_count %></td>
+                                <td><%= data[i].Budget_brief %></td>
+                                <td><%= data[i].Budget %></td>
+                                <td><%= data[i].pay_advance %></td>
+                                <td><%= data[i].Expense %></td>
+                                <td>
+                                    <button class="btn rcid btn-success rcid-approve" data-rc_id="<%= data[i].rc_id %>" >Approved</button>
+                                    <button class="btn btn-danger rcid_reject rcid_reject" data-rc_id="<%= data[i].rc_id %>">Reject</button>
+                                   
+                                </td>
+                            </tr>
+                            <% } %>
+                        <% } %>
+                        <% } %>
+                        
+                        
+                     
+                    
+                    </tbody>
+                    
+                    
+                </table>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="loader-div d-none" id="loader-div">
+            <div class="loader">
+                <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+            </div>
+        </div>
+
+
+
+
+
+        <script src="/static/js/extra_expence_approvel.js"></script>
+        <script src="/static/cdn/moment/moment.js"></script>
+
+
+
+        <%- include('partials/footer.ejs') %>
+</body>

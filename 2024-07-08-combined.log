@@ -1,0 +1,97 @@
+2024-07-08T10:34:29.546Z info: Accessed GET in login 
+2024-07-08T10:34:34.756Z info: GET admin_dashboard accessed 16008288
+2024-07-08T10:34:34.878Z error: null
+2024-07-08T10:34:36.918Z info: Accessed GET in eventreport 16008288
+2024-07-08T10:34:45.993Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-08T10:35:01.620Z info: Accessed GET in detail_event 16008288
+2024-07-08T10:35:13.403Z info: Starting POST filter_detail_event 
+2024-07-08T10:35:26.661Z info: Accessed GET in detail_event 16008288
+2024-07-08T10:35:29.988Z info: GET admin_dashboard accessed 16008288
+2024-07-08T10:35:58.643Z info: Accessed GET in eventreport 16008288
+2024-07-08T10:36:06.781Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-08T10:38:42.801Z info: Accessed GET in login 
+2024-07-08T10:38:45.306Z info: GET admin_dashboard accessed 16008288
+2024-07-08T10:38:45.457Z error: null
+2024-07-08T10:40:08.891Z info: Accessed GET in login 
+2024-07-08T10:40:10.983Z info: GET admin_dashboard accessed 16008288
+2024-07-08T10:40:11.110Z error: null
+2024-07-08T10:40:12.101Z info: Accessed GET in eventreport 16008288
+2024-07-08T10:40:18.634Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-08T10:42:04.598Z info: Accessed GET in login 
+2024-07-08T10:42:13.712Z info: GET admin_dashboard accessed 16008288
+2024-07-08T10:42:13.858Z error: null
+2024-07-08T11:01:38.587Z info: 1 in sga meet
+2024-07-08T11:01:38.598Z error: Cannot read properties of undefined (reading '0')
+2024-07-08T11:02:47.180Z info: 1 in sga meet
+2024-07-08T11:02:47.181Z info: 2 in sga meet
+2024-07-08T11:02:47.185Z info: 3 in sga meet
+2024-07-08T11:02:47.265Z info: 4 in sga meet
+2024-07-08T11:02:47.317Z info: 5 in sga meet
+2024-07-08T11:02:47.320Z info: 8 in sga meet
+2024-07-08T11:02:47.420Z info: 7 in sga meet
+2024-07-08T11:02:47.488Z info: Insert successful for rc_id:
+2024-07-08T11:02:47.490Z info: Insert successful for rc_id:
+2024-07-08T11:04:23.538Z info: Accessed GET in login 
+2024-07-08T11:04:25.385Z info: GET admin_dashboard accessed 16008288
+2024-07-08T11:04:25.507Z error: null
+2024-07-08T11:04:35.216Z info: GET admin_dashboard accessed 16008288
+2024-07-08T11:04:39.816Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-08T11:05:25.727Z info: Starting GET manage_pending_btl 16008288
+2024-07-08T11:05:26.169Z info: Accessed GET manage_pending_btl 16008288
+2024-07-08T11:08:33.626Z info: Starting POST approval_btl 16008288
+2024-07-08T11:08:33.801Z error: Error in POST approval_btl query 16008288Error: ER_DATA_TOO_LONG: Data too long for column 'Company' at row 1UPDATE Jacpl_ContractorMeet SET is_active = 2,ApprovedBTL_date= ?, Zone = ?, Company = ?, voucher_no = ?, Session_ID = ? WHERE rc_id = ?
+2024-07-08T11:08:36.637Z info: Starting POST approval_btl 16008288
+2024-07-08T11:08:36.697Z error: Error in POST approval_btl query 16008288Error: ER_DATA_TOO_LONG: Data too long for column 'Company' at row 1UPDATE Jacpl_ContractorMeet SET is_active = 2,ApprovedBTL_date= ?, Zone = ?, Company = ?, voucher_no = ?, Session_ID = ? WHERE rc_id = ?
+2024-07-08T11:09:21.908Z info: Starting POST approval_btl 16008288
+2024-07-08T11:09:21.958Z error: Error in POST approval_btl query 16008288Error: ER_DATA_TOO_LONG: Data too long for column 'Company' at row 1UPDATE Jacpl_ContractorMeet SET is_active = 2,ApprovedBTL_date= ?, Zone = ?, Company = ?, voucher_no = ?, Session_ID = ? WHERE rc_id = ?
+2024-07-08T11:11:11.751Z info: Accessed GET in login 
+2024-07-08T11:11:13.710Z info: GET admin_dashboard accessed 16008288
+2024-07-08T11:11:13.870Z error: null
+2024-07-08T11:11:15.974Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-08T11:11:17.332Z info: Starting GET manage_pending_btl 16008288
+2024-07-08T11:11:17.722Z info: Accessed GET manage_pending_btl 16008288
+2024-07-08T11:11:25.269Z info: Starting POST approval_btl 16008288
+2024-07-08T11:11:25.330Z info: Accessed POST approval_btl 16008288
+2024-07-08T11:11:26.613Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-08T11:12:12.046Z info: Starting GET manage_pending_btl 16009550
+2024-07-08T11:12:12.381Z info: Accessed GET manage_pending_btl 16009550
+2024-07-08T11:12:51.293Z info: GET admin_dashboard accessed 16008288
+2024-07-08T11:12:55.502Z info: Accessed GET in view_rejected_approved_btl 16008288
+2024-07-08T11:13:21.706Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-08T11:13:21.847Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-08T11:14:06.759Z info: Accessed GET in view_rejected_approved_btl 16008288
+2024-07-08T11:14:18.166Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-08T11:14:18.311Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-08T11:14:43.464Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-08T11:14:43.602Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-08T11:14:50.683Z info: Starting POST filter_view_rejected_approved_btl
+2024-07-08T11:14:50.810Z info: Accessed POST filter_view_rejected_approved_btl query 16008288
+2024-07-08T11:15:13.725Z info: GET admin_dashboard accessed 16008288
+2024-07-08T11:15:16.875Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-08T11:15:36.239Z info: POST filter_view_pending_btl accessed 
+2024-07-08T11:15:45.867Z info: GET admin_dashboard accessed 16008288
+2024-07-08T11:16:03.214Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-08T11:16:08.239Z info: Accessed GET in login 
+2024-07-08T11:16:08.245Z info: Accessed GET in login 
+2024-07-08T11:16:29.988Z info: GET employee_dashboard accessed 16009550
+2024-07-08T11:17:54.247Z info: Insert successful for rc_id:
+2024-07-08T11:18:39.719Z info: Accessed GET in login 
+2024-07-08T11:18:39.750Z info: Accessed GET in login 
+2024-07-08T11:18:58.061Z info: GET view_pending_btl accessed for emp_code 16009302
+2024-07-08T11:20:49.027Z info: GET view_pending_btl accessed for emp_code 16009302
+2024-07-08T11:21:12.052Z info: Accessed GET in login 
+2024-07-08T11:21:12.057Z info: Accessed GET in login 
+2024-07-08T11:21:20.623Z info: GET employee_dashboard accessed 16009550
+2024-07-08T11:22:02.077Z info: 2 in in--shope
+2024-07-08T11:22:02.206Z info: 3 in in--shope
+2024-07-08T11:22:02.373Z info: Insert successful for rc_id:
+2024-07-08T11:22:06.464Z info: GET employee_dashboard accessed 16009550
+2024-07-08T11:22:11.118Z info: Accessed GET in login 
+2024-07-08T11:22:11.124Z info: Accessed GET in login 
+2024-07-08T11:22:21.816Z info: GET view_pending_btl accessed for emp_code 16009345
+2024-07-08T11:22:49.720Z info: GET view_pending_btl accessed for emp_code 16009345
+2024-07-08T11:24:31.652Z info: GET view_pending_btl accessed for emp_code 16009345
+2024-07-08T11:24:38.265Z info: Accessed GET in login 
+2024-07-08T11:24:38.276Z info: Accessed GET in login 
+2024-07-08T11:24:42.904Z info: GET admin_dashboard accessed 16008288
+2024-07-08T11:24:43.053Z error: null

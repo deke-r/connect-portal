@@ -47,6 +47,11 @@ $(document).ready(function () {
 
     $(document).on('click', '#btn_add', function () {
         var mySelectVal = $('#mySelect').val(); 
+<<<<<<< HEAD
+      
+      
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         if (mySelectVal !== null && mySelectVal !== '') { 
             var no = $('#int_no').val().trim();
             if (no !== "") {
@@ -60,8 +65,14 @@ $(document).ready(function () {
                             let numA = res.data[0].Customer_Name;
                             if (num1 && numA) {
                                 let empId = num1 + ":" + numA;
+<<<<<<< HEAD
+                                if ($('#txt_no option').filter(function() { return this.value.split(':')[0] === num1; }).length === 0) {
+                                    $('#txt_no').append(`<option value="${empId}" selected class='selected'>${empId}</option>`);
+                                    alert(mygift)
+=======
                                 if ($('#txt_no option[value="' + empId + '"]').length === 0) {
                                     $('#txt_no').append(`<option value="${empId}" selected class='selected'>${empId}</option>`);
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     $('#int_no').val('');
                                     updateCount();
                                 } else {
@@ -78,7 +89,11 @@ $(document).ready(function () {
                             let numA='Dealer not available';
                             let empId = num1 + ":" + numA;
                             console.log(empId ,'emppppp')
+<<<<<<< HEAD
+                            if ($('#txt_no option').filter(function() { return this.value.split(':')[0] === num1; }).length === 0) {
+=======
                             if ($('#txt_no option[value="' + empId + '"]').length === 0) {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                 $('#txt_no').append(`<option value="${empId}" selected class='selected'>${empId}</option>`);
                                 $('#int_no').val('');
                                 updateCount();
@@ -123,6 +138,11 @@ $(document).ready(function () {
 
     $(document).on('click', '#btn_addade', function () {
         var mySelectVal = $('#mySelect').val(); 
+<<<<<<< HEAD
+        var mygift = $('#mygift').val();
+      
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         if (mySelectVal !== null && mySelectVal !== '') { 
             var no = $('#int_noade').val().trim();
             if (no !== "") {
@@ -194,6 +214,55 @@ $(document).ready(function () {
     });
     
 
+<<<<<<< HEAD
+    // $(document).on('click', '#btn_addade', function () {
+    //     var mySelectVal = $('#mySelect').val();
+    //     var mygift = $('#mygift').val();
+    //     if (mySelectVal !== null && mySelectVal !== '') {
+    //         var no = $('#int_no').val().trim();
+    //         if (no !== "") {
+    //             if (/^\d{10}$/.test(no)) {
+    //                 // Check only the phone number for duplicates
+    //                 if ($('#txt_no option').filter(function() { return this.value.split(':')[0] === no; }).length === 0) {
+    //                     $('#txt_no').append(`<option value="${no}:${mygift}" selected class='selected'>${no}:${mygift}</option>`);
+    //                     $('#int_no').val('');
+    //                     updateCount();
+    //                 } else {
+    //                     Swal.fire({
+    //                         icon: "error",
+    //                         title: "Oops...",
+    //                         html: "<h4 class='fw-600'>This number is already added!</h4>",
+    //                         preConfirm: function () { }
+    //                     });
+    //                 }
+    //             } else {
+    //                 Swal.fire({
+    //                     icon: "error",
+    //                     title: "Oops...",
+    //                     html: "<h4 class='fw-600'>Please enter a valid 10-digit phone number!</h4>",
+    //                     preConfirm: function () { }
+    //                 });
+    //             }
+    //         } else {
+    //             Swal.fire({
+    //                 icon: "error",
+    //                 title: "Oops...",
+    //                 html: "<h4 class='fw-600'>Please enter a phone number!</h4>",
+    //                 preConfirm: function () { }
+    //             });
+    //         }
+    //     } else {
+    //         Swal.fire({
+    //             icon: "error",
+    //             title: "Oops...",
+    //             html: "<h4 class='fw-600'>Please select any option from Meeting Gift Details!</h4>",
+    //             preConfirm: function () { }
+    //         });
+    //     }
+    // });
+
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 
     $(document).on('click', '#btn_addemp', function () {
@@ -335,6 +404,42 @@ $(document).ready(function () {
         let cal = 0;
         let cal2 = 0;
         let cal3 = 0;
+<<<<<<< HEAD
+    
+        let id1 = parseFloat(document.getElementById("fiLE_SETTING_VALUE").value);
+        let count1 = parseFloat($('#countInput').val());
+        if (!isNaN(id1) && !isNaN(count1)) {
+            cal = count1 * id1;
+        }
+    
+        let id2 = parseFloat(document.getElementById("fiLE_SETTING_VALUEADE").value);
+        let count2 = parseFloat($('#countInputade').val());
+        if (!isNaN(id2) && !isNaN(count2)) {
+            cal2 = count2 * id2;
+        }
+    
+        let id3 = parseFloat(document.getElementById("fiLE_SETTING_VALUEEMP").value);
+        let count3 = parseFloat($('#countInputemp').val());
+        if (!isNaN(id3) && !isNaN(count3)) {
+            cal3 = count3 * id3;
+        }
+    
+        let lessValue = parseFloat($('#additionalInfo').val());
+        if (isNaN(lessValue)) {
+            lessValue = 0;
+        }
+    
+        let total = cal + cal2 + cal3 - lessValue;
+    
+        $('#valuetotal').text('Budget For The Meet Rs:- [ ' + cal3 + ' ] + [ ' + cal2 + ' ] + [ ' + cal + ' ]');
+        $('#total').val(total);
+        $('#cal').val(total);
+        $('#cal1').val(cal);
+        $('#cal2').val(cal2);
+        $('#cal3').val(cal3);
+    
+    }
+=======
 
         let id1 = parseFloat(document.getElementById("fiLE_SETTING_VALUE").value);
         let count1 = parseFloat($('#countInput').val());
@@ -359,6 +464,7 @@ $(document).ready(function () {
         $('#cal3').val(cal3)
     }
 
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     $(document).on('click', '.add', function () {
         updateTotal();
     });
@@ -370,6 +476,10 @@ $(document).ready(function () {
     $(document).on('click', '.addemp', function () {
         updateTotal();
     });
+<<<<<<< HEAD
+   
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
     updateCount();
 });
@@ -391,6 +501,28 @@ $(function () {
 $(document).ready(function () {
     $(document).on('change', '.onchange', function () {
 
+<<<<<<< HEAD
+        let vertical = $('#vertical_1').val();
+        let ho_gift = $('#mySelect').val();
+
+        $.ajax({
+            url: "/get_data_dealer_meet",
+            method: "GET",
+            data: { vertical:vertical, ho_gift:ho_gift },
+            success: function(response) { 
+                let food_value = response.data[0].Food_Value;
+                let setting_value = response.data[0].SETTING_VALUE;
+              
+                
+                document.getElementById("fiLE_SETTING_VALUE").value = `${setting_value}`;
+                document.getElementById("fiLE_SETTING_VALUEADE").value = `${food_value}`;
+                document.getElementById("fiLE_SETTING_VALUEEMP").value = `${food_value}`;    
+            },
+            error: function(error) {
+                alert('Error occurred');
+            }
+        });
+=======
         var selectElement = document.getElementById("mySelect");
         var selectedOption = selectElement.options[selectElement.selectedIndex];
 
@@ -401,10 +533,32 @@ $(document).ready(function () {
         document.getElementById("fiLE_SETTING_VALUE").value = `${dataIdValue}`;
         document.getElementById("fiLE_SETTING_VALUEADE").value = `${dataIdValueade}`;
         document.getElementById("fiLE_SETTING_VALUEEMP").value = `${dataIdValueemp}`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
     });
 });
 
+<<<<<<< HEAD
+
+
+$(document).ready(function () {
+    $('#paymentForm').submit(function (event) {
+        var selectedValue = $('#advancePaymentSelect').val();
+        
+        if (!selectedValue) {
+            alert('Please make a selection for Advance Payment By HO.');
+            event.preventDefault();
+            return;
+        }
+
+        $('#loader-div').removeClass('d-none')
+        var additionalInfo = $('#additionalInput').val() || 0;
+
+        event.preventDefault();
+        var formData = new FormData($(this)[0]);
+      
+        formData.append('additionalInfo', additionalInfo);
+=======
 $(document).ready(function () {
     $(document).on('click', '.submitExpense', function (event) {
         var budget = parseFloat(document.getElementById('total').value);
@@ -424,6 +578,7 @@ $(document).ready(function () {
 
         event.preventDefault();
         var formData = new FormData($(this)[0]);
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         $.ajax({
             type: 'POST',
@@ -508,4 +663,43 @@ $(document).ready(function() {
             $('#mandatory').text('');
         }
     });
+<<<<<<< HEAD
 });
+
+
+$(document).ready(function() {
+    $('#advancePaymentSelect').change(function() {
+        var selectedValue = $(this).val();
+        $('#additionalInputContainer').empty(); 
+
+        
+        if (selectedValue === 'Yes') {
+  $('#additionalInputContainer').append(`
+    <h6 class="fw_bold f_13 ms-1">BTL Advance Amount (Rs.):</h6>
+    <div class="input-group">
+                        <input type="text"
+                            class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Advance Payment"
+                            name="" id="additionalInput">
+                    </div>`)
+           
+
+            $('#additionalInput').on('input', function() {
+                var additionalInfo = $(this).val();
+                document.getElementById("additionalInfo").value = additionalInfo;
+            });
+
+          
+        }else if(selectedValue === 'No'){
+           
+            var additionalInfo = 0;
+            document.getElementById("additionalInfo").value = additionalInfo;
+           
+            $('#additionalInputContainer').empty();
+        }
+    });
+});
+
+
+=======
+});
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
