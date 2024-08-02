@@ -45,6 +45,7 @@ $(document).ready(function () {
         updateTotal(); // Update the total count multiplication
     }
 
+<<<<<<< HEAD
     // $(document).on('click', '#btn_add', function () {
     //     var mySelectVal = $('#mySelect').val();
     //     var mygift = $('#mygift').val(); 
@@ -100,6 +101,16 @@ $(document).ready(function () {
                 if (/^\d{10}$/.test(no)) {
                     if ($('#txt_no option').filter(function() { return this.value.split(':')[0] === no; }).length === 0) {
                         $('#txt_no').append(`<option value="${no}:${mygift}" selected class='selected'>${no}:${mygift}</option>`);
+=======
+    $(document).on('click', '#btn_add', function () {
+        var mySelectVal = $('#mySelect').val(); 
+        if (mySelectVal !== null && mySelectVal !== '') { 
+            var no = $('#int_no').val().trim();
+            if (no !== "") {
+                if (/^\d{10}$/.test(no)) {
+                    if ($('#txt_no option[value="' + no + '"]').length === 0) {
+                        $('#txt_no').append(`<option value="${no}" selected class='selected'>${no}</option>`);
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         $('#int_no').val('');
                         updateCount();
                     } else {
@@ -346,11 +357,15 @@ $(document).ready(function () {
         $('#gtade').val(allOptionValuesade);
     }
 
+<<<<<<< HEAD
   
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     function updateTotal() {
         let cal = 0;
         let cal2 = 0;
         let cal3 = 0;
+<<<<<<< HEAD
     
         let id1 = parseFloat(document.getElementById("fiLE_SETTING_VALUE").value);
         let count1 = parseFloat($('#countInput').val());
@@ -379,6 +394,29 @@ $(document).ready(function () {
         $('#cal2').val(cal2);
         $('#cal3').val(cal3);
     
+=======
+
+        let id1 = parseFloat(document.getElementById("fiLE_SETTING_VALUE").value);
+        let count1 = parseFloat($('#countInput').val());
+        cal = count1 * id1;
+
+        let id2 = parseFloat(document.getElementById("fiLE_SETTING_VALUEADE").value);
+        let count2 = parseFloat($('#countInputade').val());
+        cal2 = count2 * id2;
+
+        let id3 = parseFloat(document.getElementById("fiLE_SETTING_VALUEEMP").value);
+        let count3 = parseFloat($('#countInputemp').val());
+        cal3 = count3 * id3;
+
+        let total = cal + cal2 + cal3;
+        $('#valuetotal').text('Budget For The Meet Rs:- [ ' + cal3 + ' ] + [ ' + cal2 + ' ] + [ ' + cal + ' ]');
+        $('#total').val(total);
+        $('#cal').val(total);
+
+        $('#cal1').val(cal)
+        $('#cal2').val(cal2)
+        $('#cal3').val(cal3)
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     }
 
     $(document).on('click', '.add', function () {
@@ -392,6 +430,10 @@ $(document).ready(function () {
     $(document).on('click', '.addemp', function () {
         updateTotal();
     });
+<<<<<<< HEAD
+=======
+
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     updateCount();
 });
 
@@ -412,6 +454,7 @@ $(function () {
 $(document).ready(function () {
     $(document).on('change', '.onchange', function () {
 
+<<<<<<< HEAD
         let vertical = $('#vertical_1').val();
         let ho_gift = $('#mySelect').val();
 
@@ -438,6 +481,33 @@ $(document).ready(function () {
 
 
 
+=======
+        var selectElement = document.getElementById("mySelect");
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+
+        var dataIdValue = selectedOption.getAttribute('data-id');
+        var dataIdValueade = selectedOption.getAttribute('data-food');
+        var dataIdValueemp = selectedOption.getAttribute('data-food');
+
+        document.getElementById("fiLE_SETTING_VALUE").value = `${dataIdValue}`;
+        document.getElementById("fiLE_SETTING_VALUEADE").value = `${dataIdValueade}`;
+        document.getElementById("fiLE_SETTING_VALUEEMP").value = `${dataIdValueemp}`;
+
+    });
+});
+
+$(document).ready(function () {
+    $(document).on('click', '.submitExpense', function (event) {
+        var budget = parseFloat(document.getElementById('total').value);
+        var expense = parseFloat(document.getElementsByName('expense')[0].value);
+
+        if (expense > budget) {
+            alert('Expense cannot be greater than the budget!');
+            event.preventDefault();
+        } else { }
+    });
+});
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 $(document).ready(function () {
     $('form').submit(function (event) {
@@ -451,10 +521,13 @@ $(document).ready(function () {
         event.preventDefault();
         var formData = new FormData($(this)[0]);
 
+<<<<<<< HEAD
         var additionalInfo = $('#additionalInput').val();
 
         formData.append('additionalInfo', additionalInfo);
 
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         $.ajax({
             type: 'POST',
             url: '/in-shope',
@@ -591,7 +664,10 @@ $(document).on('click', '#reset_dd', function () {
 $(document).ready(function() {
     $('#mySelect').on('change', function() {
         var ady = $('#ady').val()
+<<<<<<< HEAD
         console.log(ady,"iusfdifui")
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         var isRequired = $(this).val() === ady;
         $('#rqr_att').prop('required', isRequired);
         if (isRequired) {
@@ -601,6 +677,7 @@ $(document).ready(function() {
         }
     });
 });
+<<<<<<< HEAD
 
 
 
@@ -670,3 +747,5 @@ $(document).ready(function(){
         }
     });
 });
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730

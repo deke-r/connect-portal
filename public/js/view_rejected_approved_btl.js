@@ -17,6 +17,7 @@ function formatDate(date) {
 
 
 
+<<<<<<< HEAD
 // $(document).on('click', '#mng_run', function () {
 //     let sd = $('#datepicker').val();
 //     let ed = $('#datepicker2').val();
@@ -331,6 +332,12 @@ function formatDate(date) {
 
 
 $(document).on('click', '#mng_run', function () {
+=======
+$(document).on('click', '#mng_run', function () {
+
+
+
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     let sd = $('#datepicker').val();
     let ed = $('#datepicker2').val();
     let ddown = $('#mng_btl').val();
@@ -366,16 +373,22 @@ $(document).on('click', '#mng_run', function () {
                         text: 'No records match the specified criteria.',
                     });
                 } else {
+<<<<<<< HEAD
 
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     for (let i = 0; i < res.data.length; i++) {
                         let row = res.data[i];
                         let emp_name = row.EMP_NAME;
                         let rep_manager_id = row.REP_MANAGER_ID;
                         let rep_manager_name = row.REP_MANAGER_NAME;
                         let branch = row.BRANCH;
+<<<<<<< HEAD
                         let hqname=rowData.EMP_HQ_NAME;
                         let hqcode=rowData.EMP_HQ_CODE;
               
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         let rc_id = row.rc_id;
                         let emp_id = row.emp_id;
                         let DateOfMeet = formatDate(row.DateOfMeet);
@@ -400,7 +413,10 @@ $(document).on('click', '#mng_run', function () {
                         let company = row.Company;
                         let Session_ID = row.Session_ID;
                         let voucher_no = row.voucher_no;
+<<<<<<< HEAD
                         let payadvance = row.pay_advance;
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         let Rejected_Remarks = row.Rejected_Remarks;
                         let RejectedBTL_date = formatDate(row.RejectedBTL_date);
                         let ApprovedBTL_date = formatDate(row.ApprovedBTL_date);
@@ -419,6 +435,7 @@ $(document).on('click', '#mng_run', function () {
 
                         let status;
                         let remarksColumn = '';
+<<<<<<< HEAD
                         let zoneColumn = '';
                         let companyColumn = '';
                         let voucherColumn = '';
@@ -457,6 +474,28 @@ $(document).on('click', '#mng_run', function () {
                             remarksColumn = `<th>Rejected Remarks</th>`;
                             rejectedDateColumn = `<th>Rejected Date</th>`;
                             rejectedByColumn = `<th>Rejected By</th>`;
+=======
+                        let zoneCoulmn = '';
+                        let CompanyCoulmn = '';
+                        let VoucherCoulmn = '';
+                        let ApprovedDate = '';
+                        let RejectedDate = '';
+                        let ApprovedBy = '';
+                        let RejectedBy = '';
+
+                        if (is_active === 2) {
+                            status = 'Approved';
+                            zoneCoulmn = `<th>Zone</th>`;
+                            CompanyCoulmn = `<th>Company</th>`;
+                            VoucherCoulmn = `<th>Voucher No</th>`;
+                            ApprovedDate = `<th>Approved Date</th>`;
+                            ApprovedBy = `<th>Approved By</th>`;
+                        } else if (is_active === 3) {
+                            status = 'Rejected';
+                            remarksColumn = `<th>Rejected Remarks</th>`;
+                            RejectedDate = `<th>Rejected Date</th>`;
+                            RejectedBy = `<th>Rejected By</th>`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         } else {
                             status = 'Approval Pending';
                         }
@@ -467,8 +506,11 @@ $(document).on('click', '#mng_run', function () {
                                 <th class='stickyhead2'>Branch</th>
                                 <th>Emp Id</th>
                                 <th>Employee</th>
+<<<<<<< HEAD
                                 <th>HQ Name</th>
                                 <th>HQ Code</th>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                 <th>Sup ID</th>
                                 <th>Supervisor</th>
                                 <th>Category</th>
@@ -483,11 +525,15 @@ $(document).on('click', '#mng_run', function () {
                                 <th>ADE</th>
                                 <th>Attended Jacpl</th>
                                 <th>Budget(Rs.)</th>
+<<<<<<< HEAD
                                 <th>Advance(Rs.)</th>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                 <th>Expense (Rs.)</th>
                                 <th>Vertical</th>
                                 <th>Meeting Gift</th>
                                 <th>Status</th>
+<<<<<<< HEAD
                                 ${zoneColumn}
                                 ${companyColumn}
                                 ${voucherColumn}
@@ -498,6 +544,16 @@ $(document).on('click', '#mng_run', function () {
                                 ${RejectedBy}
                                 ${blank}
 
+=======
+                                ${zoneCoulmn}
+                                ${CompanyCoulmn}
+                                ${VoucherCoulmn}
+                                ${ApprovedDate}
+                                ${RejectedDate}
+                                ${remarksColumn}
+                                ${ApprovedBy}
+                                ${RejectedBy}
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                             </tr>`);
                             headerAppended = true;
                         }
@@ -514,6 +570,7 @@ $(document).on('click', '#mng_run', function () {
                             RejectedBTLDateBody = `<td>${RejectedBTL_date}</td>`;
                             Session_ID=`<td>${Session_ID}</td>`
 
+<<<<<<< HEAD
                         }else if (is_active === 2 && ddown === 'Pending_Voucher') {
                             if (voucher_no !== null) {
                                 continue;
@@ -578,11 +635,18 @@ $(document).on('click', '#mng_run', function () {
                             if (voucher_no === null) {
                                 continue; 
                             }
+=======
+                        } else if (is_active === 2) {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                             zoneCoulmnBody = `<td>${zone}</td>`;
                             CompanyCoulmnBody = `<td>${company}</td>`;
                             VoucherCoulmnBody = `<td>${voucher_no}</td>`;
                             ApprovedDateBody = `<td>${ApprovedBTL_date}</td>`;
                             Session_ID=`<td>${Session_ID}</td>`
+<<<<<<< HEAD
+=======
+
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         }
 
                         $('#tbody').append(`<tr>
@@ -590,8 +654,11 @@ $(document).on('click', '#mng_run', function () {
                             <td class='stickybody2'>${branch}</td>
                             <td>${emp_id}</td>
                             <td>${emp_name}</td>
+<<<<<<< HEAD
                             <td>${hqname}</td>
                             <td>${hqcode}</td>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                             <td>${rep_manager_id}</td>
                             <td>${rep_manager_name}</td>
                             <td>${meetTypeText}</td>
@@ -606,7 +673,10 @@ $(document).on('click', '#mng_run', function () {
                             <td>${Cond_By}</td>
                             <td>${Jacpl_Attended}</td>
                             <td>${Budget}</td>
+<<<<<<< HEAD
                             <td>${payadvance}</td>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                             <td>${Expense}</td>
                             <td>${vertical}</td>
                             <td>${meeting_gift}</td>
@@ -618,7 +688,10 @@ $(document).on('click', '#mng_run', function () {
                             ${RejectedBTLDateBody}
                             ${remarksColumnbody}
                             ${Session_ID}
+<<<<<<< HEAD
                             ${edit_update}
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         </tr>`);
                     }
                 }
@@ -657,6 +730,12 @@ $(document).on('click', '#mng_run', function () {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 $(document).on('click', '#reset', function () {
     window.location.reload()
 })

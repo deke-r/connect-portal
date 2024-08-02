@@ -29,12 +29,15 @@ function formatDate(date) {
 }
 
 $(document).ready(function () {
+<<<<<<< HEAD
  // Function to sort data by rc_id in ascending order
  function sortDataByRcIdAscending(data) {
   data.sort((a, b) => a.rc_id - b.rc_id);
 }
 
 
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
   $(document).on('click', '#evt_run', function () {
     const sd = $('#datepicker').val();
     const ed = $('#datepicker2').val();
@@ -71,8 +74,11 @@ $(document).ready(function () {
             text: 'No records match the specified criteria.',
           });
         } else {
+<<<<<<< HEAD
           sortDataByRcIdAscending(res.data);
           
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
           console.log(res.data);
           for (let i = 0; i < res.data.length; i++) {
             let rowData = res.data[i];
@@ -81,8 +87,11 @@ $(document).ready(function () {
             let rep_manager_name = rowData.REP_MANAGER_NAME;
             let branch = rowData.BRANCH;
             let zone = rowData.ZONE;
+<<<<<<< HEAD
             let hqname=rowData.EMP_HQ_NAME;
             let hqcode=rowData.EMP_HQ_CODE;
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             let rc_id = rowData.rc_id;
             let emp_id = rowData.emp_id;
             let DateOfMeet = formatDate(rowData.DateOfMeet);
@@ -103,7 +112,10 @@ $(document).ready(function () {
             let vertical = rowData.vertical;
             let meeting_gift = rowData.meeting_gift;
             let is_active = rowData.is_active;
+<<<<<<< HEAD
             let pay_advance = rowData.pay_advance;
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
             let meetTypeText;
 
@@ -131,8 +143,11 @@ $(document).ready(function () {
                                   <th>Zone</th>
                                   <th>Emp Id</th>
                                   <th>Employee</th>
+<<<<<<< HEAD
                                     <th>HQ Name</th>
                                   <th>HQ Code</th>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                   <th>Sup ID</th>
                                   <th>Supervisor</th>
                                   <th>Category</th>
@@ -147,7 +162,10 @@ $(document).ready(function () {
                                   <th>ADE</th>
                                   <th>Attended Jacpl</th>
                                   <th>Budget(Rs.)</th>
+<<<<<<< HEAD
                                    <th>Advance(Rs.)</th>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                   <th>Expense (Rs.)</th>
                                   <th>Vertical</th>
                                   <th>Meeting Gift</th>
@@ -167,8 +185,11 @@ $(document).ready(function () {
                                   <td style="${rowBackground}">${zone}</td>
                                   <td style="${rowBackground}">${emp_id}</td>
                                   <td style="${rowBackground}">${emp_name}</td>
+<<<<<<< HEAD
                                   <td style="${rowBackground}">${hqname}</td>
                                   <td style="${rowBackground}">${hqcode}</td>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                   <td style="${rowBackground}">${rep_manager_id}</td>
                                   <td style="${rowBackground}">${rep_manager_name}</td>
                                   <td style="${rowBackground}">${meetTypeText}</td>
@@ -183,7 +204,10 @@ $(document).ready(function () {
                                   <td style="${rowBackground}">${Cond_By}</td>
                                   <td style="${rowBackground}">${Jacpl_Attended}</td>
                                   <td style="${rowBackground}">${Budget}</td>
+<<<<<<< HEAD
                                    <td style="${rowBackground}">${pay_advance}</td>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                   <td style="${rowBackground}">${Expense}</td>
                                   <td style="${rowBackground}">${vertical}</td>
                                   <td style="${rowBackground}">${meeting_gift}</td>

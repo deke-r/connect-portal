@@ -61,8 +61,11 @@ $(document).ready(function () {
             let rep_manager_name = rowData.REP_MANAGER_NAME;
             let branch = rowData.BRANCH;
             let zone = rowData.ZONE;
+<<<<<<< HEAD
             let hqname=rowData.EMP_HQ_NAME;
             let hqcode=rowData.EMP_HQ_CODE;
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             let rc_id = rowData.rc_id;
             let emp_id = rowData.emp_id;
             let DateOfMeet = formatDate(rowData.DateOfMeet);
@@ -122,8 +125,11 @@ $(document).ready(function () {
                     <td style="${rowBackground}">${zone}</td>
                     <td style="${rowBackground}">${emp_id}</td>
                     <td style="${rowBackground}">${emp_name}</td>
+<<<<<<< HEAD
                      <td style="${rowBackground}">${hqname}</td>
                     <td style="${rowBackground}">${hqcode}</td>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     <td style="${rowBackground}">${rep_manager_id}</td>
                     <td style="${rowBackground}">${rep_manager_name}</td>
                     <td style="${rowBackground}">${meetTypeText}</td>
@@ -158,8 +164,11 @@ $(document).ready(function () {
                     <th>Zone</th>
                     <th>Emp Id</th>
                     <th>Employee</th>
+<<<<<<< HEAD
                       <th>HQ Name</th>
                     <th>HQ Code</th>
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                     <th>Sup ID</th>
                     <th>Supervisor</th>
                     <th>Category</th>
@@ -201,6 +210,7 @@ $(document).ready(function () {
 });
 
 
+<<<<<<< HEAD
 $(document).on('click', '#excel_btn', function () {
             let csvContent = "\uFEFF";
             let headers = $('#thead th').map(function () {
@@ -224,6 +234,44 @@ $(document).on('click', '#excel_btn', function () {
             link.click();
             document.body.removeChild(link);
         });
+=======
+
+
+
+$(document).on('click', '#excel_btn', function () {
+  let csvContent = "\uFEFF";
+
+  let headers = $('#thead th').map(function () {
+    let headerText = $(this).clone().children().remove().end().text();
+    return headerText.replace(/[";]/g, "") || ' ';
+  }).get();
+  csvContent += headers.join(",") + "\n";
+
+  $('#tbody tr').each(function () {
+    let row = $(this).find('td').map(function () {
+      let cellText = $(this).text().replace(/"/g, '');
+      return cellText.includes(',') ? '"' + cellText + '"' : cellText;
+    }).get();
+    csvContent += row.join(",") + "\n";
+  });
+
+  let encodedUri = encodeURI(csvContent);
+  let link = document.createElement("a");
+  link.setAttribute("href", "data:text/csv;charset=utf-8," + encodeURIComponent(csvContent));
+  link.setAttribute("download", "detail_event" + ".csv");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
+
+
+
+
+
+
+
+
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 
 $(document).on('click', '#reset', function () {
@@ -231,4 +279,8 @@ $(document).on('click', '#reset', function () {
 })
 function formatDate(date) {
   return moment(date).format('DD-MM-YYYY');
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730

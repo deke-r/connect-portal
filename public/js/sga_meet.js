@@ -45,6 +45,7 @@ $(document).ready(function () {
         updateTotal(); // Update the total count multiplication
     }
 
+<<<<<<< HEAD
     // $(document).on('click', '#btn_add', function () {
     //     var mySelectVal = $('#mySelect').val();
     //     var mygift = $('#mygift').val();
@@ -93,13 +94,22 @@ $(document).ready(function () {
     $(document).on('click', '#btn_add', function () {
         var mySelectVal = $('#mySelect').val();
         var mygift = $('#mygift').val();
+=======
+    $(document).on('click', '#btn_add', function () {
+        var mySelectVal = $('#mySelect').val();
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         if (mySelectVal !== null && mySelectVal !== '') {
             var no = $('#int_no').val().trim();
             if (no !== "") {
                 if (/^\d{10}$/.test(no)) {
+<<<<<<< HEAD
                     // Check only the phone number for duplicates
                     if ($('#txt_no option').filter(function() { return this.value.split(':')[0] === no; }).length === 0) {
                         $('#txt_no').append(`<option value="${no}:${mygift}" selected class='selected'>${no}:${mygift}</option>`);
+=======
+                    if ($('#txt_no option[value="' + no + '"]').length === 0) {
+                        $('#txt_no').append(`<option value="${no}" selected class='selected'>${no}</option>`);
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                         $('#int_no').val('');
                         updateCount();
                     } else {
@@ -135,7 +145,10 @@ $(document).ready(function () {
             });
         }
     });
+<<<<<<< HEAD
     
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 
     $(document).on('click', '#btn_addade', function () {
@@ -407,6 +420,7 @@ $(function () {
 
 $(document).ready(function () {
     $(document).on('change', '.onchange', function () {
+<<<<<<< HEAD
        
         let vertical = $('#vertical_1').val();
       
@@ -427,12 +441,91 @@ $(document).ready(function () {
             },
             error: function(error) {
                 alert('Error occurred');
+=======
+
+        var selectElement = document.getElementById("mySelect");
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+
+        var dataIdValue = selectedOption.getAttribute('data-id');
+        var dataIdValueade = selectedOption.getAttribute('data-food');
+        var dataIdValueemp = selectedOption.getAttribute('data-food');
+
+        document.getElementById("fiLE_SETTING_VALUE").value = `${dataIdValue}`;
+        document.getElementById("fiLE_SETTING_VALUEADE").value = `${dataIdValueade}`;
+        document.getElementById("fiLE_SETTING_VALUEEMP").value = `${dataIdValueemp}`;
+
+    });
+});
+
+$(document).ready(function () {
+    $(document).on('click', '.submitExpense', function (event) {
+        var budget = parseFloat(document.getElementById('total').value);
+        var expense = parseFloat(document.getElementsByName('expense')[0].value);
+
+        if (expense > budget) {
+            alert('Expense cannot be greater than the budget!');
+            event.preventDefault();
+        } else { }
+    });
+});
+
+$(document).ready(function () {
+    $('form').submit(function (event) {
+
+
+        $('#dealer_code').prop('disabled', false)
+    $('#dd_firm_name').prop('disabled', false)
+    $('#dealername').prop('disabled', false)
+    $('#dd_mobilenumber').prop('disabled', false)
+    $('#dd_city').prop('disabled', false)
+
+        $('#loader-div').removeClass('d-none')
+
+        
+        event.preventDefault();
+        var formData = new FormData($(this)[0]);
+
+        $.ajax({
+            type: 'POST',
+            url: '/sga_meet',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+
+                $('#loader-div').addClass('d-none')
+
+                console.log(response.message);
+                console.log(response.number)
+                Swal.fire({
+                    title: 'Success!',
+                    text: response.message,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.reload();
+                    }
+                });
+            },
+            error: function (error) {
+                $('#loader-div').addClass('d-none')
+
+                console.log(error.error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'An error occurred while processing your request.',
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
             }
         });
     });
 });
 
 
+<<<<<<< HEAD
 // $(document).ready(function () {
 //     $('form').submit(function (event) {
         
@@ -546,6 +639,8 @@ $('#paymentForm').submit(function (event) {
 });
 });
 
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 
 
@@ -664,6 +759,7 @@ $(document).ready(function() {
     });
 });
 
+<<<<<<< HEAD
 $(document).ready(function() {
     $('#advancePaymentSelect').change(function() {
         var selectedValue = $(this).val();
@@ -738,5 +834,8 @@ $(document).ready(function(){
 
 
 
+=======
+  
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 

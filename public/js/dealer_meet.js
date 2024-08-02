@@ -47,8 +47,11 @@ $(document).ready(function () {
 
     $(document).on('click', '#btn_add', function () {
         var mySelectVal = $('#mySelect').val(); 
+<<<<<<< HEAD
       
       
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         if (mySelectVal !== null && mySelectVal !== '') { 
             var no = $('#int_no').val().trim();
             if (no !== "") {
@@ -62,9 +65,14 @@ $(document).ready(function () {
                             let numA = res.data[0].Customer_Name;
                             if (num1 && numA) {
                                 let empId = num1 + ":" + numA;
+<<<<<<< HEAD
                                 if ($('#txt_no option').filter(function() { return this.value.split(':')[0] === num1; }).length === 0) {
                                     $('#txt_no').append(`<option value="${empId}" selected class='selected'>${empId}</option>`);
                                     alert(mygift)
+=======
+                                if ($('#txt_no option[value="' + empId + '"]').length === 0) {
+                                    $('#txt_no').append(`<option value="${empId}" selected class='selected'>${empId}</option>`);
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                     $('#int_no').val('');
                                     updateCount();
                                 } else {
@@ -81,7 +89,11 @@ $(document).ready(function () {
                             let numA='Dealer not available';
                             let empId = num1 + ":" + numA;
                             console.log(empId ,'emppppp')
+<<<<<<< HEAD
                             if ($('#txt_no option').filter(function() { return this.value.split(':')[0] === num1; }).length === 0) {
+=======
+                            if ($('#txt_no option[value="' + empId + '"]').length === 0) {
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
                                 $('#txt_no').append(`<option value="${empId}" selected class='selected'>${empId}</option>`);
                                 $('#int_no').val('');
                                 updateCount();
@@ -126,8 +138,11 @@ $(document).ready(function () {
 
     $(document).on('click', '#btn_addade', function () {
         var mySelectVal = $('#mySelect').val(); 
+<<<<<<< HEAD
         var mygift = $('#mygift').val();
       
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
         if (mySelectVal !== null && mySelectVal !== '') { 
             var no = $('#int_noade').val().trim();
             if (no !== "") {
@@ -199,6 +214,7 @@ $(document).ready(function () {
     });
     
 
+<<<<<<< HEAD
     // $(document).on('click', '#btn_addade', function () {
     //     var mySelectVal = $('#mySelect').val();
     //     var mygift = $('#mygift').val();
@@ -245,6 +261,8 @@ $(document).ready(function () {
     //     }
     // });
 
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
 
     $(document).on('click', '#btn_addemp', function () {
@@ -386,6 +404,7 @@ $(document).ready(function () {
         let cal = 0;
         let cal2 = 0;
         let cal3 = 0;
+<<<<<<< HEAD
     
         let id1 = parseFloat(document.getElementById("fiLE_SETTING_VALUE").value);
         let count1 = parseFloat($('#countInput').val());
@@ -420,6 +439,32 @@ $(document).ready(function () {
         $('#cal3').val(cal3);
     
     }
+=======
+
+        let id1 = parseFloat(document.getElementById("fiLE_SETTING_VALUE").value);
+        let count1 = parseFloat($('#countInput').val());
+        cal = count1 * id1;
+
+        let id2 = parseFloat(document.getElementById("fiLE_SETTING_VALUEADE").value);
+        let count2 = parseFloat($('#countInputade').val());
+        cal2 = count2 * id2;
+
+        let id3 = parseFloat(document.getElementById("fiLE_SETTING_VALUEEMP").value);
+        let count3 = parseFloat($('#countInputemp').val());
+        cal3 = count3 * id3;
+
+        let total = cal + cal2 + cal3;
+        $('#valuetotal').text('Budget For The Meet Rs:- [ ' + cal3 + ' ] + [ ' + cal2 + ' ] + [ ' + cal + ' ]');
+        $('#total').val(total);
+        $('#cal').val(total);
+        
+
+        $('#cal1').val(cal)
+        $('#cal2').val(cal2)
+        $('#cal3').val(cal3)
+    }
+
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
     $(document).on('click', '.add', function () {
         updateTotal();
     });
@@ -431,7 +476,10 @@ $(document).ready(function () {
     $(document).on('click', '.addemp', function () {
         updateTotal();
     });
+<<<<<<< HEAD
    
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
     updateCount();
 });
@@ -453,6 +501,7 @@ $(function () {
 $(document).ready(function () {
     $(document).on('change', '.onchange', function () {
 
+<<<<<<< HEAD
         let vertical = $('#vertical_1').val();
         let ho_gift = $('#mySelect').val();
 
@@ -473,10 +522,23 @@ $(document).ready(function () {
                 alert('Error occurred');
             }
         });
+=======
+        var selectElement = document.getElementById("mySelect");
+        var selectedOption = selectElement.options[selectElement.selectedIndex];
+
+        var dataIdValue = selectedOption.getAttribute('data-id');
+        var dataIdValueade = selectedOption.getAttribute('data-food');
+        var dataIdValueemp = selectedOption.getAttribute('data-food');
+
+        document.getElementById("fiLE_SETTING_VALUE").value = `${dataIdValue}`;
+        document.getElementById("fiLE_SETTING_VALUEADE").value = `${dataIdValueade}`;
+        document.getElementById("fiLE_SETTING_VALUEEMP").value = `${dataIdValueemp}`;
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
     });
 });
 
+<<<<<<< HEAD
 
 
 $(document).ready(function () {
@@ -496,6 +558,27 @@ $(document).ready(function () {
         var formData = new FormData($(this)[0]);
       
         formData.append('additionalInfo', additionalInfo);
+=======
+$(document).ready(function () {
+    $(document).on('click', '.submitExpense', function (event) {
+        var budget = parseFloat(document.getElementById('total').value);
+        var expense = parseFloat(document.getElementsByName('expense')[0].value);
+
+        if (expense > budget) {
+            alert('Expense cannot be greater than the budget!');
+            event.preventDefault();
+        } else { }
+    });
+});
+
+$(document).ready(function () {
+    $('form').submit(function (event) {
+
+        $('#loader-div').removeClass('d-none')
+
+        event.preventDefault();
+        var formData = new FormData($(this)[0]);
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 
         $.ajax({
             type: 'POST',
@@ -580,6 +663,7 @@ $(document).ready(function() {
             $('#mandatory').text('');
         }
     });
+<<<<<<< HEAD
 });
 
 
@@ -616,3 +700,6 @@ $(document).ready(function() {
 });
 
 
+=======
+});
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730

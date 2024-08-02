@@ -108,6 +108,7 @@ $(document).ready(function(){
     $(document).on('click','#dealer_detail_event',function(){
         window.location.href='/dealer_detail_event';
     })
+<<<<<<< HEAD
 })
 
 
@@ -120,4 +121,6 @@ $(document).ready(function(){
     $(document).on('click','#extra_expense_approval',function(){
         window.location.href='/extra_expense_approval';
     })
+=======
+>>>>>>> ed83d7165492aeec5271d205ce0189f2a1084730
 })
