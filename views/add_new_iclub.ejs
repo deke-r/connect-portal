@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="stylesheet" href="/static/css/add_new_iclub.css">
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    <div class="container-fluid py-4">
+        <div class="container-fluid border-t  box_sdw ">
+            <div class="row bg_b border-t">
+                <h5 class="text-light text-center f_14 mt-2">iClub Survey</h5>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-4 py-3 ">
+                    <div class="input-group">
+                        <input type="text" class="form-control rounded-2 border-leftb box_sdw11 f_13 fw_600" placeholder="Enter Dealer Search String">
+                        <button class="btn bg_b text-light f_13 fw_600 h_33 box_sdw11 ms-3 rounded-2" type="button" id="search">Search</button>
+                    </div>
+                    <h6 class="fw-bold f_13 ms-1 mt-2">  <span class="text-danger">*</span> OC CODE OR Baan Code for Direct Dealer/ Mobile No./ GST No.</h6>
+                    
+                </div>
+
+                <div class="col-md-8  py-3 text-center ">
+                    <button class="btn bg_b text-light f_13 fw_600 h_33 box_sdw11 ms-3 rounded-2 " type="button" id="iclub_details">Select outlet and click here to go next >></button>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 ">
+                    <h6 class="fw_bold f_13 ms-1 mt-2"> Check the oulet details carefully as Outlet code search does not filter for Outlet Headquarter or location.</h6>
+                </div>
+
+            </div>
+            
+
+            <div class="row">
+                <div class="col-md-12 py-2 table-responsive px-md-5" id="dealer_detail">
+                    <table class="table table-bordered table-hover d-none" id="dataTable">
+                        <thead>
+                            <tr>
+                                <th class="bg_b text-light f_13 text-center">Select</th>
+                                <th class="bg_b text-light f_13 text-center">Dealer</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    
+    <%- include('partials/footer.ejs') %>
+    <script src="/static/js/add_new_iclub.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+2024-07-11T04:06:38.485Z info: Accessed GET in login 
+2024-07-11T04:06:41.679Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:06:41.983Z error: null
+2024-07-11T04:33:18.231Z info: Accessed GET in login 
+2024-07-11T04:33:21.224Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:33:21.812Z error: null
+2024-07-11T04:35:16.982Z info: Accessed GET in login 
+2024-07-11T04:35:19.507Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:35:19.865Z error: null
+2024-07-11T04:36:03.257Z info: Accessed GET in login 
+2024-07-11T04:36:06.295Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:36:07.619Z error: null
+2024-07-11T04:37:57.065Z info: Accessed GET in login 
+2024-07-11T04:38:01.205Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:38:01.992Z error: null
+2024-07-11T04:38:34.080Z info: Accessed GET in login 
+2024-07-11T04:38:37.080Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:38:38.219Z error: null
+2024-07-11T04:39:27.242Z info: Accessed GET in login 
+2024-07-11T04:39:29.737Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:39:30.253Z error: null
+2024-07-11T04:41:37.362Z info: Accessed GET in login 
+2024-07-11T04:41:39.697Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:41:40.056Z error: null
+2024-07-11T04:52:25.370Z info: Accessed GET in login 
+2024-07-11T04:52:27.348Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:52:27.636Z error: null
+2024-07-11T04:53:58.349Z info: Accessed GET in login 
+2024-07-11T04:54:00.647Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:54:00.958Z error: null
+2024-07-11T04:59:39.884Z info: Accessed GET in login 
+2024-07-11T04:59:42.561Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:59:42.596Z info: GET admin_dashboard accessed 16008288
+2024-07-11T04:59:42.822Z error: null
+2024-07-11T04:59:42.826Z error: null
+2024-07-11T05:00:21.077Z info: Accessed GET in login 
+2024-07-11T05:00:25.774Z info: GET admin_dashboard accessed 16008288
+2024-07-11T05:00:26.015Z error: null
+2024-07-11T05:07:03.374Z info: Accessed GET in login 
+2024-07-11T05:07:05.349Z info: GET admin_dashboard accessed 16008288
+2024-07-11T05:07:05.649Z error: null
+2024-07-11T05:45:24.620Z info: Accessed GET in login 
+2024-07-11T05:45:27.783Z info: GET admin_dashboard accessed 16008288
+2024-07-11T05:45:29.144Z error: null
+2024-07-11T05:46:59.570Z info: Accessed GET in login 
+2024-07-11T05:47:03.342Z info: GET admin_dashboard accessed 16008288
+2024-07-11T05:47:04.643Z error: null
+2024-07-11T05:53:04.501Z info: GET admin_dashboard accessed 16008288
+2024-07-11T05:57:08.881Z info: Accessed GET in upload_account_st 16008288
+2024-07-11T05:57:23.284Z info: GET admin_dashboard accessed 16008288
+2024-07-11T05:57:28.367Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-11T05:59:04.816Z info: Accessed GET in login 
+2024-07-11T05:59:08.158Z info: GET admin_dashboard accessed 16008288
+2024-07-11T05:59:08.634Z error: null
+2024-07-11T06:02:22.663Z info: Accessed GET in login 
+2024-07-11T06:02:38.614Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:02:39.866Z error: null
+2024-07-11T06:02:40.290Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-11T06:02:43.973Z info: Starting GET manage_pending_btl 16008288
+2024-07-11T06:02:46.008Z info: Accessed GET manage_pending_btl 16008288
+2024-07-11T06:02:59.849Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:04:01.058Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:04:10.144Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-11T06:05:19.350Z info: Accessed GET in login 
+2024-07-11T06:05:22.246Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:05:22.533Z error: null
+2024-07-11T06:05:24.294Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-11T06:05:25.462Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:06:23.606Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:06:26.499Z info: Accessed GET in eventreport 16008288
+2024-07-11T06:06:28.661Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:06:31.425Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-11T06:08:49.314Z info: Accessed GET in login 
+2024-07-11T06:08:51.568Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:08:51.932Z error: null
+2024-07-11T06:08:53.538Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-11T06:08:55.684Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:09:21.403Z info: Accessed GET in login 
+2024-07-11T06:09:23.911Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:09:25.261Z error: null
+2024-07-11T06:21:06.727Z info: Accessed GET in login 
+2024-07-11T06:21:10.023Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:21:11.383Z error: null
+2024-07-11T06:22:20.281Z info: Accessed GET in login 
+2024-07-11T06:22:22.299Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:22:22.611Z error: null
+2024-07-11T06:23:56.858Z info: Accessed GET in login 
+2024-07-11T06:24:01.365Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:24:01.696Z error: null
+2024-07-11T06:27:15.476Z info: Accessed GET in login 
+2024-07-11T06:27:17.873Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:27:19.188Z error: null
+2024-07-11T06:28:30.076Z info: GET admin_dashboard accessed 16008288
+2024-07-11T06:28:32.637Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-11T08:33:21.517Z info: Accessed GET in login 
+2024-07-11T08:33:23.782Z info: GET admin_dashboard accessed 16008288
+2024-07-11T08:33:24.095Z error: null
+2024-07-11T08:34:00.408Z info: Accessed GET in upload_account_st 16008288
+2024-07-11T08:39:04.775Z info: Accessed GET in login 
+2024-07-11T08:39:07.357Z info: GET admin_dashboard accessed 16008288
+2024-07-11T08:39:07.731Z error: null
+2024-07-11T08:41:08.701Z info: Accessed GET in login 
+2024-07-11T08:44:12.463Z info: Accessed GET in login 
+2024-07-11T08:44:14.599Z info: GET admin_dashboard accessed 16008288
+2024-07-11T08:44:15.019Z error: null
+2024-07-11T08:45:46.498Z info: 1 in sga meet
+2024-07-11T08:45:46.501Z info: 2 in sga meet
+2024-07-11T08:45:46.506Z info: 3 in sga meet
+2024-07-11T08:45:46.689Z info: 4 in sga meet
+2024-07-11T08:45:46.847Z info: 5 in sga meet
+2024-07-11T08:45:46.851Z info: 8 in sga meet
+2024-07-11T08:45:47.296Z info: Insert successful for rc_id:
+2024-07-11T08:45:47.410Z info: Insert successful for rc_id:
+2024-07-11T08:45:48.107Z info: 7 in sga meet
+2024-07-11T08:48:33.966Z info: Accessed GET in login 
+2024-07-11T08:48:36.062Z info: GET admin_dashboard accessed 16008288
+2024-07-11T08:48:36.446Z error: null
+2024-07-11T08:51:11.633Z info: 1 in sga meet
+2024-07-11T08:51:11.634Z info: 2 in sga meet
+2024-07-11T08:51:11.640Z info: 3 in sga meet
+2024-07-11T08:51:12.887Z info: 4 in sga meet
+2024-07-11T08:51:13.024Z info: 5 in sga meet
+2024-07-11T08:51:13.028Z info: 8 in sga meet
+2024-07-11T08:51:13.451Z error: null
+2024-07-11T08:51:14.440Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.443Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.446Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.505Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.557Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.561Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.565Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.592Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.594Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.597Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.599Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.600Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.608Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.666Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.680Z info: Insert successful for rc_id:
+2024-07-11T08:51:14.684Z info: Insert successful for rc_id:
+2024-07-11T08:51:16.903Z info: 6 in sga meet
+2024-07-11T08:59:52.762Z info: Accessed GET in login 
+2024-07-11T08:59:58.008Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:00:01.529Z error: null
+2024-07-11T09:02:25.168Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:02:26.574Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:02:34.922Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T09:12:01.680Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:14:09.122Z info: 1 in sga meet
+2024-07-11T09:14:09.123Z info: 2 in sga meet
+2024-07-11T09:14:09.125Z info: 3 in sga meet
+2024-07-11T09:14:10.339Z info: 4 in sga meet
+2024-07-11T09:14:10.485Z info: 5 in sga meet
+2024-07-11T09:14:10.487Z info: 8 in sga meet
+2024-07-11T09:14:10.945Z error: null
+2024-07-11T09:14:11.955Z info: Insert successful for rc_id:
+2024-07-11T09:14:11.990Z info: Insert successful for rc_id:
+2024-07-11T09:14:11.995Z info: Insert successful for rc_id:
+2024-07-11T09:14:12.080Z info: Insert successful for rc_id:
+2024-07-11T09:14:12.084Z info: Insert successful for rc_id:
+2024-07-11T09:14:12.124Z info: Insert successful for rc_id:
+2024-07-11T09:14:12.127Z info: Insert successful for rc_id:
+2024-07-11T09:14:12.225Z info: Insert successful for rc_id:
+2024-07-11T09:14:12.229Z info: Insert successful for rc_id:
+2024-07-11T09:14:12.260Z info: Insert successful for rc_id:
+2024-07-11T09:14:13.039Z info: Insert successful for rc_id:
+2024-07-11T09:14:13.047Z info: Insert successful for rc_id:
+2024-07-11T09:14:13.052Z info: Insert successful for rc_id:
+2024-07-11T09:14:13.056Z info: Insert successful for rc_id:
+2024-07-11T09:14:13.059Z info: Insert successful for rc_id:
+2024-07-11T09:14:13.062Z info: Insert successful for rc_id:
+2024-07-11T09:14:14.007Z info: 6 in sga meet
+2024-07-11T09:16:13.284Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:17:39.716Z info: 2 in in--shope
+2024-07-11T09:17:41.083Z info: 3 in in--shope
+2024-07-11T09:17:42.565Z info: Insert successful for rc_id:
+2024-07-11T09:17:42.568Z info: Insert successful for rc_id:
+2024-07-11T09:17:43.737Z info: Insert successful for rc_id:
+2024-07-11T09:17:43.745Z info: Insert successful for rc_id:
+2024-07-11T09:17:43.753Z info: Insert successful for rc_id:
+2024-07-11T09:17:43.759Z info: Insert successful for rc_id:
+2024-07-11T09:19:15.818Z info: 2 in in--shope
+2024-07-11T09:19:17.169Z info: 3 in in--shope
+2024-07-11T09:19:18.612Z info: Insert successful for rc_id:
+2024-07-11T09:19:19.709Z info: Insert successful for rc_id:
+2024-07-11T09:19:19.735Z info: Insert successful for rc_id:
+2024-07-11T09:19:19.740Z info: Insert successful for rc_id:
+2024-07-11T09:19:19.758Z info: Insert successful for rc_id:
+2024-07-11T09:19:19.764Z info: Insert successful for rc_id:
+2024-07-11T09:19:19.769Z info: Insert successful for rc_id:
+2024-07-11T09:19:19.774Z info: Insert successful for rc_id:
+2024-07-11T09:19:27.134Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:20:09.150Z info: Insert successful for rc_id:
+2024-07-11T09:21:55.068Z info: Insert successful for rc_id:
+2024-07-11T09:21:56.277Z info: Insert successful for rc_id:
+2024-07-11T09:21:56.286Z info: Insert successful for rc_id:
+2024-07-11T09:21:56.289Z info: Insert successful for rc_id:
+2024-07-11T09:22:04.680Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:24:42.591Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:24:43.849Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:24:53.043Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T09:32:16.937Z info: Accessed GET in login 
+2024-07-11T09:32:20.385Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:32:20.796Z error: null
+2024-07-11T09:32:25.345Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:32:32.984Z info: Accessed POST filter_event SELECT c.*, l.* 
+                             FROM JUBILANT_LOGIN l 
+                             INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id 
+                             WHERE DATE(c.DateOfMeet) BETWEEN ? AND ? 
+                             ORDER BY c.rc_id ASC 16008288
+2024-07-11T09:34:35.050Z info: Accessed GET in login 
+2024-07-11T09:34:37.405Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:34:37.682Z error: null
+2024-07-11T09:34:39.832Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:34:51.846Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T09:36:38.827Z info: Accessed GET in login 
+2024-07-11T09:36:40.841Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:36:41.188Z error: null
+2024-07-11T09:36:42.648Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:36:49.749Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T09:40:00.088Z info: Accessed GET in login 
+2024-07-11T09:40:02.275Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:40:02.628Z error: null
+2024-07-11T09:40:03.806Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:40:12.041Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T09:43:22.301Z info: Accessed GET in login 
+2024-07-11T09:43:24.349Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:43:24.666Z error: null
+2024-07-11T09:43:25.933Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:43:32.681Z info: Accessed POST filter_event SELECT DISTINCT c.*, l.* 
+                             FROM JUBILANT_LOGIN l 
+                             INNER JOIN Jacpl_ContractorMeet c ON l.EMP_CODE = c.emp_id 
+                             WHERE DATE(c.DateOfMeet) BETWEEN ? AND ? 
+                             ORDER BY c.rc_id ASC 16008288
+2024-07-11T09:49:11.150Z info: Accessed GET in login 
+2024-07-11T09:49:13.102Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:49:13.417Z error: null
+2024-07-11T09:49:17.097Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:49:24.710Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T09:52:51.343Z info: Accessed GET in login 
+2024-07-11T09:52:53.397Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:52:53.813Z error: null
+2024-07-11T09:52:55.087Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:53:02.618Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T09:54:03.415Z info: Accessed GET in login 
+2024-07-11T09:54:05.637Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:54:05.950Z error: null
+2024-07-11T09:54:10.795Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:54:11.913Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:54:21.304Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T09:56:59.125Z info: Accessed GET in login 
+2024-07-11T09:57:04.607Z info: GET admin_dashboard accessed 16008288
+2024-07-11T09:57:05.755Z error: null
+2024-07-11T09:57:06.267Z info: Accessed GET in eventreport 16008288
+2024-07-11T09:57:06.840Z error: null
+2024-07-11T09:57:16.646Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T10:00:11.916Z info: Accessed GET in login 
+2024-07-11T10:00:14.777Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:00:16.148Z error: null
+2024-07-11T10:00:16.196Z info: Accessed GET in eventreport 16008288
+2024-07-11T10:00:23.404Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T10:02:31.835Z info: Accessed GET in login 
+2024-07-11T10:02:33.660Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:02:34.119Z error: null
+2024-07-11T10:02:35.101Z info: Accessed GET in eventreport 16008288
+2024-07-11T10:02:48.015Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T10:08:07.214Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:08:10.981Z info: Accessed GET in upload_ageing_report 16008288
+2024-07-11T10:10:18.917Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:10:21.089Z info: Accessed GET in download_ageing_report 16008288
+2024-07-11T10:11:35.359Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:11:47.898Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-11T10:11:49.337Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:11:51.908Z info: Accessed GET in login 
+2024-07-11T10:11:51.921Z info: Accessed GET in login 
+2024-07-11T10:12:12.468Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:12:12.776Z error: null
+2024-07-11T10:12:14.251Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-11T10:48:59.678Z info: Accessed GET in login 
+2024-07-11T10:49:01.714Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:49:02.554Z error: null
+2024-07-11T10:49:04.741Z info: Accessed GET in eventreport 16008288
+2024-07-11T10:49:13.245Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T10:50:35.539Z info: Accessed GET in login 
+2024-07-11T10:50:38.051Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:50:38.371Z error: null
+2024-07-11T10:50:39.200Z info: Accessed GET in eventreport 16008288
+2024-07-11T10:50:46.062Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T10:57:26.357Z info: Accessed GET in login 
+2024-07-11T10:57:28.531Z info: GET admin_dashboard accessed 16008288
+2024-07-11T10:57:28.815Z error: null
+2024-07-11T10:57:30.297Z info: Accessed GET in eventreport 16008288
+2024-07-11T10:57:40.399Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-11T11:02:35.129Z info: Accessed GET in login 
+2024-07-11T11:02:37.235Z info: GET admin_dashboard accessed 16008288
+2024-07-11T11:02:37.668Z error: null
+2024-07-11T11:02:38.466Z info: Accessed GET in eventreport 16008288
+2024-07-11T11:02:57.987Z info: Accessed POST filter_event loginQuery 16008288

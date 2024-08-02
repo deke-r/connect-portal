@@ -1,0 +1,22 @@
+2024-07-12T04:09:35.868Z error: null
+2024-07-12T04:16:09.375Z error: null
+2024-07-12T04:18:11.663Z error: null
+2024-07-12T04:18:15.130Z error: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client in nodemailer
+2024-07-12T04:19:08.431Z error: null
+2024-07-12T04:20:48.803Z error: null
+2024-07-12T04:27:31.402Z error: null
+2024-07-12T04:31:50.009Z error: null
+2024-07-12T04:33:33.057Z error: null
+2024-07-12T04:33:35.899Z error: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client in nodemailer
+2024-07-12T04:35:25.962Z error: null
+2024-07-12T04:57:59.655Z error: null
+2024-07-12T05:53:33.935Z error: null
+2024-07-12T05:57:35.327Z error: 500 - ENOENT: no such file or directory, open 'D:\var\log\jubilant\images\ea6c3981-3a0f-4b8e-a1e8-31aef588b9e6-daredevil-minimalist-4k-wallpaper-uhdpaper.com-320@0@k.jpg' - /sga_meet - POST - ::1
+2024-07-12T05:58:30.027Z error: 500 - ENOENT: no such file or directory, open 'D:\var\log\jubilant\images\b918647d-8b30-4c03-8c52-dc8d3f797f89-daredevil-minimalist-4k-wallpaper-uhdpaper.com-320@0@k.jpg' - /sga_meet - POST - ::1
+2024-07-12T05:59:42.251Z error: null
+2024-07-12T06:10:26.649Z error: null
+2024-07-12T06:14:05.119Z error: null
+2024-07-12T06:15:16.675Z error: null
+2024-07-12T06:22:07.788Z error: null
+2024-07-12T06:26:50.994Z error: null
+2024-07-12T06:28:33.053Z error: null

@@ -1,0 +1,9 @@
+@media (max-width:768px) {
+    .my_cols{
+     margin-top: .5rem !important;
+     margin-bottom: .5rem !important;
+    }
+    .displaynun{
+        display: none !important;
+    }
+}

@@ -1,0 +1,30 @@
+
+
+
+
+@media (max-width:768px) {
+    .my_cols{
+     margin-top: .5rem !important;
+     margin-bottom: .5rem !important;
+    }
+
+    .displaynun{
+        display: none !important;
+    }
+    .f-end{
+        display: flex !important;
+        justify-content: end !important;
+    }
+ 
+}
+
+
+
+
+
+.eventreport{
+    position: fixed !important;
+bottom: 0px;
+}
+
+

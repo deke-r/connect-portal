@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/upload_ageing_report.css">
+    <link rel="stylesheet" href="/static/cdn/dataTables/css/datatable.min.css">
+    
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+
+
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid box_sdw border-t  childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Upload Ageing Report</h5>
+                </div>
+                <div class="row mx-3 d-flex justify-content-between  align-items-center">
+
+                    <div class="col-md-4 py-3">
+
+                        <div class="input-group  mt-3">
+                            <input type="file" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                placeholder="Upload Excel" aria-label="Recipient's username"
+                                aria-describedby="button-addon2" id="excel_upload">
+                            <button class="btn bg_b text-light f_13 fw_600 h_33 box_sdw11" type="button"
+                                id="upload_btn">Upload</button>
+                        </div>
+                        <h6 class="fw_bold f_13 ms-1 mt-2"> <span class="text-danger">*</span> Upload files only in CSV
+                            format:</h6>
+
+
+
+
+
+
+                    </div>
+                    <div class="col-md-4 col-2 py-3">
+                        <button class="btn bg_r mt-md-2 text-light f_13 fw_600 h_33 box_sdw11" type="button"
+                            id="reset">Reset</button>
+                        <h6 class="fw_bold f_13 ms-1">&nbsp;</h6>
+
+                    </div>
+
+
+                    <div class="col-md-4 col-6 mb-4 py-3 d-flex justify-content-end">
+                        <button class="btn bg_b text-light  f_13 fw_600 h_33 box_sdw11" type="button" id="save_ext"
+                            disabled>Save & Exit</button>
+                    </div>
+
+                    <hr>
+
+
+                </div>
+
+
+
+                
+
+
+
+
+
+                <div class="mx-3">
+
+                    <div class="table-responsive    px-2   me-2" id="">
+                        <table id="csvTable" class="table table-bordered   overflow-scroll  table-striped">
+
+                            <thead id="csvTableHead"></thead>
+                            <tbody id="csvTableBody"></tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="loader-div d-none" id="loader-div">
+            <div class="loader">
+                <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+            </div>
+        </div>
+
+
+        <%- include('partials/footer.ejs') %>
+
+            <script src="/static/js/upload_ageing_report.js"></script>
+            <script src='/static/cdn/dataTables/js/datatables.min.js'></script>
+</body>
+
+</html>

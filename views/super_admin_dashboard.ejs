@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/super_admin_dashboard.css">
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+
+
+
+        <div class="container-fluid mt-3">
+
+            <div class="row">
+
+
+                <div class="col-md-6 my-4">
+
+
+                    <div class=" row border-t mediamr">
+                        <div class="container-fluid pb-3 border-t bg_dot  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2"><i class="fa-solid fa-handshake me-2"></i> Meet Details</h4>
+                            </div>
+                            <!-- <div class="row my-3 mx-1">
+                                <p class="f_12 pb-0 mb-0 fw_600">View & update details of meet done in market.</p>
+                            </div> -->
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn  btn_grn f_13 box_sdw11 fw_600 text-light  text-start"
+                                    id="sga_meet">
+                                    <i class="fa fa-users me-3"></i>
+                                    Add Small Group Actvity Details </button>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+
+
+                                <button class="btn hover_btn  btn_grn f_13 fw_600 text-light box_sdw11  text-start"
+                                    id="inshop">
+                                    <i class="fa fa-users me-3"></i>
+                                    Add In-Shop Meet Details </button>
+                            </div>
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn f_13 fw_600 text-light box_sdw11 text-start"
+                                    id="contractor">
+                                    <i class="fa fa-users me-3"></i>
+                                    Add Contractor Meet Details </button>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn f_13 fw_600 text-light box_sdw11 text-start"
+                                    id="dealer_meet">
+                                    <i class="fa fa-users me-3"></i>
+                                    Add Dealer Meet Details </button>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn bg_grey hover_btn2 f_13 fw_600 text-light box_sdw11 text-start"
+                                    id="eventreport">
+                                    <i class="fa-regular fa-file me-3"></i>
+                                    View Meet (SGA/Inshop/Contractor/Dealer) Report </button>
+                            </div>
+
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn bg_grey hover_btn2 f_13 fw_600 text-light text-start box_sdw11"
+                                    id="detail_event">
+                                    <i class="fa-solid fa-file-circle-check me-3"></i>
+                                    View Meet (SGA/Inshop/Contractor) Detail Report </button>
+                            </div>
+                            <div class="row mx-1 my-2">
+                                <button class="btn bg_grey hover_btn2 f_13 fw_600 text-light text-start box_sdw11"
+                                    id="dealer_detail_event">
+                                    <i class="fa-solid fa-file-circle-check me-3"></i>
+                                    View Meet (Dealer) Detail Report </button>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 my-4">
+                    <div class=" row mediamr">
+                        <div class="container-fluid border-t bg_dot pb-3  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2">
+                                    <i class="fa-solid fa-cubes-stacked"></i>
+                                    iClub Details
+                                </h4>
+                            </div>
+                           
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn  btn_grn f_13 fw_600 box_sdw11  text-light text-start"
+                                    id="view_edit_iclub_report">
+                                    <i class="fa-solid fa-eye me-3"></i>
+                                    Click to View/ Update </button>
+                            </div>
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn f_13 fw_600 box_sdw11 text-light text-start"
+                                    id="add_new_iclub">
+                                    <i class="fa-solid fa-plus me-3"></i>
+                                    Click to Add New iClub </button>
+                            </div>
+
+
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn bg_grey hover_btn2 f_13 fw_600 text-light box_sdw11 text-start"
+                                    id="view_dealer_report_monthwise">
+                                    <i class="fa-solid fa-file-circle-check me-3"></i>
+                                    View Dealerwise Monthwise iClub Achievement Report FY23-24 </button>
+                            </div>
+
+
+                            <!-- <div class="row mx-1 my-2">
+                    <button class="btn bg_grey hover_btn2 f_13 fw_600 text-light text-start">
+                        View Dealerwise Monthwise iClub Achievement Report FY22-23       </button>
+                </div> -->
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class=" row mediamr mt-3 ">
+                        <div class="container-fluid border-t bg_dot pb-3  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2"><i class="fa-regular fa-file me-2"></i>Ageing Report</h4>
+                            </div>
+
+
+                            <div class="row mx-1 my-2 mt-4">
+                                <button class="btn hover_btn  btn_grn f_13 fw_600 box_sdw11  text-light text-start"
+                                    id="upload_ageing_report">
+                                    <i class="fa-solid fa-upload me-3"></i>
+                                    Upload Ageing Report </button>
+                            </div>
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn f_13 fw_600 box_sdw11 text-light text-start"
+                                    id="download_ageing_report">
+                                    <i class="fa-solid fa-download me-3"></i>
+                                    Download Ageing Report </button>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="col-md-6 my-4">
+                    <div class=" row mediamr">
+                        <div class="container-fluid border-t bg_dot pb-3  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2"><i class="fa-solid fa-receipt me-2"></i>Account Statement</h4>
+                            </div>
+
+
+                            <div class="row mx-1 my-2 mt-4">
+                                <button class="btn hover_btn  btn_grn f_13 fw_600 box_sdw11  text-light text-start"
+                                    id="upload_account_st">
+                                    <i class="fa-solid fa-upload me-3"></i>
+                                    Upload Account Statement </button>
+                            </div>
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn f_13 fw_600 box_sdw11 text-light text-start"
+                                    id="download_account_st">
+                                    <i class="fa-solid fa-download me-3"></i>
+                                    Download Account Statement </button>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+                
+
+                <div class="col-md-6 my-4 ">
+                    <div class=" row border-t mediamr">
+                        <div class="container-fluid border-t pb-3 bg_dot  newmp">
+                            <div class="row bg_b text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2"><i class="fa-solid fa-people-roof me-2"></i>Manage Meet Details
+                                </h4>
+                            </div>
+
+
+                            <div class="row mx-1 my-2 mt-4">
+                                <button class="btn hover_btn  btn_grn f_13 fw_600 text-light box_sdw11  text-start"
+                                    id="pnd_btl">
+                                    <i class="fa-solid fa-hourglass-half me-3"></i>
+                                    View/Edit Pending BTL </button>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn  btn_grn f_13 fw_600 text-light  box_sdw11  text-start"
+                                    id="ra_btl">
+                                    <i class="fa-solid fa-eye me-3"></i>
+                                    View Rejected & Approved BTL </button>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn box_sdw11  btn_grn f_13 fw_600 text-light  text-start"
+                                    id="duplicate_image_details">
+                                    <i class="fa-solid fa-clone me-3"></i>
+                                    Duplicate Image Details</button>
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+
+                <div class="col-md-6 my-4">
+
+
+                    <div class=" row mediamr mt-3">
+                        <div class="container-fluid border-t bg_dot pb-3  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2">
+                                    <i class="fa-solid fa-clock me-2"></i>
+                                    Pending Approvel
+                                </h4>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn mt-2 f_13 fw_600 box_sdw11 text-light text-start"
+                                    id="attended_approvel">
+                                    <i class="fa-brands fa-creative-commons-by me-3"></i>
+                                    Attended Approvel</button>
+                            </div>
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn mt-2 f_13 fw_600 box_sdw11 text-light text-start"
+                                    id="extra_expense_approval">
+                                    <i class="fa-brands fa-creative-commons-by me-3"></i>
+                                    Extra Expense Approval</button>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 my-4">
+
+
+                    <div class=" row mediamr mt-3">
+                        <div class="container-fluid border-t bg_dot pb-3  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2">
+                                    <i class="fa-solid fa-clock me-2"></i>
+                                    Pending Report
+                                </h4>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn mt-2 f_13 fw_600 box_sdw11 text-light text-start"
+                                    id="pending_approval">
+                                    <i class="fa-brands fa-creative-commons-by me-3"></i>
+                                    Pending Approval </button>
+                            </div>
+                           
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 my-4">
+
+
+                    <div class=" row mediamr mt-3">
+                        <div class="container-fluid border-t bg_dot pb-3  newmp">
+                            <div class="row bg_b2 text-light align-middle text-center border-t">
+                                <h4 class="f_14 mt-2">
+                                    <i class="fa-solid fa-user-tie me-2"></i>
+                                    Dealer Details
+                                </h4>
+                            </div>
+
+                            <div class="row mx-1 my-2">
+                                <button class="btn hover_btn btn_grn mt-2 f_13 fw_600 box_sdw11 text-light text-start"
+                                    id="dealer_upload">
+                                    <i class="fa-regular fa-square-plus me-3"></i>
+                                    Upload Dealer Details</button>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+            <!-- <div class="row my-4">
+
+
+    <div class="col-md-6">
+
+
+        <div class=" row border-t  mediamr">
+<div class="container-fluid pb-3 bg_dot  box_sdw">
+    <div class="row bg_b2 text-light align-middle text-center border-t">
+        <h4 class="f_14 mt-2">Site Details</h4>
+    </div>
+   
+
+    <div class="row mx-1 my-2">
+        <button class="btn   hover_btn btn_grn f_13 fw_600  text-light text-start">
+            Site Details</button>
+    </div>
+    <div class="row mx-1 my-2">
+        <button class="btn hover_btn btn_grn f_13 fw_600 text-light text-start">
+            Add New Site       </button>
+    </div>
+
+
+
+    <div class="row mx-1 my-2">
+        <button class="btn bg_grey hover_btn2 f_13 fw_600 text-light text-start">
+            Site Visit Report        </button>
+    </div>
+
+
+   
+
+    
+</div>
+
+        </div>
+
+
+    </div>
+ 
+
+</div> -->
+
+        </div>
+
+
+
+
+
+        
+        
+        <script src="/static/js/super_admin_dashboard.js"></script>
+        <%- include('partials/footer.ejs') %>
+
+
+</body>
+
+</html>

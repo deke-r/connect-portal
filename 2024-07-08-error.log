@@ -1,0 +1,11 @@
+2024-07-08T10:34:34.878Z error: null
+2024-07-08T10:38:45.457Z error: null
+2024-07-08T10:40:11.110Z error: null
+2024-07-08T10:42:13.858Z error: null
+2024-07-08T11:01:38.598Z error: Cannot read properties of undefined (reading '0')
+2024-07-08T11:04:25.507Z error: null
+2024-07-08T11:08:33.801Z error: Error in POST approval_btl query 16008288Error: ER_DATA_TOO_LONG: Data too long for column 'Company' at row 1UPDATE Jacpl_ContractorMeet SET is_active = 2,ApprovedBTL_date= ?, Zone = ?, Company = ?, voucher_no = ?, Session_ID = ? WHERE rc_id = ?
+2024-07-08T11:08:36.697Z error: Error in POST approval_btl query 16008288Error: ER_DATA_TOO_LONG: Data too long for column 'Company' at row 1UPDATE Jacpl_ContractorMeet SET is_active = 2,ApprovedBTL_date= ?, Zone = ?, Company = ?, voucher_no = ?, Session_ID = ? WHERE rc_id = ?
+2024-07-08T11:09:21.958Z error: Error in POST approval_btl query 16008288Error: ER_DATA_TOO_LONG: Data too long for column 'Company' at row 1UPDATE Jacpl_ContractorMeet SET is_active = 2,ApprovedBTL_date= ?, Zone = ?, Company = ?, voucher_no = ?, Session_ID = ? WHERE rc_id = ?
+2024-07-08T11:11:13.870Z error: null
+2024-07-08T11:24:43.053Z error: null

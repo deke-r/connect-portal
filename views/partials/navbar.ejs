@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jubilant</title>
+  <link rel="icon" type="image/png" href="/static/images/logo.png">
+  <script src="/static/js/jquery-3.6.1.min.js"></script>
+  <link rel="stylesheet" href="/static/css/navbar.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/cdn/bootstrap/css/bootstrap5.2.3.min.css">
+  <link rel="stylesheet" href="/static/cdn/fontawesome/css/fontawesome6.5.1.css">
+  <link rel="stylesheet" href="/static/cdn/jquery/css/jqueryUI1.12.1.css">
+  <link rel="stylesheet" href="/static/css/jquery_calender.css">
+  <script src="/static/js/navbar.js"></script>
+
+</head>
+
+<body>
+
+
+
+  <nav class="navbar navbar-expand-lg bg-light printnone">
+    <div class="container-fluid">
+      <% if (role==='EMPLOYEE' ) { %>
+        <a class="navbar-brand" href="/employee_dashboard">
+          <img src="/static/images/logo.png" width="70px">
+        </a>
+        <% } else if (role==='MANAGER' ) { %>
+          <a class="navbar-brand" href="/manager_dashboard">
+            <img src="/static/images/logo.png" width="70px">
+          </a>
+          <% } else if (role==='COMMERCIAL' ) { %>
+            <a class="navbar-brand" href="/commercial_dashboard">
+              <img src="/static/images/logo.png" width="70px">
+            </a>
+            <% } else if (role==='SUPER_ADMIN' ) { %>
+              <a class="navbar-brand" href="/super_admin_dashboard">
+                <img src="/static/images/logo.png" width="70px">
+              </a>
+              <% } else { %>
+                <a class="navbar-brand" href="/admin_dashboard">
+                  <img src="/static/images/logo.png" width="70px">
+                </a>
+                <% } %>
+
+                  <% if (role==='EMPLOYEE' ) { %> <a class="navbar-brand dlay" href="/employee_dashboard">
+                      <h5 class="text-blue mt-2 nevis me-3 fw_650">
+                        <img src="/static/images/JivanjorM.png" class="mb-1" height="20px">CONNECT
+                      </h5>
+                    </a>
+                    <% } else if (role==='MANAGER' ) { %> <a class="navbar-brand dlay" href="/manager_dashboard">
+                        <h5 class="text-blue mt-2 nevis me-3  fw_650">
+                          <img src="/static/images/JivanjorM.png" class="mb-1" height="20px">CONNECT
+                        </h5>
+                      </a>
+                      <% } else if (role==='COMMERCIAL' ) { %> <a class="navbar-brand dlay"
+                          href="/commercial_dashboard">
+                          <h5 class="text-blue mt-2 nevis me-3 fw_650">
+                            <img src="/static/images/JivanjorM.png" class="mb-1" height="20px">CONNECT
+                          </h5>
+                        </a>
+                        <% } else if (role==='SUPER_ADMIN' ) { %>
+                          <a class="navbar-brand dlay" href="/super_admin_dashboard">
+                            <h5 class="text-blue mt-2 nevis me-3   fw_650">
+                              <img src="/static/images/JivanjorM.png" class="mb-1" height="20px">CONNECT
+                            </h5>
+                          </a>
+                          <% } else { %>
+                            <a class="navbar-brand dlay" href="/admin_dashboard">
+                              <h5 class="text-blue mt-2 neviss me-3  fw_650">
+                                <img src="/static/images/JivanjorM.png" class="mb-1" height="20px">CONNECT
+                              </h5>
+                            </a>
+                            <% } %>
+                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                                <ul class="navbar-nav   mb-2 mb-lg-0">
+                                  <li class="nav-item me-3 ms-1 ">
+                                    <h6 class="nav-link fw_600 mt-1  text-dark" aria-current="page" href="#">
+
+                                      <i class="fa-solid fa-id-card-clip"></i>
+                                      &nbsp;<%= emp %><span class="fw-bold text-blue nevis">  [<%= emp_name %>]</span>
+                                    </h6>
+                                  </li>
+                                  <li class="nav-item me-3 ms-1 ">
+                                    <h6 class="nav-link fw_600 mt-1 text-dark" aria-current="page" href="#">
+
+                                      <i class="fa-regular fa-user"></i>
+                                      &nbsp;Account Type:<span class="fw-bold text-blue nevis">
+                                        <%= role %>
+                                      </span>
+                                    </h6>
+                                  </li>
+                                  <li class="nav-item me-3 ms-1 ">
+                                    <h6 class="nav-link fw_600 mt-1 text-dark" aria-current="page" href="#">
+
+                                      <i class="fa-regular fa-id-badge"></i>
+                                   &nbsp;Designation:<span class="fw-bold text-blue nevis">
+                                        <%= designation %>
+                                      </span>
+                                    </h6>
+                                  </li>
+
+
+
+
+
+
+
+                                        <li class="nav-item me-3 ms-1 ">
+                                          <a href="#" class=" nav-link fw_600  text-dark" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop">
+                                            <i class="fa-solid fa-power-off"></i>
+                                            &nbsp;Logout
+                                          </a>
+
+                                          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog">
+                                              <div class="modal-content">
+                                                <div class="modal-header text-dark">
+                                                  <h6>Logout <i class="fa fa-lock"></i></h6>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body text-dark fw_600">
+                                                  <i class="fa fa-question-circle"></i> Are you sure you want to
+                                                  log-out?
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                  <button type="button"
+                                                    class="btn bg_r text-light f_13 fw_600 box_sdw11"
+                                                    id="logout">Logout</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+
+
+
+
+
+                                        </li>
+
+                                </ul>
+
+                              </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+</html>

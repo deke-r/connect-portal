@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/dealer_meet.css">
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+
+    <div class="container-fluid parentbox  my-4">
+        <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+            <div class="row bg_r border-t">
+                <h5 class="text-light text-center f_16 mt-2">Dealer Meet</h5>
+            </div>
+            <div class="row">
+                <p class="pb-0 mb-0 my-2 f_12  fw_600">Enter details of Dealer meet done.</p>
+            </div>
+
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid newmp  border-t childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Event Details</h5>
+                </div>
+
+              
+
+                <form action="/in-shope" method="POST" enctype="multipart/form-data" id="paymentForm">
+                    <input type="hidden" name="email_to_send" id="email_to_send">
+                    <input type="hidden" name="countemp" id="countInputemp">
+                    <input type="hidden" name="count" id="countInput">
+                    <input type="hidden" name="countade" id="countInputade">
+                    <input type="hidden" name="cal" id="cal1">
+                    <input type="hidden" name="cal1" id="cal2">
+                    <input type="hidden" name="cal2" id="cal3">
+                    <input type="hidden" value="<%= emp %>" name="employeeId">
+
+
+                    <div class="row mt-4 mb-2 pb-4">
+
+                        <div class="col-md-6 my_cols">
+                            <h6 class="fw_bold f_13 ms-1 ">Select Vertical:</h6>
+                            <select name="vertical" class="form-select border-leftb box_sdw11 f_13 fw_600"
+                                aria-label="Default select example" id="vertical_1" required>
+                                <option selected disabled>Select</option>
+                                <% for (var i=0; i < data.length; i++) { %>
+                                    <option value="<%= data[i].vertical %>">
+                                        <%= data[i].vertical %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-6 my_cols">
+                            <h6 class="fw_bold f_13 ms-1 ">Date Of Meet:</h6>
+                            <input type="text" id="datepicker" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                placeholder="DD-MM-YYYY" name="dateformate" required readonly>
+                            <h6 class="f_11 fw_bold ms-1 mt-1">(Backdate of meeting entry is restricted to 07 days only)
+                            </h6>
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+        </div>
+
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid newmp border-t  childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Dealer Details</h5>
+                </div>
+
+                    <div class="row mt-2 mb-2">
+                        <div class="col-md-6 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Venue Dealer Meet::</h6>
+                            <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                placeholder="Enter Dealer Firm Name" name="dealerfirmname" required>
+
+
+                        </div>
+
+                        <div class="col-md-6 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Name of Dealer:</h6>
+                            <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                placeholder="Dealer Name" name="dealername" required>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row mt-2 mb-2 pb-4">
+                        
+                        <div class="col-md-6 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Mobile No.(Dealer):</h6>
+                            <input type="number" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                placeholder="Dealer Mobile No." name="mobilenumber" required>
+                            <h6 class="f_11 fw_bold ms-1 mt-1 displaynun">&nbsp;</h6>
+
+                        </div>
+                        <div class="col-md-6 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">City/ Town:</h6>
+                            <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                placeholder="Enter City/Town" name="city" required>
+
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid newmp border-t childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Meet Action</h5>
+                </div>
+                    <div class="row mt-2 mb-2">
+
+
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Select Meeting Gift Details:</h6>
+                            <select class="form-select border-leftb box_sdw11 f_13 fw_600 onchange" id="mySelect"
+                                aria-label="Default select example" name="Meeting" required>
+                                <option selected disabled>Select Meeting Gift Details</option>
+                                <% for (var i=0; i < inshopData.length; i++) { %>
+                                    <option value="<%= inshopData[i].BACKEND_TITLE %>">
+                                        <%= inshopData[i].UI_TITLE %>
+                                    </option>
+                                    <% } %>
+
+                            </select>
+
+                            <input type="hidden" value="<%= inshopData[0].BACKEND_TITLE %>" class="" id="ady">
+
+
+                            <h6 class="f_11 fw_bold ms-1 mt-1">Prior approval on email is required to go for own gift.
+                                Email approval to be attached with bills.
+                            </h6>
+                        </div>
+                        
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Agenda Of Meet:</h6>
+                            <textarea class="form-control f_13 fw_600 border-leftb box_sdw11" rows="1" cols="10"
+                                placeholder="Enter Agenda of Meet" name="Agenda" required></textarea>
+
+                        </div>
+
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Meeting Outcome:</h6>
+                            <textarea class="form-control f_13 fw_600 border-leftb box_sdw11" rows="1" cols="10"
+                                placeholder="" name="Outcome" required></textarea>
+
+                        </div>
+                        
+                    </div>
+
+                    <div class="row mt-2 mb-2 pb-4">
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Upload Event Photo (Mandatory):</h6>
+                            <input type="file" name="Attachment1"
+                                class="form-control border-leftb box_sdw11 f_13 fw_600" accept="image/*" required />
+                        </div>
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Upload Event Hotel/Food Bills in one file (Mandatory):</h6>
+                            <input type="file" name="Attachment2"
+                                class="form-control border-leftb box_sdw11 f_13 fw_600" accept="image/*" placeholder="" required>
+                        </div>
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Upload Event Gift Bills <span id="mandatory"></span>:</h6>
+                            <input type="file" name="Attachment3"
+                                class="form-control border-leftb box_sdw11 f_13 fw_600" accept="image/*" placeholder="" id="rqr_att">
+                            <h6 class="f_11 fw_bold ms-1 mt-1 displaynun">&nbsp;</h6>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid newmp  border-t childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Attended Details</h5>
+                </div>
+
+                    <div class="row mt-3 mb-2">
+
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">JACPL Attended Employee ID:</h6>
+                            <div class="input-group">
+                            <input type="number" id="int_noemp" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                placeholder="eg. 1600XXXX" name="jacpl">
+                                <button class="btn bg_b text-light f_13 fw_600 box_sdw11 addemp rounded-end-2" type="button"
+                                id="btn_addemp">Add</button>
+                                <input type="hidden" id="fiLE_SETTING_VALUEEMP">
+                            </div>
+                            <h6 class="f_11 fw_bold ms-1 mt-1">Enter JACPL Employee ID and click Add. Add all
+                                Attendees befor submitting.
+                            </h6>
+                        </div>
+
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">ADE Attended Employee ID:</h6>
+                            <div class="input-group">
+                            <input type="text" id="int_noade" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                placeholder="eg. JBXXXX" name="adename">
+                                <button class="btn bg_b text-light f_13 fw_600 box_sdw11 addade rounded-end-2" type="button"
+                                id="btn_addade">Add</button>
+                                <input type="hidden" id="fiLE_SETTING_VALUEADE">
+                            </div>
+                            <h6 class="f_11 fw_bold ms-1 mt-1">Enter ADE ID and click Add. Add all
+                                Attendees befor submitting.
+                            </h6>
+
+                        </div>
+
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Dealer Attended:</h6>
+                            <div class="input-group">
+                                <input type="text" id="int_no" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                    placeholder="Enter Dealer Code." aria-label="Recipient's username"
+                                    aria-describedby="button-addon2">
+                                <button class="btn bg_b text-light f_13 fw_600 box_sdw11 add rounded-end-2" type="button"
+                                    id="btn_add">Add</button>
+                                <input type="hidden" id="fiLE_SETTING_VALUE">
+                            </div>
+                            <h6 class="f_11 fw_bold ms-1 mt-1">Enter Dealer Code of Dealer and click Add. Add all
+                                Attendees befor submitting.</h6>
+
+
+                        </div> 
+
+                        
+                    </div>
+
+
+                    <div class="row mt-2 mb-2 pb-3">
+
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1" id="options_countemp"></h6>
+                            <div class="input-group">
+                                <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="txt_noemp"
+                                    aria-label="Default select example">
+
+                                </select>
+                                <button class="btn bg_r text-light f_13 fw_600 h_33 box_sdw11" type="button"
+                                    id="del_txt_noemp">Delete From List</button>
+                            </div>
+                            <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+                        </div>
+
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1" id="options_countade"></h6>
+                            <div class="input-group">
+                                <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="txt_noade"
+                                    aria-label="Default select example">
+
+                                </select>
+                                <button class="btn bg_r text-light f_13 fw_600 h_33 box_sdw11" type="button"
+                                    id="del_txt_noade">Delete From List</button>
+                            </div>
+                            <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+                        </div>
+
+
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1" id="options_count"></h6>
+                            <div class="input-group">
+                                <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="txt_no"
+                                    aria-label="Default select example">
+
+                                </select>
+                                <button class="btn bg_r text-light f_13 fw_600 h_33 box_sdw11" type="button"
+                                    id="del_txt_no">Delete From List</button>
+                            </div>
+                            <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+                        </div>
+
+
+                    </div>
+
+
+
+            </div>
+        </div>
+
+
+
+                    
+
+                   
+
+                    <textarea type="text" class="d-none" id="gt" name="number"></textarea>
+                    <textarea type="text" class="d-none" id="gtemp" name="numberemp"></textarea>
+                    <textarea type="text" class="d-none" id="gtade" name="numberade"></textarea>
+                   
+
+
+        <div class="container-fluid parentbox my-4">
+                <div class="container-fluid newmp border-t  childbox bg-light">
+                            <div class="row bg_b border-t">
+                                <h5 class="text-light text-center f_14 mt-2">Budget Details</h5>
+                            </div>
+
+                    <div class="row mt-2 mb-2 pb-4">
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Advance Payment By HO</h6>
+                            <select id="advancePaymentSelect" class="form-select border-leftb box_sdw11 f_13 fw_600 onchange" required>
+                                <option selected disabled>Select</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+  
+                        
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1" id="valuetotal"></h6>
+                            <input type="text" class="form-control bg_lg border-leftb box_sdw11 f_13 fw_600" id="total"
+                                name="" placeholder="" disabled>
+
+                        </div>
+                        <input type="hidden" name="budget" id="cal">
+                        <div class="col-md-4 my_cols">
+                            <h6 class="fw_bold f_13 ms-1">Total incurred expense for meet (Rs.):</h6>
+                                <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" name="expense"
+                                    placeholder="" required>
+
+                        </div>
+                        </div>
+
+                        <div class="row mt-2 mb-2 pb-4">
+
+                            <div class="col-md-4 my_cols mt-2" id="additionalInputContainer">
+                                 
+                               
+                            </div>
+    
+                            
+                            <div class="col-md-4 my_cols">
+    
+                            </div>
+                        <div class="col-md-4 d-flex justify-content-between   my_cols">
+                                   
+
+                                    <button class="btn bg_b mt-5 text-nowrap text-light f_13 fw_600 submitExpense email" type="sumbit"
+                                        id="sub_btn">Submit Details</button><br>
+                                        <button class="btn bg_r mt-5 text-light f_13 fw_600" type="button"
+                                        id="back">Back</button>
+                        </div>
+                        
+                    </div>
+
+
+
+
+                    <input type="hidden" id="additionalInfo" class="form-control mt-3" placeholder="Captured Value" readonly>
+                    
+                   
+
+                   
+
+                </form>
+            </div>
+
+
+
+
+
+
+        </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="loader-div d-none" id="loader-div">
+            <div class="loader">
+                <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+            </div>
+        </div>
+
+
+
+        <script src="/static/js/dealer_meet.js"></script>
+
+
+
+        <%- include('partials/footer.ejs') %>
+</body>

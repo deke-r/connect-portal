@@ -1,0 +1,18 @@
+.row_margin{
+    margin-inline:1.5rem !important ;
+}
+@media (max-width:387px) {
+    .row_margin{
+        margin-inline: 0.25rem !important;
+    }
+}
+.newmp2 {
+    border-radius: 1px;
+    background-color: white;
+    border-radius: 1px;
+    box-shadow: 5px 5px 12px #afafaf, -5px -5px 12px #ffffff;
+}
+
+
+
+.txt_sky{color: skyblue !important;}

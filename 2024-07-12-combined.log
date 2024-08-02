@@ -1,0 +1,226 @@
+2024-07-12T04:09:33.531Z info: Accessed GET in login 
+2024-07-12T04:09:35.742Z info: GET admin_dashboard accessed 16008288
+2024-07-12T04:09:35.868Z error: null
+2024-07-12T04:16:07.641Z info: Accessed GET in login 
+2024-07-12T04:16:09.269Z info: GET admin_dashboard accessed 16008288
+2024-07-12T04:16:09.375Z error: null
+2024-07-12T04:18:11.319Z info: 1 in sga meet
+2024-07-12T04:18:11.321Z info: 2 in sga meet
+2024-07-12T04:18:11.324Z info: 3 in sga meet
+2024-07-12T04:18:11.397Z info: 4 in sga meet
+2024-07-12T04:18:11.462Z info: 5 in sga meet
+2024-07-12T04:18:11.466Z info: 8 in sga meet
+2024-07-12T04:18:11.663Z error: null
+2024-07-12T04:18:11.815Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.820Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.828Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.838Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.841Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.845Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.849Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.850Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.853Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.856Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.871Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.881Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.889Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.892Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.897Z info: Insert successful for rc_id:
+2024-07-12T04:18:11.906Z info: Insert successful for rc_id:
+2024-07-12T04:18:15.130Z error: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client in nodemailer
+2024-07-12T04:19:03.375Z info: Accessed GET in login 
+2024-07-12T04:19:06.714Z info: Accessed GET in login 
+2024-07-12T04:19:08.319Z info: GET admin_dashboard accessed 16008288
+2024-07-12T04:19:08.431Z error: null
+2024-07-12T04:20:48.454Z info: 1 in sga meet
+2024-07-12T04:20:48.457Z info: 2 in sga meet
+2024-07-12T04:20:48.465Z info: 3 in sga meet
+2024-07-12T04:20:48.543Z info: 4 in sga meet
+2024-07-12T04:20:48.604Z info: 5 in sga meet
+2024-07-12T04:20:48.612Z info: 8 in sga meet
+2024-07-12T04:20:48.803Z error: null
+2024-07-12T04:20:48.882Z info: Insert successful for rc_id:
+2024-07-12T04:20:48.944Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.181Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.184Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.190Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.193Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.197Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.199Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.202Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.215Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.219Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.223Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.254Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.268Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.279Z info: Insert successful for rc_id:
+2024-07-12T04:20:49.283Z info: Insert successful for rc_id:
+2024-07-12T04:20:52.562Z info: 6 in sga meet
+2024-07-12T04:27:27.968Z info: Accessed GET in login 
+2024-07-12T04:27:31.283Z info: GET admin_dashboard accessed 16008288
+2024-07-12T04:27:31.402Z error: null
+2024-07-12T04:29:07.076Z info: 1 in sga meet
+2024-07-12T04:29:07.078Z info: 2 in sga meet
+2024-07-12T04:29:07.083Z info: 3 in sga meet
+2024-07-12T04:29:07.162Z info: 4 in sga meet
+2024-07-12T04:29:07.221Z info: 5 in sga meet
+2024-07-12T04:29:07.227Z info: 8 in sga meet
+2024-07-12T04:29:07.482Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.489Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.503Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.710Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.719Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.721Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.725Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.727Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.729Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.731Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.733Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.735Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.737Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.769Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.771Z info: Insert successful for rc_id:
+2024-07-12T04:29:07.786Z info: Insert successful for rc_id:
+2024-07-12T04:31:47.924Z info: Accessed GET in login 
+2024-07-12T04:31:49.888Z info: GET admin_dashboard accessed 16008288
+2024-07-12T04:31:50.009Z error: null
+2024-07-12T04:33:32.545Z info: 1 in sga meet
+2024-07-12T04:33:32.547Z info: 2 in sga meet
+2024-07-12T04:33:32.553Z info: 3 in sga meet
+2024-07-12T04:33:32.632Z info: 4 in sga meet
+2024-07-12T04:33:32.686Z info: 5 in sga meet
+2024-07-12T04:33:32.690Z info: 8 in sga meet
+2024-07-12T04:33:33.057Z error: null
+2024-07-12T04:33:33.064Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.069Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.090Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.094Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.100Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.103Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.106Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.108Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.110Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.113Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.127Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.130Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.142Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.148Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.151Z info: Insert successful for rc_id:
+2024-07-12T04:33:33.156Z info: Insert successful for rc_id:
+2024-07-12T04:33:35.899Z error: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client in nodemailer
+2024-07-12T04:34:21.766Z info: Accessed GET in login 
+2024-07-12T04:35:24.240Z info: Accessed GET in login 
+2024-07-12T04:35:25.838Z info: GET admin_dashboard accessed 16008288
+2024-07-12T04:35:25.962Z error: null
+2024-07-12T04:36:53.592Z info: 1 in sga meet
+2024-07-12T04:36:53.594Z info: 2 in sga meet
+2024-07-12T04:36:53.600Z info: 3 in sga meet
+2024-07-12T04:36:53.682Z info: 4 in sga meet
+2024-07-12T04:36:53.742Z info: 5 in sga meet
+2024-07-12T04:36:53.746Z info: 8 in sga meet
+2024-07-12T04:36:54.014Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.022Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.027Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.038Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.214Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.217Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.221Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.224Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.226Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.232Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.234Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.251Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.254Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.258Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.268Z info: Insert successful for rc_id:
+2024-07-12T04:36:54.270Z info: Insert successful for rc_id:
+2024-07-12T04:57:18.801Z info: Accessed GET in login 
+2024-07-12T04:57:59.562Z info: GET admin_dashboard accessed 16008288
+2024-07-12T04:57:59.655Z error: null
+2024-07-12T04:58:06.173Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T04:58:08.156Z info: GET admin_dashboard accessed 16008288
+2024-07-12T05:01:12.197Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T05:01:27.629Z info: Starting GET manage_pending_btl 16008288
+2024-07-12T05:01:28.150Z info: Accessed GET manage_pending_btl 16008288
+2024-07-12T05:03:06.044Z info: GET admin_dashboard accessed 16008288
+2024-07-12T05:03:32.388Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T05:06:17.538Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T05:06:19.835Z info: Starting GET manage_pending_btl 16008288
+2024-07-12T05:06:20.232Z info: Accessed GET manage_pending_btl 16008288
+2024-07-12T05:06:32.487Z info: Starting GET manage_pending_btl 16008288
+2024-07-12T05:06:32.879Z info: Accessed GET manage_pending_btl 16008288
+2024-07-12T05:08:35.582Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T05:08:46.382Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T05:08:55.925Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T05:22:04.161Z info: GET admin_dashboard accessed 16008288
+2024-07-12T05:53:31.407Z info: Accessed GET in login 
+2024-07-12T05:53:33.830Z info: GET admin_dashboard accessed 16008288
+2024-07-12T05:53:33.935Z error: null
+2024-07-12T05:57:35.327Z error: 500 - ENOENT: no such file or directory, open 'D:\var\log\jubilant\images\ea6c3981-3a0f-4b8e-a1e8-31aef588b9e6-daredevil-minimalist-4k-wallpaper-uhdpaper.com-320@0@k.jpg' - /sga_meet - POST - ::1
+2024-07-12T05:58:30.027Z error: 500 - ENOENT: no such file or directory, open 'D:\var\log\jubilant\images\b918647d-8b30-4c03-8c52-dc8d3f797f89-daredevil-minimalist-4k-wallpaper-uhdpaper.com-320@0@k.jpg' - /sga_meet - POST - ::1
+2024-07-12T05:59:41.589Z info: 1 in sga meet
+2024-07-12T05:59:41.591Z info: 2 in sga meet
+2024-07-12T05:59:41.596Z info: 3 in sga meet
+2024-07-12T05:59:41.669Z info: 4 in sga meet
+2024-07-12T05:59:41.729Z info: 5 in sga meet
+2024-07-12T05:59:41.732Z info: 8 in sga meet
+2024-07-12T05:59:42.010Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.013Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.027Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.193Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.196Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.198Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.202Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.206Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.209Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.212Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.222Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.225Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.233Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.247Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.249Z info: Insert successful for rc_id:
+2024-07-12T05:59:42.251Z error: null
+2024-07-12T05:59:42.258Z info: Insert successful for rc_id:
+2024-07-12T05:59:44.682Z info: 6 in sga meet
+2024-07-12T06:03:59.803Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:05:30.801Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:10:24.042Z info: Accessed GET in login 
+2024-07-12T06:10:26.540Z info: GET admin_dashboard accessed 16008288
+2024-07-12T06:10:26.649Z error: null
+2024-07-12T06:10:29.350Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:14:02.430Z info: Accessed GET in login 
+2024-07-12T06:14:05.006Z info: GET admin_dashboard accessed 16008288
+2024-07-12T06:14:05.119Z error: null
+2024-07-12T06:14:07.821Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:14:58.769Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:15:07.219Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:15:14.410Z info: Accessed GET in login 
+2024-07-12T06:15:14.440Z info: Accessed GET in login 
+2024-07-12T06:15:16.560Z info: GET admin_dashboard accessed 16008288
+2024-07-12T06:15:16.675Z error: null
+2024-07-12T06:15:25.626Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:15:40.836Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:17:47.935Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:17:54.277Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:18:10.212Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:19:37.674Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:22:05.658Z info: Accessed GET in login 
+2024-07-12T06:22:07.709Z info: GET admin_dashboard accessed 16008288
+2024-07-12T06:22:07.788Z error: null
+2024-07-12T06:22:10.664Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:26:47.945Z info: Accessed GET in login 
+2024-07-12T06:26:50.881Z info: GET admin_dashboard accessed 16008288
+2024-07-12T06:26:50.994Z error: null
+2024-07-12T06:26:53.515Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:27:05.882Z info: POST filter_view_pending_btl accessed 
+2024-07-12T06:28:28.966Z info: Accessed GET in login 
+2024-07-12T06:28:32.926Z info: GET admin_dashboard accessed 16008288
+2024-07-12T06:28:33.053Z error: null
+2024-07-12T06:28:35.472Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:28:45.024Z info: POST filter_view_pending_btl accessed 
+2024-07-12T06:28:54.079Z info: GET view_pending_btl accessed for emp_code 16008288
+2024-07-12T06:29:12.582Z info: POST filter_view_pending_btl accessed 
+2024-07-12T06:29:23.830Z info: POST filter_view_pending_btl accessed 
+2024-07-12T06:29:43.964Z info: Starting GET manage_pending_btl 16008288
+2024-07-12T06:29:44.351Z info: Accessed GET manage_pending_btl 16008288
+2024-07-12T12:04:08.556Z info: Accessed GET in login 

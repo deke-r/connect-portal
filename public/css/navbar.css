@@ -1,0 +1,93 @@
+.pba{
+    position: absolute !important;
+    left: 4vw !important;
+}
+
+.dropdown-item{
+    font-size: 13px;
+    font-weight: 600
+    ;
+}
+@media (max-width:374px) {
+    .dlay{
+        display: none !important;
+    }
+    }
+
+    .navbar-brand h5:hover{color: #0d6efd !important;transform: scale(1.03);transition: .5s;}
+
+
+    
+
+    .rounddeldin {
+        /* border: 1px solid !important; */
+        padding: 10px 15px !important;
+        border-radius: 47% !important;
+       box-shadow: rgba(0, 0, 0, 0.15) 2.2px 2.2px 2.6px;
+    }
+
+    .rounddeinst{
+        /* border: 1px solid !important; */
+        padding: 10px 10px !important;
+        border-radius: 48% !important;
+       box-shadow: rgba(0, 0, 0, 0.15) 2.2px 2.2px 2.6px;
+    }
+    .rounddegoogle{
+        /* border: 1px solid !important; */
+        padding: 10px 10px !important;
+        border-radius: 48% !important;
+       box-shadow: rgba(0, 0, 0, 0.15) 2.2px 2.2px 2.6px;
+    }
+    .rounddetwtr{
+        /* border: 1px solid !important; */
+        padding: 10px 9px !important;
+        border-radius: 48% !important;
+       box-shadow: rgba(0, 0, 0, 0.15) 2.2px 2.2px 2.6px;
+    }
+
+    .roundde{
+        /* border: 1px solid !important; */
+        padding: 10px 12px !important;
+        border-radius: 48% !important;
+       box-shadow: rgba(0, 0, 0, 0.15) 2.2px 2.2px 2.6px;
+    }
+
+ /* .hv a:hover{
+    background-color: #0d6efd !important;
+    color: white !important;
+    transition: .5s ease-in-out;
+ } */
+
+ /* facebook */
+ .hv > a:nth-child(1):hover {
+    background-color: #316FF6 !important;  
+    color: white !important;
+    transition: .5s ease-in-out;
+
+  }
+/* tweeter */
+  .hv > a:nth-child(2):hover {
+    background-color: #1DA1F2 !important ;  
+    color: white !important;
+    transition: .5s ease-in-out;
+
+  }
+/* instagram */
+  .hv > a:nth-child(3):hover {
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7) !important;
+    color: white !important;
+    transition: .5s ease-in-out;
+
+  }
+/* linkdin */
+  .hv > a:nth-child(4):hover {
+    background-color: #0A66C2 !important;
+    color: white !important;
+    transition: .5s ease-in-out;
+
+  }
+
+
+
+
+

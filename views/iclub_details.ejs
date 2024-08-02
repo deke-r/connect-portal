@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="stylesheet" href="/static/css/iclub_details.css">
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    <div class="container-fluid parentbox  my-4">
+        <div class="container-fluid bg_dot box_sdw border-t pb-2 childbox bg-light">
+            <div class="row bg_r border-t">
+                <h5 class="text-light text-center f_16 mt-2">iClub Details</h5>
+            </div>
+           
+    
+        <div class="container-fluid parentbox my-4 ">
+            <div class="container-fluid newmp  border-t childbox bg-light ">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Edit iClub Details</h5>
+                </div>
+    
+                <div class="row mt-4 ">
+                    <div class="col-md-6 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">Trans ID</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600 " placeholder="Trans ID" name="transid">
+                    </div>
+                    <div class="col-md-6 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">Dealer Details</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Dealer Details" name="dealer_detl">    
+                    </div>  
+                </div>
+
+                <div class="row mt-md-4 pb-3 my_cols">
+                    <div class="col-md-6 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">Last Year iClub</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Last Year iClub" name="last_yr_iclub">
+                    </div>
+                    <div class="col-md-6 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">Distributor Details</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Distributor Details" name="distributor_detl">    
+                    </div>  
+                </div>
+
+            </div>
+        </div>
+
+        <!-- //////////////////////////////////////// -->
+        <div class="container-fluid parentbox my-4 ">
+            <div class="container-fluid newmp  border-t childbox bg-light pb-2">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Government Details</h5>
+                </div>
+    
+                <div class="row mt-4 mb-2">
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">Dealer GST No.</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" maxlength="15" placeholder="Enter GST No." name="dealer_GSTno">
+                        <h6 class="f_11 fw_bold ms-1 mt-1 ">(GST No. is mandetory of all iClub Dealers (except Welcome Slab), Also check the correctness of GST No. before submitting, this will be validated with GST Website.)</h6>
+                    </div>
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">PAN No.(GST Not registered)</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Enter valid Pan No." name="pan_no">
+                        <h6 class="f_11 fw_bold ms-1 mt-1">(By entering PAN No, I confirm that Dealer is not registered in GST and I have cheked the same. )</h6> 
+                    </div>
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">GST Validation</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="GST Validation" name="GST_validat">   
+                    </div>  
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-fluid parentbox my-4 ">
+            <div class="container-fluid newmp  border-t childbox bg-light pb-2">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">New iClub Slab</h5>
+                </div>
+    
+                <div class="row mt-4 mb-md-2">
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">Recommended iClub details</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Recommended iClub details" name="Recomm_iclub_detl">
+                    </div>
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">iClub</h6>
+                        <select name="iClub" class="form-select border-leftb box_sdw11 f_13 fw_600" >
+                            <option selected>Select iClub</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">Target (Kg/Ltr)</h6>
+                        <input type="number" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Enter Target in Kg/Liter" name="target">
+                        <h6 class="f_11 fw_bold ms-1 mt-1 ">(only enter in numbers, don't put Kg/ Ltr in end)</h6>
+                    </div>
+                    </div>
+
+                    <div class="row ">
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">Enrolment Date</h6>
+                        <input type="date" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Enter Target in Kg/Liter" name="enrolment_date">
+                        <h6 class="f_11 fw_bold ms-1 mt-1 ">(select actual date of enrolment)</h6>
+                    </div>
+                    
+                    
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">Contact Name</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Enter Contact Name" name="contact_name">
+                    </div>
+
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">Contact No.</h6>
+                        <input type="number" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Enter Contact No" name="contact_no">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container-fluid parentbox my-4 ">
+            <div class="container-fluid newmp  border-t childbox bg-light pb-2">
+                <div class="row bg_b border-t ">
+                    <h5 class="text-light text-center f_14 mt-2">Address Details</h5>
+                </div>
+    
+                <div class="row mt-4 mb-md-2">
+                    <div class="col-md-6 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">Address</h6>
+                        <textarea name="address" id="" cols="1" rows="1" class="form-control border-leftb box_sdw11 f_13 fw_60" placeholder="Enter Address"></textarea>
+                    </div>
+                    <div class="col-md-6 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">Pin code</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Enter Pin code" name="pincode">
+                    </div>
+
+                </div>
+
+                    <div class="row mb-2">
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">State</h6>
+                        <select name="state" class="form-select border-leftb box_sdw11 f_13 fw_600" >
+                            <option selected>Select State</option>
+                        </select>
+                        <h6 class="f_11 fw_bold ms-1 mt-1 ">(Enter pin code to auto generate)</h6> 
+
+                    </div>
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">District</h6>
+                        <select name="district" class="form-select border-leftb box_sdw11 f_13 fw_600" >
+                            <option selected>Select District</option>
+                        </select>
+                        <h6 class="f_11 fw_bold ms-1 mt-1 ">(Enter pin code to auto generate)</h6> 
+                    </div> 
+
+                    <div class="col-md-4 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">City</h6>
+                        <select name="city" class="form-select border-leftb box_sdw11 f_13 fw_600" >
+                            <option selected>Select City</option>
+                        </select>
+                    </div> 
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="btn bg_b mt-4 text-nowrap text-light f_13 fw_600 " type="sumbit" id="sub_btn">Submit Details</button>
+            <button class="btn bg_r mt-4 text-light f_13 fw_600" type="button" id="back">Back</button>
+        </div>
+
+
+
+    
+        </div>
+    </div>
+    
+    
+
+
+    <%- include('partials/footer.ejs') %>
+    <script src="/static/js/iclub_details.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/manage_pending_btl.css">
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid box_sdw  border-t childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Manage Pending BTL</h5>
+                </div>
+
+
+                <div class="row mt-2  pb-3 mx-3">
+
+
+
+
+                    <div class="container newmp2 mt-4 py-2">
+                        <div class="row">
+                            <div class="col-md-6 f_13 border-0">
+                                <div class="row">
+                                    <div class="col-3  text-nowrap fw_bold">EMP Id/Name:</div>
+                                    <div class="col-9 teend  fw_600">
+                                        <span id="emp_idd"><%= emp_id %></span>/<span id="emp_nameeee"><%= data2[0].EMP_NAME %></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 f_13 border-0   ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap fw_bold">Ref-No:</div>
+                                    <div class="col-9  teend fw_600" id="rc_id">
+                                        <%= rc_id %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container newmp2 mt-1 py-2">
+                        <div class="row">
+                            <div class="col-md-6 f_13 border-0  fw_600">
+                                <div class="row">
+                                    <div class="col-3 fw_bold text-nowrap ">Branch:</div>
+                                    <div class="col-9 teend fw_600 ">
+                                        <%= data2[0].BRANCH %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 f_13 border-0   ">
+                                <div class="row">
+                                    <div class="col-3  fw_bold text-nowrap">Zone:</div>
+                                    <div class="col-9 teend fw_600">
+                                        <%= data2[0].ZONE %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container newmp2 mt-1 py-2">
+                        <div class="row">
+                            <div class="col-md-6 f_13 border-0  ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap fw_bold">Meet Type: </div>
+                                    <div class="col-9 teend fw_600" id="meetTypeText">
+                                        <% let meetTypeText; if (data[0].Meet_Type===1) { meetTypeText='In-Shop Meet' ;
+                                            } else if (data[0].Meet_Type===2) { meetTypeText='Contractor Meet' ; } else
+                                            if (data[0].Meet_Type===3) { meetTypeText='Dealer Meet' ; } else {
+                                            meetTypeText='SGA Meet'; } %>
+                                            <%= meetTypeText %>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 f_13 border-0   ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap fw_bold">Event Date:</div>
+                                    <div class="col-9 teend fw_600">
+                                        <%= data[0].DateOfMeet %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container newmp2 mt-1 py-2">
+                        <div class="row">
+                            <div class="col-md-6 f_13 border-0  ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap fw_bold">City:</div>
+                                    <div class="col-9 teend fw_600">
+                                        <%= data[0].City %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 f_13 border-0   ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap fw_bold ">People Attended:</div>
+                                    <div class="col-9 teend fw_600" id="people_attended">
+                                        <%= data[0].Attended_count %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="container newmp2 mt-1 py-2">
+                        <div class="row">
+                            <div class="col-md-6 f_13 border-0  ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap  fw_bold">Approval Date:</div>
+                                    <div class="col-9 teend fw_600">
+                                        <%= data[0].Manager_Approval_date %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 f_13 border-0   ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap fw_bold">Approved by:</div>
+                                    <div class="col-9 teend fw_600">
+                                        <% if(data[0].Approved_by && data[0].Approved_by.length > 0) { %>
+                                            <%= data[0].Approved_by %>
+                                        <% } else { %>
+                                            Approval Not Required
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container newmp2 mt-1 py-2">
+                        <div class="row">
+                            <div class="col-md-6 f_13 border-0   ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap fw_bold">Budget Brief:</div>
+                                    <div class="col-9 teend fw_600">
+                                        <%= data[0].Budget_brief %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 f_13 border-0  ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap  fw_bold">Budget:</div>
+                                    <div class="col-9 teend fw_600">
+                                        <%= data[0].Budget %>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container newmp2 mt-1 py-2">
+                        <div class="row">
+                            <div class="col-md-6 f_13 border-0  ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap  fw_bold">Expense:</div>
+                                    <div class="col-9 teend  fw_600">
+                                        <%= data[0].Expense %>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 f_13 border-0  ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap  fw_bold">Advance:</div>
+                                    <div class="col-9 teend  fw_600">
+                                        <%= data[0].pay_advance %>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="container newmp2 mt-1 py-2">
+                        <div class="row">
+                            <div class="col-md-6 f_13 border-0   ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap fw_bold">Event Hotel & Food Biils:</div>
+
+                                    <div class="col-9 teend h_18 fw_600">
+                                        <img src="/static/images/<%=data[0].Event_Photo2%>" class="img_inlarge"
+                                            alt="Event Photo">
+                                          <span class="me-2">  <%= data[0].Event_Photo2 %></span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 f_13 border-0   ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap fw_bold">Event Gift Biils:</div>
+                                    <div class="col-9 teend h_18 fw_600">
+                                        <img src="/static/images/<%= data[0].Event_Photo3 %>" class="img_inlarge"
+                                            alt="Event Photo">
+                                            <span class="me-2">  <%= data[0].Event_Photo3 %></span>
+                                                                            </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="container newmp2 mt-1 py-2">
+                        <div class="row">
+                            <div class="col-md-6 f_13 border-0  ">
+                                <div class="row">
+                                    <div class="col-3 text-nowrap  fw_bold">Event Photo:</div>
+                                    <div class="col-9 teend h_18 fw_600">
+                                        <img src="/static/images/<%=data[0].Event_Photo1%>" class="img_inlarge"
+                                            alt="Event Photo">
+                                            <span class="me-2">  <%= data[0].Event_Photo1 %></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        </div>
+
+                    <div class="container newmp2 mt-1 py-2">
+                        <div class="row">
+                            <div class="col-md-12 f_13 border-0   ">
+                                <span class="text-danger fw_600 f_13 mt-3 marquee">
+                                    <% duplicatePhotos.forEach(duplicate => { %>
+                                        <%= duplicate.photo %> Duplicates found in the following rc_ids:
+                                        <% duplicate.rc_ids.forEach(rc_id => { %>
+                                            <%= rc_id %>
+                                            <% if (duplicate.rc_ids.indexOf(rc_id) !== duplicate.rc_ids.length - 1) { %>, <% } %>
+                                        <% }) %>
+                                        <% if (duplicatePhotos.indexOf(duplicate) !== duplicatePhotos.length - 1) { %>; <% } %>
+                                    <% }) %>
+                                        </span>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                   
+                    
+
+
+                </div>
+
+                <button type="button" class="btn btn-primary d-none" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content border-0 modal_trans">
+                            <div class="modal-header border-0">
+                                <button type="button" class="btn-close modal_ab" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body d-flex justify-content-center align-items-center">
+                                <img src="" class="img-fluid" id="enlargedImage" alt="Event Photo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="row mt-2 mx-4  pb-3">
+                    <div class="container-fluid border-t bg-light p-4 newmp">
+                        <div class="row">
+                            <div class="col-md-4 col-xl-4 my_cols">
+                                <h6 class="fw_bold f_13 ms-1 ">Manage BTL:</h6>
+                                <select class="form-select  border-leftb box_sdw11 f_13 fw_600" id="tabDropdown"
+                                    aria-label="Default select example">
+                                    <option value="" selected disabled class="f_18">Select Your Action</option>
+                                    <option value="home-tab-pane" class="f_18">Approve</option>
+                                    <option value="profile-tab-pane" class="f_18">Rejected</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 col-xl-1 my_cols">
+                                <button type="button" class="btn box_sdw11 mt-4 float-right bg_r text-light f_13 fw_600"
+                                    id="reset">Reset</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row  mx-2 mb-2 pb-5">
+                    <ul class="nav nav-tabs d-none" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Approve
+                                Button</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#profile-tab-pane" type="button" role="tab"
+                                aria-controls="profile-tab-pane" aria-selected="false">Rejected Button</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+
+
+
+
+
+
+
+                        <div class="tab-pane fade" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                            tabindex="0">
+
+                            <div class="container-fluid border-t bg-light p-4 newmp">
+                                <div class="row">
+
+                                    <div class="col-md-4 col-xl-4 my_cols">
+                                        <h6 class="fw_bold f_13 ms-1 ">Zone:</h6>
+                                        <input type="text" id="ap_zone"
+                                            class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Please Enter Zone Details">
+
+                                    </div>
+                                    <div class="col-md-4 col-xl-4 my_cols">
+                                        <h6 class="fw_bold f_13 ms-1 ">Company:</h6>
+                                        <input type="text" id="ap_company"
+                                            class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Please Enter Company Details">
+
+                                    </div>
+                                    <!-- <div class="col-md-4 col-xl-4 my_cols">
+                                        <h6 class="fw_bold f_13 ms-1 ">Voucher No:</h6>
+                                        <input type="text" id="ap_voucher"
+                                            class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="">
+
+                                    </div> -->
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-12 col-xl-12 d-flex justify-content-end my_cols">
+                                        <button type="button"
+                                            class="btn mx-2 box_sdw11 float-right bg_r mt-4 text-light f_13 fw_600"
+                                            id="back">Back</button>
+                                        <button type="button"
+                                            class="btn box_sdw11 float-right bg_b mt-4 text-light f_13 fw_600"
+                                            id="ap_submit">Submit</button>
+
+                                    </div>
+                                </div>
+                                <!-- <div class="row">
+                                    <div class="col-12 d-flex justify-content-end mt-2">
+                                        <button type="button"
+                                            class="btn mx-2 box_sdw11 float-right bg_r mt-2 text-light f_13 fw_600"
+                                            id="back">Back</button>
+                                        <button type="button"
+                                            class="btn box_sdw11 float-right bg_b mt-2 text-light f_13 fw_600"
+                                            id="ap_submit">Submit</button>
+                                    </div>
+                                </div> -->
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+                            tabindex="0">
+
+
+                            <div class="container-fluid border-t bg-light p-4 newmp">
+                                <div class="row">
+
+                                    <div class="col-md-6 col-xl-6 my_cols">
+                                        <h6 class="fw_bold f_13 ms-1 ">Reason:</h6>
+                                        <textarea type="text" id="myTextarea" rows="5" cols=""
+                                            class="form-control border-leftb box_sdw11 f_18 fw_600"
+                                            placeholder=""></textarea>
+                                        <div id="" class="f_14 fw_600 float-end mt-1"><span
+                                                id="textcount">200</span>/200</div>
+
+                                    </div>
+
+                                    <div class="col-6 d-flex justify-content-end align-items-end mt-2">
+                                        <div class="div">
+                                            <button type="button"
+                                                class="btn mx-2 box_sdw11 float-right bg_r mt-2 text-light f_13 fw_600"
+                                                id="back">Back</button>
+                                            <button type="button"
+                                                class="btn box_sdw11 float-right bg_b mt-2 text-light f_13 fw_600"
+                                                id="rej_btn">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <%- include('partials/footer.ejs') %>
+            <script src="/static/js/view_pending_btl.js"></script>
+</body>
+
+</html>

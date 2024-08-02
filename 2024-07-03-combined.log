@@ -1,0 +1,39 @@
+2024-07-03T09:50:11.596Z info: Accessed GET in login 
+2024-07-03T09:50:15.023Z info: GET admin_dashboard accessed 16008288
+2024-07-03T09:50:15.144Z error: null
+2024-07-03T10:24:18.656Z info: Accessed GET in login 
+2024-07-03T10:24:20.769Z info: GET admin_dashboard accessed 16008288
+2024-07-03T10:24:21.027Z error: null
+2024-07-03T10:57:51.251Z error: 500 - ENOENT: no such file or directory, open 'D:\var\log\jubilant\images\4b63e186-82fe-423f-9f8f-7132c96cc459-Screenshot (1).png' - /contractor_meet - POST - ::1
+2024-07-03T10:58:53.337Z info: Accessed GET in login 
+2024-07-03T10:58:55.652Z info: GET admin_dashboard accessed 16008288
+2024-07-03T10:58:55.780Z error: null
+2024-07-03T10:59:43.523Z info: Insert successful for rc_id:
+2024-07-03T11:00:17.012Z info: GET admin_dashboard accessed 16008288
+2024-07-03T11:08:43.423Z info: Accessed GET in login 
+2024-07-03T11:08:45.292Z info: GET admin_dashboard accessed 16008288
+2024-07-03T11:08:45.424Z error: null
+2024-07-03T11:10:20.734Z info: Accessed GET in login 
+2024-07-03T11:10:23.139Z info: GET admin_dashboard accessed 16008288
+2024-07-03T11:10:23.285Z error: null
+2024-07-03T11:17:12.266Z info: Accessed GET in login 
+2024-07-03T11:17:14.695Z info: GET admin_dashboard accessed 16008288
+2024-07-03T11:17:14.820Z error: null
+2024-07-03T11:19:25.098Z info: Accessed GET in login 
+2024-07-03T11:19:26.729Z info: GET admin_dashboard accessed 16008288
+2024-07-03T11:19:26.873Z error: null
+2024-07-03T11:39:29.978Z info: GET admin_dashboard accessed 16008288
+2024-07-03T11:39:31.323Z info: Accessed GET in eventreport 16008288
+2024-07-03T11:41:03.281Z info: Accessed GET in login 
+2024-07-03T11:41:08.302Z info: Accessed GET in login 
+2024-07-03T11:41:09.872Z info: GET admin_dashboard accessed 16008288
+2024-07-03T11:41:09.998Z error: null
+2024-07-03T11:41:11.244Z info: Accessed GET in eventreport 16008288
+2024-07-03T11:41:18.602Z info: Accessed POST filter_event loginQuery 16008288
+2024-07-03T11:42:40.950Z info: Accessed GET in login 
+2024-07-03T11:42:40.954Z info: Accessed GET in login 
+2024-07-03T11:47:23.854Z info: GET admin_dashboard accessed 16008288
+2024-07-03T11:47:23.990Z error: null
+2024-07-03T12:21:25.948Z info: Accessed GET in login 
+2024-07-03T12:21:28.491Z info: GET admin_dashboard accessed 16008288
+2024-07-03T12:21:28.679Z error: null

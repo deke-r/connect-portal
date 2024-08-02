@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/view_rejected_approved_btl.css" >
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid box_sdw border-t  childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">View Pending BTL</h5>
+                </div>
+
+
+
+
+
+                <div class="row mt-3 mb-2 pb-2">
+
+                    <div class="col-md-2 col-xl-2 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">START DATE:</h6>
+                        <input type="text" id="datepicker" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                            placeholder="DD-MM-YYYY">
+                        <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+
+                    </div>
+                    <div class="col-md-2 col-xl-2 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">END DATE:</h6>
+                        <input type="text" id="datepicker2" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                            placeholder="DD-MM-YYYY">
+                        <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+
+                    </div>
+
+
+                    <div class="col-xl-4 col-md-6 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">Manage BTL:</h6>
+                        <select class="form-select  border-leftb box_sdw11 f_13 fw_600" id="mng_btl"
+                            aria-label="Default select example">
+                                <option value="" selected disabled class="f_18">Select Your Action</option>
+                                <option value="2" class="">Approve</option>
+                                <option value="3" class="">Rejected</option>
+                                <option value="0" class="">Approval Pending</option>
+                                <option value="Pending_Voucher" class="">Pending Voucher</option>
+                             
+                        </select>
+                    </div>
+                    <div class="col-md-12 col-xl-4 my_cols f-end">
+                        <h6 class="fw_bold f_13 ms-1 displaynun ">&nbsp;</h6>
+                        <button type="button" class="btn box_sdw11 float-right bg_b mx-2 text-light f_13 fw_600"
+                            id="mng_run">Run Report</button>
+                        <button type="button" class="btn box_sdw11 float-right bg_b mx-2 text-light f_13 fw_600"
+                            id="excel_btn">Export IN Excel</button>
+                        <!-- <button type="button" class="btn box_sdw11 float-right bg_b text-light f_13 fw_600"
+                            id="pending">Pending Voucher</button> -->
+                        <button type="button" class="btn box_sdw11 float-right bg_r text-light f_13 fw_600"
+                            id="reset">Reset</button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="row mt-2 mx-2">
+
+            <div class=" table-responsive  px-2  h_350  me-2">
+                <table class="table table-bordered table-responsive  table-striped" id="dataTables">
+                    <thead id="thead">
+
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+
+
+        
+      <div class="loader-div d-none" id="loader-div">
+        <div class="loader">
+            <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+        </div>
+    </div>
+
+
+
+        <%- include('partials/footer.ejs') %>
+            <script src="/static/js/view_rejected_approved_btl.js"></script>
+            <script src="/static/cdn/moment/moment.js"></script>
+
+
+</body>
+
+</html>

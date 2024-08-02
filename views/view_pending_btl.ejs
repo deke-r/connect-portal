@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/view_pending_btl.css">
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid box_sdw border-t  childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">View Pending BTL</h5>
+                </div>
+
+
+
+
+
+                <div class="row mt-3 mb-2 pb-2">
+
+                    <div class="col-md-2 col-xl-2 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">START DATE:</h6>
+                        <input type="text" id="datepicker" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                            placeholder="DD-MM-YYYY">
+                        <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+
+                    </div>
+                    <div class="col-md-2 col-xl-2 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">END DATE:</h6>
+                        <input type="text" id="datepicker2" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                            placeholder="DD-MM-YYYY">
+                        <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+
+                    </div>
+
+
+                    <div class="col-xl-4 col-md-6 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">REF.NO:</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" id="searchInput"
+                            placeholder="Search String">
+                    </div>
+                    <div class="col-md-12 col-xl-3 my_cols f-end">
+                        <h6 class="fw_bold f_13 ms-1 displaynun ">&nbsp;</h6>
+                        <button type="button" class="btn box_sdw11 float-right bg_b mx-2 text-light f_13 fw_600"
+                            id="evt_run">Run Report</button>
+                        <button type="button" class="btn box_sdw11 float-right bg_b mx-2 text-light f_13 fw_600"
+                            id="excel_btn">Export IN Excel</button>
+                        <button type="button" class="btn box_sdw11 float-right bg_r text-light f_13 fw_600"
+                            id="reset">Reset</button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row mt-2 mx-2">
+
+            <div class=" table-responsive  px-2  h_350  me-2">
+
+                <table class="table table-bordered table-responsive  table-striped" id="dataTables">
+                    <thead id="thead">
+                        <tr>
+                            <th class='stickyhead1'>ID</th>
+                            <th class='stickyhead1'>Action</th>
+                            <th class='stickyhead2'>Branch</th>
+                            <th>Zone</th>
+                            <th>Emp Id</th>
+                            <th>Employee</th>
+                            <th>HQ Name</th>
+                            <th>HQ Code</th>
+                            <th>Sup ID</th>
+                            <th>Supervisor</th>
+                            <th>Category</th>
+                            <th>Event Date</th>
+                            <th>Dealer Code</th>
+                            <th>Dealer Name</th>
+                            <th>Venue</th>
+                            <th>City</th>
+                            <th>Agenda</th>
+                            <th>People Attended</th>
+                            <th>Outcome</th>
+                            <th>ADE</th>
+                            <th>Attended Jacpl</th>
+                            <th>Budget(Rs.)</th>
+                            <th>Advance(Rs.)</th>
+                            <th>Expense (Rs.)</th>
+                            <th>Vertical</th>
+                            <th>Meeting Gift</th>
+                            <th>Expense Budget Exceed Status</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        
+                        
+                       
+                        <% for(var i=0; i < data.length; i++){ %>
+                            <% 
+                                        let meetTypeText;
+                                        if (data[i].Meet_Type === 1) {
+                                            meetTypeText = 'In-Shop Meet';
+                                        } else if (data[i].Meet_Type === 2) {
+                                            meetTypeText = 'Contractor Meet';
+                                        } else if (data[i].Meet_Type === 3) {
+                                            meetTypeText = 'Dealer Meet';
+                                        } else {
+                                            meetTypeText = 'SGA Meet';
+                                        }
+                                        %>
+                            <tr>
+                                <td><a href="/view_pending_btl_pdf/<%= data[i].emp_id %>/<%= data[i].rc_id %>/<%= meetTypeText %>" target="_blank"><%= data[i].rc_id %></a></td> 
+                                <td><a href="/manage_pending_btl/<%= data[i].emp_id %>/<%= data[i].rc_id %>" class="f_14 text-danger"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                <td><%= data[i].BRANCH %></td>
+                                <td><%= data[i].ZONE %></td> 
+                                <td><%= data[i].emp_id %></td> 
+                                <td><%= data[i].EMP_NAME %></td>
+                                <td><%= data[i].EMP_HQ_NAME %></td>
+                                <td><%= data[i].EMP_HQ_CODE %></td>
+                                <td><%= data[i].REP_MANAGER_ID %></td> 
+                                <td><%= data[i].REP_MANAGER_NAME %></td> 
+                                <td class="8th">
+                                         <%= meetTypeText %> 
+                                </td>
+                                
+                                <td><%= data[i].DateOfMeet%></td>
+                                <td><%= data[i].Dealer_Code %></td> 
+                                <td><%= data[i].Dealer_Name %></td>
+                                <td><%= data[i].Dealer_firm_Name %></td> 
+                                <td><%= data[i].City %></td> 
+                                <td><%= data[i].Agenda %></td> 
+                                <td><%= data[i].Attended_count %></td> 
+                                <td><%= data[i].Outcome %></td>
+                                <td><%= data[i].Cond_By %></td>
+                                <td><%= data[i].Jacpl_Attended %></td> 
+                                <td><%= data[i].Budget %></td> 
+                                <td><%= data[i].pay_advance %></td> 
+                                <td><%= data[i].Expense %></td> 
+                                <td><%= data[i].vertical %></td> 
+                                <td><%= data[i].meeting_gift %></td>
+                                <td><%= data[i].action_status %></td>
+
+                            </tr>
+                            
+                            <% } %>
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="loader-div d-none" id="loader-div">
+            <div class="loader">
+                <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+            </div>
+        </div>
+
+
+
+
+
+        <script src="/static/js/view_pending_btl.js"></script>
+        <script src="/static/cdn/moment/moment.js"></script>
+
+
+
+
+        <%- include('partials/footer.ejs') %>
+</body>

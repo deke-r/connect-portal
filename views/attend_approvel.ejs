@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/attend_approvel.css">
+
+
+</head>
+
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    
+
+        <div class="container-fluid parentbox my-4">
+            <div class="container-fluid box_sdw border-t  childbox bg-light">
+                <div class="row bg_b border-t">
+                    <h5 class="text-light text-center f_14 mt-2">Attended Approval</h5>
+                </div>
+
+                <!-- <div class="row mt-3 mb-2 pb-2">
+
+                    <div class="col-md-2 col-xl-2 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">START DATE:</h6>
+                        <input type="text" id="datepicker" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                            placeholder="DD-MM-YYYY">
+                        <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+
+                    </div>
+                    <div class="col-md-2 col-xl-2 my_cols">
+                        <h6 class="fw_bold f_13 ms-1 ">END DATE:</h6>
+                        <input type="text" id="datepicker2" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                            placeholder="DD-MM-YYYY">
+                        <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+                    </div>
+
+                    <div class="col-md-1 col-xl-1 my_cols mt-4 text-center">
+                        
+                     <b>OR</b>
+
+                    </div>
+                    
+
+                    <div class="col-xl-2 col-md-3 my_cols">
+                        <h6 class="fw_bold f_13 ms-1">REF.NO:</h6>
+                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" id="searchInput"
+                            placeholder="Search String">
+                    </div>
+                    
+                    <div class="col-md-12 col-xl-3 my_cols f-end">
+                        <h6 class="fw_bold f_13 ms-1 displaynun ">&nbsp;</h6>
+                        <button type="button" class="btn box_sdw11 float-right bg_b mx-2 text-light f_13 fw_600"
+                            id="evt_run">Run Report</button>
+                        <button type="button" class="btn box_sdw11 float-right bg_b mx-2 text-light f_13 fw_600"
+                            id="excel_btn">Export IN Excel</button>
+                        <button type="button" class="btn box_sdw11 float-right bg_r text-light f_13 fw_600"
+                            id="reset">Reset</button>
+
+                    </div>
+
+
+                </div> -->
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row mt-2 mx-2">
+
+            <div class=" table-responsive  px-2  h_350  me-2">
+
+                <table class="table table-bordered table-responsive  table-striped" id="dataTables">
+                    <thead id="thead">
+
+                       
+                        <tr>
+                            <th>Rc Id</th>
+                            <th>Emp Id</th>
+                            <th>Emp Name</th>
+                            <th>Reporting Manager Name</th>                         
+                            <th>Meet Type</th>                            
+                            <th>Attended Count</th>                            
+                            <th>Budget Brief</th>                            
+                            <th>Advance</th>                            
+                            <th>Action</th>                            
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                        <% for(var i=0; i < data.length; i++){ %>
+                            <% 
+                                let meetTypeText;
+                                let showRow = false;
+                                if (data[i].Meet_Type === 1) {
+                                    meetTypeText = 'In-Shop Meet';
+                                    showRow = data[i].Attended_count > 15;
+                                } else if (data[i].Meet_Type === 2) {
+                                    meetTypeText = 'Contractor Meet';
+                                    showRow = data[i].Attended_count > 60;
+                                } else if (data[i].Meet_Type === 3) {
+                                    meetTypeText = 'Dealer Meet';
+                                    showRow = data[i].Attended_count > 125;
+                                } else {
+                                    meetTypeText = 'SGA Meet';
+                                    showRow = data[i].Attended_count > 15;
+                                }
+                            %>
+                           
+                            <% if (showRow) { %>
+                               
+                            <tr>
+                                <td><%= data[i].rc_id %></td>
+                                <td><%= data[i].emp_id %></td>
+                                <td><%= data[i].EMP_NAME %></td>
+                                <td><%= data[i].REP_MANAGER_NAME%></td>
+                                <td><%= meetTypeText %> </td>
+                                <td><%= data[i].Attended_count %> </td>
+                                <td><%= data[i].Budget_brief %></td>
+                                <td><%= data[i].pay_advance %></td>
+                                <td>
+                                    <button class="btn btn-success Approval" data-rc_id="<%= data[i].rc_id %>" data-rep_manager="<%= data[i].REP_MANAGER_NAME%>" id="rcid">Approved</button>
+                                    <button class="btn btn-danger Reject" data-rc_id="<%= data[i].rc_id %>" data-rep_manager="<%= data[i].REP_MANAGER_NAME%>">Reject</button>
+                                </td>
+                            </tr>
+
+                            <% } %>
+                            <% } %>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <div class="loader-div d-none" id="loader-div">
+            <div class="loader">
+                <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+            </div>
+        </div>
+
+
+
+
+
+        <script src="/static/js/attend_approvel.js"></script>
+        <script src="/static/cdn/moment/moment.js"></script>
+
+
+
+        <%- include('partials/footer.ejs') %>
+</body>

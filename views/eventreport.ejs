@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/eventreport.css">
+
+
+
+
+
+    
+</head>
+<body>
+<%- include('partials/navbar.ejs') %>
+
+<div class="container-fluid parentbox my-4">
+    <div class="container-fluid border-t box_sdw  childbox bg-light">
+        <div class="row bg_b border-t">
+            <h5 class="text-light text-center f_14 mt-2">Event Report</h5>
+        </div>
+
+   
+
+
+
+        <div class="row mt-3 mb-2 pb-2">
+
+            <div class="col-xl-2 col-md-4  my_cols">
+                <h6 class="fw_bold f_13 ms-1 ">START DATE:</h6>
+                <input type="text" id="datepicker" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="DD-MM-YYYY" required readonly>
+                <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+
+            </div>
+            <div class="col-xl-2 col-md-4 my_cols">
+                <h6 class="fw_bold f_13 ms-1 ">END DATE:</h6>
+                <input type="text" id="datepicker2" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="DD-MM-YYYY" required readonly>
+                <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+
+            </div>
+
+            <div class="col-xl-2 col-md-4 my_cols">
+                <h6 class="fw_bold f_13 ms-1">EVENT CATEGORY:</h6>
+                <select class="form-select border-leftb box_sdw11 f_13 fw_600" aria-label="Default select example" id="evtc" required>
+                    <option selected disabled>All Categories</option>
+                    <option value="4">SGA Meet</option>
+                    <option value="1">In-Shop Meet</option>
+                    <option value="2">Contractor Meet</option>
+                    <option value="3">Dealer Meet</option>
+                  </select>
+                <h6 class="fw_bold f_13 ms-1 displaynun">&nbsp;</h6>
+            </div>
+            <div class="col-xl-3 col-md-6 my_cols">
+                <h6 class="fw_bold f_13 ms-1">REF.NO.</h6>
+                <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" placeholder="Search String" id="searchInput" required>
+            </div>
+            <div class="col-xl-3 col-md-6 my_cols f-end">
+                <h6 class="fw_bold f_13 ms-1 displaynun ">&nbsp;</h6>
+                <button type="button" class="btn box_sdw11 float-right bg_b text-light mx-2 f_13 fw_600" id="evt_run">Run Report</button>
+                <button type="button" class="btn box_sdw11 float-right bg_b text-light mx-2 f_13 fw_600" id="excel_btn">Export IN Excel</button>
+                <button type="button" class="btn box_sdw11 float-right bg_r text-light f_13 fw_600" id="reset">Reset</button>
+
+            </div>
+            
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="row mt-2 mx-2">
+
+    <div class=" table-responsive  px-2  h_350  me-2">
+          <table class="table table-bordered table-responsive  table-striped" id="dataTables">
+              <thead id="thead">
+      
+              </thead>
+              <tbody id="tbody">
+
+              </tbody>
+          </table>
+    </div>
+
+
+      </div>
+
+
+
+      <div class="loader-div d-none" id="loader-div">
+        <div class="loader">
+            <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+        </div>
+    </div>
+
+
+
+
+
+
+<script src="/static/js/eventreport.js"></script>
+<script src="/static/cdn/moment/moment.js"></script>
+
+
+
+
+<%- include('partials/footer.ejs') %>
+</body>

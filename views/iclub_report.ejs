@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACPL</title>
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/css/iclub_report.css">
+    
+</head>
+<body>
+<%- include('partials/navbar.ejs') %>
+
+<div class="container-fluid parentbox my-4">
+    <div class="container-fluid box_sdw  childbox bg-light">
+        <div class="row bg_b border-t">
+            <h5 class="text-light text-center f_14 mt-2">iClub Report</h5>
+        </div>
+
+   
+
+
+
+        <div class="row mt-5 mb-2 pb-5">
+
+            <div class="col-xl-4 col-md-6 my_cols">
+                <h6 class="fw_bold f_13 ms-1">OUTLET-CODE/DEALER NAME/BAAN CODE/ MOBILE NO:</h6>
+                <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" id="input_iclub" placeholder="Search String">
+            </div>
+            <div class="col-xl-1 col-md-2 my_cols f-end">
+                <h6 class="fw_bold f_13 ms-1 displaynun ">&nbsp;</h6>
+                <button type="button" class="btn box_sdw11 float-right bg_b text-light f_13 fw_600" id="btn_iclub">Run Report</button>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="/static/js/iclub_report.js"></script>
+
+
+<%- include('partials/footer.ejs') %>
+</body>
